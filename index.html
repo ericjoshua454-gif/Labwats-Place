@@ -8,129 +8,6 @@
 
   <!-- FontAwesome for WhatsApp Icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <style>
-    /* Bigger Hero Text + Order Button */
-    .hero {
-      background: linear-gradient(to bottom, rgba(0,50,0,0.6), rgba(0,50,0,0.6)),
-                  url("images/kitchen-bg.jpg") center/cover no-repeat;
-      color: #fff;
-      padding: 6rem 2rem;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 4.2rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      letter-spacing: 2px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-    }
-    .hero p {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      color: #dcedc8;
-      font-weight: 500;
-    }
-    .btn-order {
-      padding: 1rem 2.5rem;
-      background: linear-gradient(to right, #43a047, #1b5e20);
-      color: #fff;
-      font-size: 1.3rem;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
-    .btn-order:hover {
-      background: linear-gradient(to right, #66bb6a, #2e7d32);
-      transform: scale(1.05);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.5);
-    }
-
-    /* Meet Our Chefs */
-    .chefs {
-      padding: 4rem 2rem;
-      background: #fff8f2;
-      text-align: center;
-    }
-    .chefs h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      color: #1b5e20;
-    }
-    .chef-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    .chef-card {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 15px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-    .chef-card:hover {
-      transform: translateY(-8px);
-    }
-    .chef-card img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 1rem;
-    }
-    .chef-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-      color: #2e7d32;
-    }
-    .chef-card p {
-      font-size: 1rem;
-      color: #555;
-    }
-
-    /* Video Section */
-    .video-section {
-      padding: 4rem 2rem;
-      text-align: center;
-      background: #fefefe;
-    }
-    .video-section h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      color: #1b5e20;
-    }
-    .video-section video {
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-    }
-
-    /* WhatsApp Floating Button */
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: #fff;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: transform 0.3s;
-    }
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      background-color: #20b858;
-    }
-  </style>
 </head>
 <body>
   <!-- Navbar -->
@@ -200,9 +77,9 @@
     <p>&copy; 2025 Labwat's Kitchen. All rights reserved.</p>
   </footer>
 
-  <!-- Floating WhatsApp Button -->
+  <!-- Floating WhatsApp Button (opens new tab only for WhatsApp) -->
   <a href="https://wa.me/2347015059513?text=Hello%20Labwat's%20Kitchen!%20I'd%20like%20to%20order%20some%20food." 
-     class="whatsapp-float" target="_blank">
+     class="whatsapp-float" target="_blank" rel="noopener noreferrer">
     <i class="fab fa-whatsapp"></i>
   </a>
 </body>
