@@ -1,0 +1,360 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+  background: linear-gradient(120deg, #ffe9c6, #fff6f0);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #ff5f6d, #ffc371);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #222;
+}
+
+/* Hero Sections */
+.hero,
+.hero-about,
+.hero-menu,
+.hero-contact {
+  text-align: center;
+  padding: 6rem 2rem;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  animation: fadeIn 2s ease-in;
+}
+
+.hero {
+  background: url("images/hero-bg.jpg") no-repeat center/cover;
+}
+.hero-about {
+  background: url("images/about-bg.jpg") no-repeat center/cover;
+}
+.hero-menu {
+  background: url("images/hero-bg.jpg") no-repeat center/cover;
+}
+.hero-contact {
+  background: url("images/contact-bg.jpg") no-repeat center/cover;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* Highlights */
+.highlights {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: #fff8f2;
+}
+
+.highlight {
+  background: #fff;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-size: 1.1rem;
+  transition: transform 0.3s;
+}
+
+.highlight:hover {
+  transform: translateY(-5px);
+}
+
+/* About */
+.about-content {
+  padding: 3rem 2rem;
+  background: #fafafa;
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.about-content p,
+.about-content blockquote {
+  max-width: 800px;
+  margin: 1rem auto;
+  font-size: 1.1rem;
+}
+
+blockquote {
+  background: #fff0e6;
+  padding: 1rem;
+  border-left: 5px solid #ff5f6d;
+  font-style: italic;
+  border-radius: 8px;
+}
+
+/* Accordion Menu */
+.menu-content {
+  padding: 3rem 2rem;
+}
+
+.accordion {
+  max-width: 800px;
+  margin: auto;
+}
+
+.accordion-item {
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+  color: #fff;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.accordion-header:hover {
+  background: linear-gradient(to right, #ff5e62, #ff9966);
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  background: #fff;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.accordion-body.open {
+  padding: 1rem;
+  max-height: 1000px;
+}
+
+.dish {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.8rem 0;
+}
+
+.dish img {
+  width: 80px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.dish img:hover {
+  transform: scale(1.05);
+}
+
+/* Contact */
+.contact-content {
+  padding: 3rem 2rem;
+  background: #fff8f2;
+}
+
+.contact-content h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.contact-content p {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+form input,
+form textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+form button {
+  padding: 1rem;
+  background: linear-gradient(to right, #43cea2, #185a9d);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+form button:hover {
+  opacity: 0.8;
+}
+
+/* Video Section */
+.video-section {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #fefefe;
+}
+
+.video-section h2 {
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to right, #ff5f6d, #ffc371);
+  color: #fff;
+}
+
+.footer-motto {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+/* Chef Hat Animation */
+.chef-hat {
+  width: 40px;
+  height: 40px;
+  background: url("images/chef-hat.png") no-repeat center/contain;
+  margin-right: 10px;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Navbar - Dark Green */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #004d40, #00695c);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #c8e6c9;
+}
+
+/* Hero Section - Dark Green */
+.hero {
+  background: url("images/hero-bg.jpg") no-repeat center/cover;
+  text-align: center;
+  padding: 6rem 2rem;
+  color: #fff;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 60, 50, 0.7);
+  animation: fadeIn 2s ease-in;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: #e8f5e9;
+}
+.hero p {
+  font-size: 1.3rem;
+  color: #c8e6c9;
+}
+
+/* Highlights - Green Style */
+.highlights {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: #e8f5e9;
+}
+
+.highlight {
+  background: #004d40;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-size: 1.1rem;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.highlight:hover {
+  transform: translateY(-6px);
+  background: #00695c;
+}
+
+/* Footer - Match Dark Green */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to right, #004d40, #00695c);
+  color: #fff;
+}

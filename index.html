@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Labwat's Kitchen | Home</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- FontAwesome for WhatsApp Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Bigger Hero Text + Order Button */
+    .hero {
+      background: linear-gradient(to bottom, rgba(0,50,0,0.6), rgba(0,50,0,0.6)),
+                  url("images/kitchen-bg.jpg") center/cover no-repeat;
+      color: #fff;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 4.2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: #dcedc8;
+      font-weight: 500;
+    }
+    .btn-order {
+      padding: 1rem 2.5rem;
+      background: linear-gradient(to right, #43a047, #1b5e20);
+      color: #fff;
+      font-size: 1.3rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    .btn-order:hover {
+      background: linear-gradient(to right, #66bb6a, #2e7d32);
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+    }
+
+    /* Meet Our Chefs */
+    .chefs {
+      padding: 4rem 2rem;
+      background: #fff8f2;
+      text-align: center;
+    }
+    .chefs h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #1b5e20;
+    }
+    .chef-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .chef-card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .chef-card:hover {
+      transform: translateY(-8px);
+    }
+    .chef-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+    .chef-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #2e7d32;
+    }
+    .chef-card p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Video Section */
+    .video-section {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: #fefefe;
+    }
+    .video-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #1b5e20;
+    }
+    .video-section video {
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #20b858;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <div class="chef-hat"></div>
+        Labwat's Kitchen
+      </div>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Welcome to Labwat’s Kitchen</h1>
+    <p>Where every dish is made with passion, tradition, and a touch of innovation.</p>
+    <a href="menu.html" class="btn-order">🍴 Explore Menu</a>
+  </section>
+
+  <!-- Highlights -->
+  <section class="highlights">
+    <div class="highlight">🌿 Fresh Ingredients Daily</div>
+    <div class="highlight">👨‍🍳 Master Chefs at Work</div>
+    <div class="highlight">🔥 Traditional Meets Modern</div>
+  </section>
+
+  <!-- Meet Our Chefs -->
+  <section class="chefs">
+    <h2>Meet Our Chefs</h2>
+    <div class="chef-grid">
+      <div class="chef-card">
+        <img src="images/headchef.jpg.jpg" alt="Head Chef">
+        <h3>Chef Labwat
+        <p>Our visionary Head Chef, blending Nigerian heritage with global flavors to create unforgettable dishes.</p>
+      </div>
+      <div class="chef-card">
+        <img src="images/sarah.jpg"Sous Chef">
+        <h3>Chef Sarah
+        <p>Sous Chef extraordinaire, bringing creativity and precision to every plate that leaves our kitchen.</p>
+      </div>
+      <div class="chef-card">
+        <img src="images/ras.jpg" alt="Pastry Chef">
+        <h3>Chef Rasida</h3>
+        <p>Master of sweets and pastries, known for her coconut pudding and innovative desserts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="video-section">
+    <h2>
+    <video controls width="80%">
+      <source src="video/ type="video/mp4">
+      Your browser does not support video.
+    </video>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p class="footer-motto">“From the East to the West, our food is the best.”</p>
+    <p>&copy; 2025 Labwat's Kitchen. All rights reserved.</p>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/2347015059513?text=Hello%20Labwat's%20Kitchen!%20I'd%20like%20to%20order%20some%20food." 
+     class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</body>
+</html>

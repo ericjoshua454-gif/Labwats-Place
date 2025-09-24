@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Labwat's Kitchen | Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Simple animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+    }
+    .fade-in:nth-child(2) { animation-delay: 0.2s; }
+    .fade-in:nth-child(3) { animation-delay: 0.4s; }
+    .fade-in:nth-child(4) { animation-delay: 0.6s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Fun emoji rain */
+    .emoji {
+      position: fixed;
+      top: -50px;
+      font-size: 1.5rem;
+      animation: fall linear forwards;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+
+    .contact-form {
+      z-index: 1;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <span class="chef-hat"></span> Labwat's Kitchen
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contact Section -->
+  <section class="section">
+    <h2 class="fade-in">Get in Touch</h2>
+    <div class="contact-form">
+      <form>
+        <input type="text" placeholder="First Name" class="fade-in" required>
+        <input type="text" placeholder="Last Name" class="fade-in" required>
+        <input type="email" placeholder="Email" class="fade-in" required>
+        <input type="text" placeholder="Phone (optional)" class="fade-in">
+        <textarea rows="5" placeholder="Your Message" class="fade-in"></textarea>
+        <button type="submit" class="fade-in">Send Message</button>
+      </form>
+      <p class="fade-in"><strong>Phone:</strong> 07015059513</p>
+      <p class="fade-in"><strong>Email:</strong> chefrnr454@gmail.com</p>
+      <p class="fade-in"><strong>Address:</strong>1 Railfied Road</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="fade-in">
+    <p class="footer-motto">“From the East to the West, our food is the best.”</p>
+    <p>&copy; 2025 Labwat's Kitchen. All rights reserved.</p>
+  </footer>
+
+  <!-- Fun Emoji Rain Script -->
+  <script>
+    const emojis = ["🍲","🍛","🍗","🍕","🥗","🍹"];
+    function createEmoji() {
+      const emoji = document.createElement("div");
+      emoji.classList.add("emoji");
+      emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.left = Math.random() * 100 + "vw";
+      emoji.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 5000);
+    }
+    setInterval(createEmoji, 800);
+  </script>
+</body>
+</html>
