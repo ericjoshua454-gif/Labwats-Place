@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    /* Hero Section */
+    /* Bigger Hero Text + Order Button */
     .hero {
       background: linear-gradient(to bottom, rgba(0,50,0,0.6), rgba(0,50,0,0.6)),
                   url("images/kitchen-bg.jpg") center/cover no-repeat;
@@ -63,7 +63,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
-      justify-items: center; /* centers the cards */
     }
     .chef-card {
       background: #fff;
@@ -71,15 +70,13 @@
       border-radius: 15px;
       box-shadow: 0 6px 16px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
-      max-width: 280px;
-      text-align: center;
     }
     .chef-card:hover {
       transform: translateY(-8px);
     }
     .chef-card img {
       width: 100%;
-      height: 200px;
+      height: 200px; /* adjusted to fit nicely */
       object-fit: cover;
       border-radius: 12px;
       margin-bottom: 1rem;
@@ -106,8 +103,8 @@
       color: #1b5e20;
     }
     .video-section video {
-      width: 80%;
-      max-width: 900px;
+      max-width: 90%;
+      height: auto;
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.3);
     }
@@ -193,7 +190,7 @@
   <!-- Video Section -->
   <section class="video-section">
     <h2>Experience Our Kitchen in Action</h2>
-    <video controls autoplay muted loop>
+    <video controls autoplay muted loop playsinline>
       <source src="videos/kitchen-video.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
