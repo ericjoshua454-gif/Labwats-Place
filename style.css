@@ -1,4 +1,4 @@
-/* General Reset */
+/* -------------------- RESET & BASE -------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -6,19 +6,18 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* Body */
 body {
   background: linear-gradient(120deg, #ffe9c6, #fff6f0);
   color: #333;
   line-height: 1.6;
 }
 
-/* Navbar */
+/* -------------------- NAVBAR -------------------- */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to right, #ff5f6d, #ffc371);
+  background: linear-gradient(to right, #004d40, #00695c);
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
@@ -41,27 +40,30 @@ body {
 
 .navbar a {
   text-decoration: none;
-  color: #fff;
+  color: #e8f5e9;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 .navbar a:hover,
 .navbar a.active {
-  color: #222;
+  color: #c8e6c9;
 }
 
-/* Hero Sections */
+/* -------------------- HERO SECTIONS -------------------- */
 .hero,
 .hero-about,
 .hero-menu,
-.hero-contact {
+.hero-contact,
+.hero-recipe {
   text-align: center;
   padding: 6rem 2rem;
   color: #fff;
   background-size: cover;
   background-position: center;
   animation: fadeIn 2s ease-in;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 60, 50, 0.7);
 }
 
 .hero {
@@ -76,39 +78,46 @@ body {
 .hero-contact {
   background: url("images/contact-bg.jpg") no-repeat center/cover;
 }
+.hero-recipe {
+  background: url("images/recipe-bg.jpg") no-repeat center/cover; /* new image for recipe */
+}
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
+  color: #e8f5e9;
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  color: #c8e6c9;
 }
 
-/* Highlights */
+/* -------------------- HIGHLIGHTS -------------------- */
 .highlights {
   display: flex;
   justify-content: center;
   gap: 2rem;
   padding: 2rem;
-  background: #fff8f2;
+  background: #e8f5e9;
 }
 
 .highlight {
-  background: #fff;
-  padding: 1rem 2rem;
+  background: #004d40;
+  color: #be2121;
+  padding: 1.5rem 2rem;
   border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   font-size: 1.1rem;
-  transition: transform 0.3s;
+  transition: transform 0.3s, background 0.3s;
 }
 
 .highlight:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  background: #00695c;
 }
 
-/* About */
+/* -------------------- ABOUT -------------------- */
 .about-content {
   padding: 3rem 2rem;
   background: #fafafa;
@@ -135,7 +144,7 @@ blockquote {
   border-radius: 8px;
 }
 
-/* Accordion Menu */
+/* -------------------- ACCORDION MENU -------------------- */
 .menu-content {
   padding: 3rem 2rem;
 }
@@ -199,7 +208,7 @@ blockquote {
   transform: scale(1.05);
 }
 
-/* Contact */
+/* -------------------- CONTACT -------------------- */
 .contact-content {
   padding: 3rem 2rem;
   background: #fff8f2;
@@ -246,7 +255,7 @@ form button:hover {
   opacity: 0.8;
 }
 
-/* Video Section */
+/* -------------------- VIDEO -------------------- */
 .video-section {
   padding: 3rem 2rem;
   text-align: center;
@@ -257,11 +266,11 @@ form button:hover {
   margin-bottom: 1rem;
 }
 
-/* Footer */
+/* -------------------- FOOTER -------------------- */
 footer {
   text-align: center;
   padding: 2rem;
-  background: linear-gradient(to right, #ff5f6d, #ffc371);
+  background: linear-gradient(to right, #004d40, #00695c);
   color: #fff;
 }
 
@@ -270,7 +279,7 @@ footer {
   margin-bottom: 0.5rem;
 }
 
-/* Chef Hat Animation */
+/* -------------------- ANIMATIONS -------------------- */
 .chef-hat {
   width: 40px;
   height: 40px;
@@ -284,77 +293,75 @@ footer {
   50% { transform: translateY(-10px); }
 }
 
-/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
-/* Navbar - Dark Green */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(to right, #004d40, #00695c);
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+
+/* -------------------- RECIPE PAGE SCOPED -------------------- */
+.recipe-page body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, #ffe9c6, #fff6f0);
+  color: #333;
 }
 
-.navbar a:hover,
-.navbar a.active {
+.recipe-page .navbar {
+  background: linear-gradient(to right, #004d40, #00695c);
+}
+
+.recipe-page .navbar a {
+  color: #e8f5e9;
+}
+
+.recipe-page .navbar a:hover,
+.recipe-page .navbar a.active {
   color: #c8e6c9;
 }
 
-/* Hero Section - Dark Green */
-.hero {
-  background: url("images/hero-bg.jpg") no-repeat center/cover;
+.recipe-page h2.section-title {
+  color: #2e7d32;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.recipe-page .accordion + .accordion {
+  margin-top: 1.5rem;
+}
+/* Hero Section - Recipe Page */
+.hero-recipe {
+  background: linear-gradient(rgba(0,77,64,0.7), rgba(0,77,64,0.7)),
+              url('../images/recipe-hero.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.hero-recipe h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-recipe p {
+  font-size: 1.25rem;
+}
+/* Hero Section - Recipes */
+.hero-recipe {
+  background: url("images/recipe-bg.jpg") no-repeat center/cover;
   text-align: center;
   padding: 6rem 2rem;
   color: #fff;
   background-blend-mode: overlay;
-  background-color: rgba(0, 60, 50, 0.7);
+  background-color: rgba(0, 60, 50, 0.7); /* same green overlay */
   animation: fadeIn 2s ease-in;
 }
 
-.hero h1 {
+.hero-recipe h1 {
   font-size: 3.5rem;
   margin-bottom: 1rem;
   color: #e8f5e9;
 }
-.hero p {
+
+.hero-recipe p {
   font-size: 1.3rem;
   color: #c8e6c9;
-}
-
-/* Highlights - Green Style */
-.highlights {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 2rem;
-  background: #e8f5e9;
-}
-
-.highlight {
-  background: #004d40;
-  color: #fff;
-  padding: 1.5rem 2rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  font-size: 1.1rem;
-  transition: transform 0.3s, background 0.3s;
-}
-
-.highlight:hover {
-  transform: translateY(-6px);
-  background: #00695c;
-}
-
-/* Footer - Match Dark Green */
-footer {
-  text-align: center;
-  padding: 2rem;
-  background: linear-gradient(to right, #004d40, #00695c);
-  color: #fff;
 }
