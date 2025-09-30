@@ -152,6 +152,30 @@
       padding: 1rem;
       margin-top: 2rem;
     }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #128C7E;
+    }
   </style>
 </head>
 <body>
@@ -177,1758 +201,1734 @@
     <p>Step-by-step guides to create delicious meals in your kitchen</p>
   </section>
 
-  <!-- Recipes Start -->
-  <div class="recipes-container">
-    <!-- Your recipes accordion goes here -->
-
-
+  <!-- Recipes Container -->
   <div class="recipes-container">
 
     <!-- ===================== NIGERIAN DISHES ===================== -->
+    <h2>🍲 Nigerian Dishes</h2>
+    <div class="accordion">
 
-   <!-- ========================= -->
-<!-- Nigerian Dishes Section -->
-<!-- ========================= -->
+      <!-- Jollof Rice -->
+      <div class="accordion">
+        <div class="accordion-header">Jollof Rice <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/jollof-rice.jpg" alt="Jollof Rice">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>3 cups long-grain parboiled rice</li>
+            <li>6 large tomatoes (blended)</li>
+            <li>4 red bell peppers (blended)</li>
+            <li>2 onions</li>
+            <li>3 tbsp tomato paste</li>
+            <li>2 cups chicken stock</li>
+            <li>2 tsp curry powder, thyme, and seasoning cubes</li>
+            <li>Salt and vegetable oil</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Blend tomatoes, peppers, and 1 onion into a smooth paste.</li>
+            <li>Heat oil, fry sliced onion and tomato paste for 3 mins.</li>
+            <li>Add blended mixture, curry, thyme, and seasoning. Cook until sauce thickens.</li>
+            <li>Add rice and chicken stock, stir, then cover with foil for steaming.</li>
+            <li>Cook on low heat until rice is soft and smoky. Serve with chicken or plantain.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 6</p>
+        </div>
+      </div>
 
-<h2 class="section-title">🍲 Nigerian Dishes</h2>
+      <!-- Fried Rice -->
+      <div class="accordion">
+        <div class="accordion-header">Fried Rice <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/fried-rice.jpg" alt="Fried Rice">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>3 cups parboiled rice</li>
+            <li>2 cups mixed vegetables (carrot, peas, sweetcorn)</li>
+            <li>1 cup diced liver or chicken</li>
+            <li>1 green bell pepper</li>
+            <li>1 onion</li>
+            <li>2 tsp curry powder</li>
+            <li>2 cups chicken stock</li>
+            <li>Salt, seasoning cubes, and oil</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Boil rice with chicken stock until 70% cooked, then set aside.</li>
+            <li>Sauté onions, liver, and vegetables in oil with curry and seasoning.</li>
+            <li>Add rice in batches to stir-fry, mixing evenly with vegetables.</li>
+            <li>Cook on low heat for 10 more minutes. Serve hot with grilled chicken.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 45 mins | <strong>Serves:</strong> 5</p>
+        </div>
+      </div>
 
-<!-- Jollof Rice -->
-<div class="accordion">
-  <div class="accordion-header">Jollof Rice <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/jollof-rice.jpg" alt="Jollof Rice">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>3 cups long-grain parboiled rice</li>
-      <li>6 large tomatoes (blended)</li>
-      <li>4 red bell peppers (blended)</li>
-      <li>2 onions</li>
-      <li>3 tbsp tomato paste</li>
-      <li>2 cups chicken stock</li>
-      <li>2 tsp curry powder, thyme, and seasoning cubes</li>
-      <li>Salt and vegetable oil</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Blend tomatoes, peppers, and 1 onion into a smooth paste.</li>
-      <li>Heat oil, fry sliced onion and tomato paste for 3 mins.</li>
-      <li>Add blended mixture, curry, thyme, and seasoning. Cook until sauce thickens.</li>
-      <li>Add rice and chicken stock, stir, then cover with foil for steaming.</li>
-      <li>Cook on low heat until rice is soft and smoky. Serve with chicken or plantain.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 6</p>
-  </div>
-</div>
+      <!-- Egusi Soup -->
+      <div class="accordion">
+        <div class="accordion-header">Egusi Soup <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/egusi.jpg" alt="Egusi Soup">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>2 cups ground melon seeds (egusi)</li>
+            <li>1 cup palm oil</li>
+            <li>500g assorted meat (goat, beef, tripe)</li>
+            <li>2 cups spinach or bitterleaf</li>
+            <li>2 tbsp ground crayfish</li>
+            <li>2 scotch bonnets</li>
+            <li>Seasoning cubes and salt</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Boil meat with seasoning until tender. Keep stock aside.</li>
+            <li>Heat palm oil, fry onions and ground egusi paste until crumbly.</li>
+            <li>Add meat stock, crayfish, pepper, and meat. Simmer 15 mins.</li>
+            <li>Add leafy vegetables, stir well, and cook 5 mins more.</li>
+            <li>Serve hot with pounded yam, fufu, or eba.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 6</p>
+        </div>
+      </div>
 
-<!-- Fried Rice -->
-<div class="accordion">
-  <div class="accordion-header">Fried Rice <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/fried-rice.jpg" alt="Fried Rice">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>3 cups parboiled rice</li>
-      <li>2 cups mixed vegetables (carrot, peas, sweetcorn)</li>
-      <li>1 cup diced liver or chicken</li>
-      <li>1 green bell pepper</li>
-      <li>1 onion</li>
-      <li>2 tsp curry powder</li>
-      <li>2 cups chicken stock</li>
-      <li>Salt, seasoning cubes, and oil</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Boil rice with chicken stock until 70% cooked, then set aside.</li>
-      <li>Sauté onions, liver, and vegetables in oil with curry and seasoning.</li>
-      <li>Add rice in batches to stir-fry, mixing evenly with vegetables.</li>
-      <li>Cook on low heat for 10 more minutes. Serve hot with grilled chicken.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 45 mins | <strong>Serves:</strong> 5</p>
-  </div>
-</div>
+      <!-- Suya -->
+      <div class="accordion">
+        <div class="accordion-header">Suya (Spicy Beef Skewers) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/suya.jpg" alt="Suya">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>500g beef (thinly sliced)</li>
+            <li>3 tbsp suya spice mix (yaji)</li>
+            <li>2 tbsp groundnut oil</li>
+            <li>Onions and tomatoes for garnish</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Marinate beef with oil and suya spice for at least 2 hrs.</li>
+            <li>Thread onto skewers and grill or roast until cooked.</li>
+            <li>Sprinkle more yaji, garnish with onions and tomatoes.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 40 mins (plus marination) | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- Egusi Soup -->
-<div class="accordion">
-  <div class="accordion-header">Egusi Soup <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/egusi.jpg" alt="Egusi Soup">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>2 cups ground melon seeds (egusi)</li>
-      <li>1 cup palm oil</li>
-      <li>500g assorted meat (goat, beef, tripe)</li>
-      <li>2 cups spinach or bitterleaf</li>
-      <li>2 tbsp ground crayfish</li>
-      <li>2 scotch bonnets</li>
-      <li>Seasoning cubes and salt</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Boil meat with seasoning until tender. Keep stock aside.</li>
-      <li>Heat palm oil, fry onions and ground egusi paste until crumbly.</li>
-      <li>Add meat stock, crayfish, pepper, and meat. Simmer 15 mins.</li>
-      <li>Add leafy vegetables, stir well, and cook 5 mins more.</li>
-      <li>Serve hot with pounded yam, fufu, or eba.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 6</p>
-  </div>
-</div>
+      <!-- Pounded Yam & Ogbono -->
+      <div class="accordion">
+        <div class="accordion-header">Pounded Yam & Ogbono Soup <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/pounded-yam-ogbono-soup.jpg" alt="Ogbono Soup">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>2 cups ground ogbono seeds</li>
+            <li>1 cup palm oil</li>
+            <li>500g assorted meat & stockfish</li>
+            <li>2 tbsp ground crayfish</li>
+            <li>2 cups spinach or ugu</li>
+            <li>Pounded yam (prepared separately)</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Boil meat with seasoning until soft, keep broth.</li>
+            <li>Heat palm oil, stir in ground ogbono until slimy.</li>
+            <li>Add meat stock, crayfish, pepper, and meats.</li>
+            <li>Simmer for 20 mins, then add vegetables.</li>
+            <li>Serve hot with pounded yam.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 6</p>
+        </div>
+      </div>
 
-<!-- Suya -->
-<div class="accordion">
-  <div class="accordion-header">Suya (Spicy Beef Skewers) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/suya.jpg" alt="Suya">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>500g beef (thinly sliced)</li>
-      <li>3 tbsp suya spice mix (yaji)</li>
-      <li>2 tbsp groundnut oil</li>
-      <li>Onions and tomatoes for garnish</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Marinate beef with oil and suya spice for at least 2 hrs.</li>
-      <li>Thread onto skewers and grill or roast until cooked.</li>
-      <li>Sprinkle more yaji, garnish with onions and tomatoes.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 40 mins (plus marination) | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- Moi Moi -->
+      <div class="accordion">
+        <div class="accordion-header">Moi Moi (Steamed Bean Pudding) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/moimoi.jpg" alt="Moi Moi">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>2 cups peeled beans (black-eyed peas)</li>
+            <li>2 red bell peppers</li>
+            <li>1 onion</li>
+            <li>2 scotch bonnets</li>
+            <li>1/4 cup vegetable oil</li>
+            <li>2 seasoning cubes, salt</li>
+            <li>Boiled egg slices (optional)</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Blend beans, peppers, and onions into a smooth paste.</li>
+            <li>Add oil, seasoning, and enough water for a thick batter.</li>
+            <li>Pour into ramekins or moi moi leaves, add egg slices if desired.</li>
+            <li>Steam for 45–60 minutes until set.</li>
+            <li>Serve hot with rice or bread.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 6</p>
+        </div>
+      </div>
 
-<!-- Pounded Yam & Ogbono -->
-<div class="accordion">
-  <div class="accordion-header">Pounded Yam & Ogbono Soup <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/pounded-yam-ogbono-soup.jpg" alt="Ogbono Soup">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>2 cups ground ogbono seeds</li>
-      <li>1 cup palm oil</li>
-      <li>500g assorted meat & stockfish</li>
-      <li>2 tbsp ground crayfish</li>
-      <li>2 cups spinach or ugu</li>
-      <li>Pounded yam (prepared separately)</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Boil meat with seasoning until soft, keep broth.</li>
-      <li>Heat palm oil, stir in ground ogbono until slimy.</li>
-      <li>Add meat stock, crayfish, pepper, and meats.</li>
-      <li>Simmer for 20 mins, then add vegetables.</li>
-      <li>Serve hot with pounded yam.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 6</p>
-  </div>
-</div>
+      <!-- Akara -->
+      <div class="accordion">
+        <div class="accordion-header">Akara (Bean Fritters) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/akara.jpg" alt="Akara">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>2 cups peeled beans</li>
+            <li>1 onion</li>
+            <li>2 scotch bonnets</li>
+            <li>Salt and seasoning cubes</li>
+            <li>Oil for deep-frying</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Blend beans, onions, and pepper into a thick paste.</li>
+            <li>Whisk batter until airy, season with salt.</li>
+            <li>Heat oil and drop spoonfuls of batter to fry until golden.</li>
+            <li>Serve with pap, bread, or custard.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 30 mins | <strong>Serves:</strong> 5</p>
+        </div>
+      </div>
 
-<!-- Moi Moi -->
-<div class="accordion">
-  <div class="accordion-header">Moi Moi (Steamed Bean Pudding) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/moimoi.jpg" alt="Moi Moi">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>2 cups peeled beans (black-eyed peas)</li>
-      <li>2 red bell peppers</li>
-      <li>1 onion</li>
-      <li>2 scotch bonnets</li>
-      <li>1/4 cup vegetable oil</li>
-      <li>2 seasoning cubes, salt</li>
-      <li>Boiled egg slices (optional)</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Blend beans, peppers, and onions into a smooth paste.</li>
-      <li>Add oil, seasoning, and enough water for a thick batter.</li>
-      <li>Pour into ramekins or moi moi leaves, add egg slices if desired.</li>
-      <li>Steam for 45–60 minutes until set.</li>
-      <li>Serve hot with rice or bread.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 6</p>
-  </div>
-</div>
+      <!-- Efo Riro -->
+      <div class="accordion">
+        <div class="accordion-header">Efo Riro (Vegetable Stew) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/efo-riro.jpg" alt="Efo Riro">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>2 bunches spinach or ugu leaves</li>
+            <li>2 red bell peppers</li>
+            <li>2 scotch bonnets</li>
+            <li>1 onion</li>
+            <li>1/2 cup palm oil</li>
+            <li>500g assorted meat & stockfish</li>
+            <li>2 tbsp crayfish, seasoning cubes</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Blend peppers and onion into a smooth paste.</li>
+            <li>Heat palm oil, fry pepper mix until cooked.</li>
+            <li>Add meats, crayfish, and stock. Simmer 15 mins.</li>
+            <li>Stir in washed vegetables and cook for 5 mins.</li>
+            <li>Serve with rice, yam, or amala.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 50 mins | <strong>Serves:</strong> 6</p>
+        </div>
+      </div>
 
-<!-- Akara -->
-<div class="accordion">
-  <div class="accordion-header">Akara (Bean Fritters) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/akara.jpg" alt="Akara">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>2 cups peeled beans</li>
-      <li>1 onion</li>
-      <li>2 scotch bonnets</li>
-      <li>Salt and seasoning cubes</li>
-      <li>Oil for deep-frying</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Blend beans, onions, and pepper into a thick paste.</li>
-      <li>Whisk batter until airy, season with salt.</li>
-      <li>Heat oil and drop spoonfuls of batter to fry until golden.</li>
-      <li>Serve with pap, bread, or custard.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 30 mins | <strong>Serves:</strong> 5</p>
-  </div>
-</div>
+      <!-- Okra Soup -->
+      <div class="accordion">
+        <div class="accordion-header">Okra Soup <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/okra-soup.jpg" alt="Okra Soup">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>3 cups fresh okra (chopped finely)</li>
+            <li>1/2 cup palm oil</li>
+            <li>500g assorted meat & fish</li>
+            <li>2 tbsp crayfish</li>
+            <li>2 scotch bonnets</li>
+            <li>Seasoning cubes, salt</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Boil meat and fish with seasoning until tender.</li>
+            <li>Add palm oil, crayfish, pepper, and simmer.</li>
+            <li>Add chopped okra and stir until it becomes slightly slimy.</li>
+            <li>Cook for 10 mins and serve with fufu or amala.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 45 mins | <strong>Serves:</strong> 5</p>
+        </div>
+      </div>
 
-<!-- Efo Riro -->
-<div class="accordion">
-  <div class="accordion-header">Efo Riro (Vegetable Stew) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/efo-riro.jpg" alt="Efo Riro">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>2 bunches spinach or ugu leaves</li>
-      <li>2 red bell peppers</li>
-      <li>2 scotch bonnets</li>
-      <li>1 onion</li>
-      <li>1/2 cup palm oil</li>
-      <li>500g assorted meat & stockfish</li>
-      <li>2 tbsp crayfish, seasoning cubes</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Blend peppers and onion into a smooth paste.</li>
-      <li>Heat palm oil, fry pepper mix until cooked.</li>
-      <li>Add meats, crayfish, and stock. Simmer 15 mins.</li>
-      <li>Stir in washed vegetables and cook for 5 mins.</li>
-      <li>Serve with rice, yam, or amala.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 50 mins | <strong>Serves:</strong> 6</p>
-  </div>
-</div>
+      <!-- Afang Soup -->
+      <div class="accordion">
+        <div class="accordion-header">Afang Soup <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/afang.jpg" alt="Afang Soup">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>2 cups waterleaf</li>
+            <li>2 cups afang (okazi) leaves (blended)</li>
+            <li>1 cup palm oil</li>
+            <li>500g goat meat & stockfish</li>
+            <li>2 tbsp crayfish</li>
+            <li>2 scotch bonnets</li>
+            <li>Seasoning cubes, salt</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Cook meat and stockfish with seasoning until soft.</li>
+            <li>Add palm oil, crayfish, and pepper. Simmer for 10 mins.</li>
+            <li>Add waterleaf first, then afang leaves.</li>
+            <li>Cook for 10–15 mins more until well combined.</li>
+            <li>Serve with garri, fufu, or pounded yam.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 6</p>
+        </div>
+      </div>
 
-<!-- Okra Soup -->
-<div class="accordion">
-  <div class="accordion-header">Okra Soup <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/okra-soup.jpg" alt="Okra Soup">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>3 cups fresh okra (chopped finely)</li>
-      <li>1/2 cup palm oil</li>
-      <li>500g assorted meat & fish</li>
-      <li>2 tbsp crayfish</li>
-      <li>2 scotch bonnets</li>
-      <li>Seasoning cubes, salt</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Boil meat and fish with seasoning until tender.</li>
-      <li>Add palm oil, crayfish, pepper, and simmer.</li>
-      <li>Add chopped okra and stir until it becomes slightly slimy.</li>
-      <li>Cook for 10 mins and serve with fufu or amala.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 45 mins | <strong>Serves:</strong> 5</p>
-  </div>
-</div>
+      <!-- Nkwobi -->
+      <div class="accordion">
+        <div class="accordion-header">Nkwobi (Cow Foot Delicacy) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/nkwobi.jpg" alt="Nkwobi">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>1 kg cow foot (cut into pieces)</li>
+            <li>1/2 cup palm oil</li>
+            <li>2 tbsp potash (dissolved in water)</li>
+            <li>2 tbsp crayfish</li>
+            <li>Utazi leaves (for garnish)</li>
+            <li>Seasoning cubes, salt, pepper</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Boil cow foot until very soft with pepper and seasoning.</li>
+            <li>Mix palm oil with potash water until it forms a yellowish paste.</li>
+            <li>Add crayfish and cow foot, stir well.</li>
+            <li>Garnish with utazi leaves and serve warm.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 2 hrs | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- Afang Soup -->
-<div class="accordion">
-  <div class="accordion-header">Afang Soup <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/afang.jpg" alt="Afang Soup">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>2 cups waterleaf</li>
-      <li>2 cups afang (okazi) leaves (blended)</li>
-      <li>1 cup palm oil</li>
-      <li>500g goat meat & stockfish</li>
-      <li>2 tbsp crayfish</li>
-      <li>2 scotch bonnets</li>
-      <li>Seasoning cubes, salt</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Cook meat and stockfish with seasoning until soft.</li>
-      <li>Add palm oil, crayfish, and pepper. Simmer for 10 mins.</li>
-      <li>Add waterleaf first, then afang leaves.</li>
-      <li>Cook for 10–15 mins more until well combined.</li>
-      <li>Serve with garri, fufu, or pounded yam.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 6</p>
-  </div>
-</div>
+      <!-- Pepper Soup -->
+      <div class="accordion">
+        <div class="accordion-header">Pepper Soup (Goat Meat or Fish) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/pepper-soup.jpg" alt="Pepper Soup">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>500g goat meat or catfish</li>
+            <li>2 tbsp pepper soup spice mix</li>
+            <li>2 scotch bonnets</li>
+            <li>1 onion</li>
+            <li>2 seasoning cubes, salt</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Boil meat or fish with onion, pepper, and seasoning.</li>
+            <li>Add pepper soup spice and simmer for 20 mins.</li>
+            <li>Serve hot with yam, rice, or alone as a starter.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 40 mins | <strong>Serves:</strong> 5</p>
+        </div>
+      </div>
 
-<!-- Nkwobi -->
-<div class="accordion">
-  <div class="accordion-header">Nkwobi (Cow Foot Delicacy) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/nkwobi.jpg" alt="Nkwobi">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>1 kg cow foot (cut into pieces)</li>
-      <li>1/2 cup palm oil</li>
-      <li>2 tbsp potash (dissolved in water)</li>
-      <li>2 tbsp crayfish</li>
-      <li>Utazi leaves (for garnish)</li>
-      <li>Seasoning cubes, salt, pepper</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Boil cow foot until very soft with pepper and seasoning.</li>
-      <li>Mix palm oil with potash water until it forms a yellowish paste.</li>
-      <li>Add crayfish and cow foot, stir well.</li>
-      <li>Garnish with utazi leaves and serve warm.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 2 hrs | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- Ofada Rice & Ayamase -->
+      <div class="accordion">
+        <div class="accordion-header">Ofada Rice & Ayamase Sauce <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/ofada.jpg" alt="Ofada Rice & Ayamase">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>3 cups ofada rice</li>
+            <li>6 green bell peppers</li>
+            <li>3 scotch bonnets</li>
+            <li>1 onion</li>
+            <li>1 cup palm oil</li>
+            <li>500g assorted meat</li>
+            <li>Seasoning cubes, crayfish, iru (locust beans)</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Cook ofada rice separately until soft.</li>
+            <li>Blend peppers and onion, then fry in bleached palm oil.</li>
+            <li>Add iru, crayfish, meats, and seasoning. Simmer until rich.</li>
+            <li>Serve sauce over ofada rice.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1.5 hrs | <strong>Serves:</strong> 6</p>
+        </div>
+      </div>
 
-<!-- Pepper Soup -->
-<div class="accordion">
-  <div class="accordion-header">Pepper Soup (Goat Meat or Fish) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/pepper-soup.jpg" alt="Pepper Soup">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>500g goat meat or catfish</li>
-      <li>2 tbsp pepper soup spice mix</li>
-      <li>2 scotch bonnets</li>
-      <li>1 onion</li>
-      <li>2 seasoning cubes, salt</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Boil meat or fish with onion, pepper, and seasoning.</li>
-      <li>Add pepper soup spice and simmer for 20 mins.</li>
-      <li>Serve hot with yam, rice, or alone as a starter.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 40 mins | <strong>Serves:</strong> 5</p>
-  </div>
-</div>
+      <!-- Beans & Plantain -->
+      <div class="accordion">
+        <div class="accordion-header">Beans & Fried Plantain <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/beans-fried-plantain.jpg" alt="Beans & Plantain">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>3 cups beans (brown or black-eyed)</li>
+            <li>2 ripe plantains</li>
+            <li>1 onion</li>
+            <li>Palm oil or vegetable oil</li>
+            <li>Seasoning cubes, salt</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Cook beans with onion and seasoning until soft.</li>
+            <li>Slice and fry ripe plantains until golden brown.</li>
+            <li>Serve beans with fried plantain on the side.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 5</p>
+        </div>
+      </div>
 
-<!-- Ofada Rice & Ayamase -->
-<div class="accordion">
-  <div class="accordion-header">Ofada Rice & Ayamase Sauce <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/ofada.jpg" alt="Ofada Rice & Ayamase">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>3 cups ofada rice</li>
-      <li>6 green bell peppers</li>
-      <li>3 scotch bonnets</li>
-      <li>1 onion</li>
-      <li>1 cup palm oil</li>
-      <li>500g assorted meat</li>
-      <li>Seasoning cubes, crayfish, iru (locust beans)</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Cook ofada rice separately until soft.</li>
-      <li>Blend peppers and onion, then fry in bleached palm oil.</li>
-      <li>Add iru, crayfish, meats, and seasoning. Simmer until rich.</li>
-      <li>Serve sauce over ofada rice.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1.5 hrs | <strong>Serves:</strong> 6</p>
-  </div>
-</div>
+    </div>
 
-<!-- Beans & Plantain -->
-<div class="accordion">
-  <div class="accordion-header">Beans & Fried Plantain <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/beans-fried-plantain.jpg" alt="Beans & Plantain">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>3 cups beans (brown or black-eyed)</li>
-      <li>2 ripe plantains</li>
-      <li>1 onion</li>
-      <li>Palm oil or vegetable oil</li>
-      <li>Seasoning cubes, salt</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Cook beans with onion and seasoning until soft.</li>
-      <li>Slice and fry ripe plantains until golden brown.</li>
-      <li>Serve beans with fried plantain on the side.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 5</p>
-  </div>
-</div>
-
-
-</div>
-
-    <!-- More Nigerian dishes like Okra Soup, Afang Soup, Banga Soup, Nkwobi, Yam Porridge, Suya, etc. -->
     <!-- ===================== AFRICAN DISHES ===================== -->
+    <h2>🌍 African Dishes</h2>
     <div class="accordion">
-<!-- ========================= -->
-<!-- African Dishes Section -->
-<!-- ========================= -->
 
-<h2 class="section-title">🌍 African Dishes</h2>
+      <!-- Moroccan Couscous -->
+      <div class="accordion">
+        <div class="accordion-header">Moroccan Couscous <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/moroccan-couscous.jpg" alt="Moroccan Couscous">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>2 cups couscous</li>
+            <li>2 cups chicken or vegetable broth</li>
+            <li>1 onion, chopped</li>
+            <li>2 carrots, diced</li>
+            <li>1 zucchini, diced</li>
+            <li>1 cup chickpeas (cooked)</li>
+            <li>Olive oil, cumin, paprika, salt</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Bring broth to a boil, remove from heat, and stir in couscous.</li>
+            <li>Cover and let steam for 5 mins, then fluff with a fork.</li>
+            <li>Sauté onion and vegetables with oil and spices until soft.</li>
+            <li>Mix vegetables and chickpeas into couscous, drizzle with olive oil.</li>
+            <li>Serve warm with grilled meat or fish.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 30 mins | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- 1. Moroccan Couscous -->
-<div class="accordion">
-  <div class="accordion-header">Moroccan Couscous <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/moroccan-couscous.jpg" alt="Moroccan Couscous">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>2 cups couscous</li>
-      <li>2 cups chicken or vegetable broth</li>
-      <li>1 onion, chopped</li>
-      <li>2 carrots, diced</li>
-      <li>1 zucchini, diced</li>
-      <li>1 cup chickpeas (cooked)</li>
-      <li>Olive oil, cumin, paprika, salt</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Bring broth to a boil, remove from heat, and stir in couscous.</li>
-      <li>Cover and let steam for 5 mins, then fluff with a fork.</li>
-      <li>Sauté onion and vegetables with oil and spices until soft.</li>
-      <li>Mix vegetables and chickpeas into couscous, drizzle with olive oil.</li>
-      <li>Serve warm with grilled meat or fish.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 30 mins | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- South African Bobotie -->
+      <div class="accordion">
+        <div class="accordion-header">South African Bobotie <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/south-african-bobotie.jpg" alt="Bobotie">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>500g minced beef or lamb</li>
+            <li>1 onion, chopped</li>
+            <li>2 slices bread (soaked in milk)</li>
+            <li>2 tbsp curry powder</li>
+            <li>1/2 cup raisins</li>
+            <li>2 eggs</li>
+            <li>1 cup milk</li>
+            <li>Salt, pepper, oil</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Fry onions in oil, then add minced meat and curry powder.</li>
+            <li>Add soaked bread, raisins, salt, and mix well.</li>
+            <li>Place mixture in a baking dish.</li>
+            <li>Whisk eggs with milk and pour over the meat mixture.</li>
+            <li>Bake at 180°C for 40 mins until golden brown.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 6</p>
+        </div>
+      </div>
 
-<!-- 2. South African Bobotie -->
-<div class="accordion">
-  <div class="accordion-header">South African Bobotie <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/south-african-bobotie.jpg" alt="Bobotie">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>500g minced beef or lamb</li>
-      <li>1 onion, chopped</li>
-      <li>2 slices bread (soaked in milk)</li>
-      <li>2 tbsp curry powder</li>
-      <li>1/2 cup raisins</li>
-      <li>2 eggs</li>
-      <li>1 cup milk</li>
-      <li>Salt, pepper, oil</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Fry onions in oil, then add minced meat and curry powder.</li>
-      <li>Add soaked bread, raisins, salt, and mix well.</li>
-      <li>Place mixture in a baking dish.</li>
-      <li>Whisk eggs with milk and pour over the meat mixture.</li>
-      <li>Bake at 180°C for 40 mins until golden brown.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 6</p>
-  </div>
-</div>
+      <!-- Kenyan Nyama Choma -->
+      <div class="accordion">
+        <div class="accordion-header">Kenyan Nyama Choma (Grilled Meat) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/kenyan-nyama-choma.jpg" alt="Nyama Choma">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>1 kg goat or beef (cut into chunks)</li>
+            <li>2 cloves garlic, minced</li>
+            <li>1 lemon (juice)</li>
+            <li>2 tbsp oil</li>
+            <li>Salt and black pepper</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Marinate meat with garlic, lemon juice, oil, salt, and pepper.</li>
+            <li>Leave for at least 2 hours (or overnight).</li>
+            <li>Grill over charcoal until tender and smoky.</li>
+            <li>Serve with kachumbari (tomato-onion salad).</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1.5 hrs (with marination) | <strong>Serves:</strong> 5</p>
+        </div>
+      </div>
 
-<!-- 3. Kenyan Nyama Choma -->
-<div class="accordion">
-  <div class="accordion-header">Kenyan Nyama Choma (Grilled Meat) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/kenyan-nyama-choma.jpg" alt="Nyama Choma">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>1 kg goat or beef (cut into chunks)</li>
-      <li>2 cloves garlic, minced</li>
-      <li>1 lemon (juice)</li>
-      <li>2 tbsp oil</li>
-      <li>Salt and black pepper</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Marinate meat with garlic, lemon juice, oil, salt, and pepper.</li>
-      <li>Leave for at least 2 hours (or overnight).</li>
-      <li>Grill over charcoal until tender and smoky.</li>
-      <li>Serve with kachumbari (tomato-onion salad).</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1.5 hrs (with marination) | <strong>Serves:</strong> 5</p>
-  </div>
-</div>
+      <!-- Ethiopian Doro Wat -->
+      <div class="accordion">
+        <div class="accordion-header">Ethiopian Doro Wat (Spicy Chicken Stew) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/ethiopian-doro-wat.jpg" alt="Doro Wat">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>1 whole chicken (cut into pieces)</li>
+            <li>3 onions (finely chopped)</li>
+            <li>3 tbsp berbere spice</li>
+            <li>2 tbsp butter</li>
+            <li>2 boiled eggs</li>
+            <li>Salt</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Cook onions in a dry pan until caramelized.</li>
+            <li>Add butter and berbere spice, stir for 2 mins.</li>
+            <li>Add chicken pieces and cook in the sauce.</li>
+            <li>Simmer with water until chicken is tender.</li>
+            <li>Add boiled eggs and serve with injera.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr 15 mins | <strong>Serves:</strong> 6</p>
+        </div>
+      </div>
 
-<!-- 4. Ethiopian Doro Wat -->
-<div class="accordion">
-  <div class="accordion-header">Ethiopian Doro Wat (Spicy Chicken Stew) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/ethiopian-doro-wat.jpg" alt="Doro Wat">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>1 whole chicken (cut into pieces)</li>
-      <li>3 onions (finely chopped)</li>
-      <li>3 tbsp berbere spice</li>
-      <li>2 tbsp butter</li>
-      <li>2 boiled eggs</li>
-      <li>Salt</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Cook onions in a dry pan until caramelized.</li>
-      <li>Add butter and berbere spice, stir for 2 mins.</li>
-      <li>Add chicken pieces and cook in the sauce.</li>
-      <li>Simmer with water until chicken is tender.</li>
-      <li>Add boiled eggs and serve with injera.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr 15 mins | <strong>Serves:</strong> 6</p>
-  </div>
-</div>
+      <!-- Ghanaian Waakye -->
+      <div class="accordion">
+        <div class="accordion-header">Ghanaian Waakye <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/ghanaian-waakye.jpg" alt="Waakye">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>2 cups rice</li>
+            <li>1 cup black-eyed peas</li>
+            <li>Waakye leaves (or baking soda for color)</li>
+            <li>Salt</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Boil beans until half cooked.</li>
+            <li>Add waakye leaves or baking soda for color.</li>
+            <li>Add rice and cook together until soft.</li>
+            <li>Serve with stew, fish, or fried plantain.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 5</p>
+        </div>
+      </div>
 
-<!-- 5. Ghanaian Waakye -->
-<div class="accordion">
-  <div class="accordion-header">Ghanaian Waakye <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/ghanaian-waakye.jpg" alt="Waakye">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>2 cups rice</li>
-      <li>1 cup black-eyed peas</li>
-      <li>Waakye leaves (or baking soda for color)</li>
-      <li>Salt</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Boil beans until half cooked.</li>
-      <li>Add waakye leaves or baking soda for color.</li>
-      <li>Add rice and cook together until soft.</li>
-      <li>Serve with stew, fish, or fried plantain.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 5</p>
-  </div>
-</div>
+      <!-- Moroccan Tagine -->
+      <div class="accordion">
+        <div class="accordion-header">Moroccan Chicken Tagine <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/moroccan-chicken-tagine.jpg" alt="Tagine">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>1 whole chicken (cut in pieces)</li>
+            <li>2 onions, sliced</li>
+            <li>2 preserved lemons</li>
+            <li>1/2 cup olives</li>
+            <li>2 tsp ginger, turmeric, paprika</li>
+            <li>Olive oil</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Season chicken with spices, let marinate 1 hr.</li>
+            <li>Sauté onions, add chicken, cook until browned.</li>
+            <li>Add preserved lemon and olives.</li>
+            <li>Simmer covered with little water until tender.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr 10 mins | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- 6. Moroccan Tagine -->
-<div class="accordion">
-  <div class="accordion-header">Moroccan Chicken Tagine <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/moroccan-chicken-tagine.jpg" alt="Tagine">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>1 whole chicken (cut in pieces)</li>
-      <li>2 onions, sliced</li>
-      <li>2 preserved lemons</li>
-      <li>1/2 cup olives</li>
-      <li>2 tsp ginger, turmeric, paprika</li>
-      <li>Olive oil</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Season chicken with spices, let marinate 1 hr.</li>
-      <li>Sauté onions, add chicken, cook until browned.</li>
-      <li>Add preserved lemon and olives.</li>
-      <li>Simmer covered with little water until tender.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr 10 mins | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- South African Bunny Chow -->
+      <div class="accordion">
+        <div class="accordion-header">South African Bunny Chow <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/south-african-bunny-chow.jpg" alt="Bunny Chow">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>1 loaf white bread</li>
+            <li>500g beef or chicken curry</li>
+            <li>1 onion, chopped</li>
+            <li>Spices: curry powder, garlic, ginger</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Cook curry with meat, onions, garlic, and spices until thick.</li>
+            <li>Cut bread in half, hollow out the center.</li>
+            <li>Fill bread with curry and serve hot.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- 7. South African Bunny Chow -->
-<div class="accordion">
-  <div class="accordion-header">South African Bunny Chow <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/south-african-bunny-chow.jpg" alt="Bunny Chow">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>1 loaf white bread</li>
-      <li>500g beef or chicken curry</li>
-      <li>1 onion, chopped</li>
-      <li>Spices: curry powder, garlic, ginger</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Cook curry with meat, onions, garlic, and spices until thick.</li>
-      <li>Cut bread in half, hollow out the center.</li>
-      <li>Fill bread with curry and serve hot.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- North African Shakshuka -->
+      <div class="accordion">
+        <div class="accordion-header">Shakshuka (Eggs in Tomato Sauce) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/shakshuka.jpg" alt="Shakshuka">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>4 eggs</li>
+            <li>4 tomatoes (chopped)</li>
+            <li>1 onion, chopped</li>
+            <li>1 green pepper</li>
+            <li>Spices: cumin, paprika, chili</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Sauté onion and pepper in oil with spices.</li>
+            <li>Add tomatoes and simmer until sauce thickens.</li>
+            <li>Crack eggs on top, cover, and cook until eggs are set.</li>
+            <li>Serve with bread.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 30 mins | <strong>Serves:</strong> 3</p>
+        </div>
+      </div>
 
-<!-- 8. North African Shakshuka -->
-<div class="accordion">
-  <div class="accordion-header">Shakshuka (Eggs in Tomato Sauce) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/shakshuka.jpg" alt="Shakshuka">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>4 eggs</li>
-      <li>4 tomatoes (chopped)</li>
-      <li>1 onion, chopped</li>
-      <li>1 green pepper</li>
-      <li>Spices: cumin, paprika, chili</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Sauté onion and pepper in oil with spices.</li>
-      <li>Add tomatoes and simmer until sauce thickens.</li>
-      <li>Crack eggs on top, cover, and cook until eggs are set.</li>
-      <li>Serve with bread.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 30 mins | <strong>Serves:</strong> 3</p>
-  </div>
-</div>
+      <!-- Tanzanian Pilau Rice -->
+      <div class="accordion">
+        <div class="accordion-header">Tanzanian Pilau Rice <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/tanzanian-pilau-rice.jpg" alt="Pilau Rice">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>2 cups basmati rice</li>
+            <li>500g beef</li>
+            <li>2 onions, sliced</li>
+            <li>Spices: cinnamon, cardamom, cumin, cloves</li>
+            <li>4 cups beef stock</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Brown onions and spices in oil.</li>
+            <li>Add beef, fry until browned.</li>
+            <li>Add rice and stock, simmer until rice is fluffy.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 5</p>
+        </div>
+      </div>
 
-<!-- 9. Tanzanian Pilau Rice -->
-<div class="accordion">
-  <div class="accordion-header">Tanzanian Pilau Rice <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/tanzanian-pilau-rice.jpg" alt="Pilau Rice">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>2 cups basmati rice</li>
-      <li>500g beef</li>
-      <li>2 onions, sliced</li>
-      <li>Spices: cinnamon, cardamom, cumin, cloves</li>
-      <li>4 cups beef stock</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Brown onions and spices in oil.</li>
-      <li>Add beef, fry until browned.</li>
-      <li>Add rice and stock, simmer until rice is fluffy.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 5</p>
-  </div>
-</div>
+      <!-- Ugandan Chapati -->
+      <div class="accordion">
+        <div class="accordion-header">Ugandan Chapati <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/ugandan-chapati.jpg" alt="Chapati">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>3 cups flour</li>
+            <li>1 cup water</li>
+            <li>2 tbsp oil</li>
+            <li>1 tsp salt</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Knead flour, water, oil, and salt into dough.</li>
+            <li>Rest 30 mins, then divide into balls.</li>
+            <li>Roll flat and fry on hot pan until golden.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 45 mins | <strong>Serves:</strong> 6</p>
+        </div>
+      </div>
 
-<!-- 10. Ugandan Chapati -->
-<div class="accordion">
-  <div class="accordion-header">Ugandan Chapati <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/ugandan-chapati.jpg" alt="Chapati">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>3 cups flour</li>
-      <li>1 cup water</li>
-      <li>2 tbsp oil</li>
-      <li>1 tsp salt</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Knead flour, water, oil, and salt into dough.</li>
-      <li>Rest 30 mins, then divide into balls.</li>
-      <li>Roll flat and fry on hot pan until golden.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 45 mins | <strong>Serves:</strong> 6</p>
-  </div>
-</div>
+      <!-- Egyptian Ful Medames -->
+      <div class="accordion">
+        <div class="accordion-header">Egyptian Ful Medames <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/egyptian-ful-medames.jpg" alt="Ful Medames">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>2 cups fava beans (cooked)</li>
+            <li>2 garlic cloves</li>
+            <li>1 lemon (juice)</li>
+            <li>Olive oil</li>
+            <li>Salt, cumin</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Mash beans slightly, heat with garlic and cumin.</li>
+            <li>Drizzle with lemon juice and olive oil.</li>
+            <li>Serve with pita bread.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 30 mins | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- 11. Egyptian Ful Medames -->
-<div class="accordion">
-  <div class="accordion-header">Egyptian Ful Medames <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/egyptian-ful-medames.jpg" alt="Ful Medames">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>2 cups fava beans (cooked)</li>
-      <li>2 garlic cloves</li>
-      <li>1 lemon (juice)</li>
-      <li>Olive oil</li>
-      <li>Salt, cumin</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Mash beans slightly, heat with garlic and cumin.</li>
-      <li>Drizzle with lemon juice and olive oil.</li>
-      <li>Serve with pita bread.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 30 mins | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- Cameroonian Koki Beans -->
+      <div class="accordion">
+        <div class="accordion-header">Cameroonian Koki Beans <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/cameroonian-koki-beans.jpg" alt="Koki Beans">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>2 cups black-eyed peas</li>
+            <li>1 cup red palm oil</li>
+            <li>1 onion</li>
+            <li>Banana leaves (for wrapping)</li>
+            <li>Salt and pepper</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Peel beans and grind with onions into paste.</li>
+            <li>Add palm oil and seasoning, mix well.</li>
+            <li>Wrap mixture in banana leaves and steam until firm.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr 30 mins | <strong>Serves:</strong> 6</p>
+        </div>
+      </div>
 
-<!-- 12. Cameroonian Koki Beans -->
-<div class="accordion">
-  <div class="accordion-header">Cameroonian Koki Beans <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/cameroonian-koki-beans.jpg" alt="Koki Beans">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>2 cups black-eyed peas</li>
-      <li>1 cup red palm oil</li>
-      <li>1 onion</li>
-      <li>Banana leaves (for wrapping)</li>
-      <li>Salt and pepper</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Peel beans and grind with onions into paste.</li>
-      <li>Add palm oil and seasoning, mix well.</li>
-      <li>Wrap mixture in banana leaves and steam until firm.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr 30 mins | <strong>Serves:</strong> 6</p>
-  </div>
-</div>
+      <!-- Cameroonian Ndolé -->
+      <div class="accordion">
+        <div class="accordion-header">Cameroonian Ndolé <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/cameroonian-ndole.jpg" alt="Ndolé">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>500g bitterleaf (washed)</li>
+            <li>500g beef or fish</li>
+            <li>1 cup ground peanuts</li>
+            <li>2 tbsp crayfish</li>
+            <li>Seasoning cubes, oil, salt</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Cook meat or fish with spices until tender.</li>
+            <li>Add ground peanuts, crayfish, and oil, stir well.</li>
+            <li>Add bitterleaf and simmer until flavors blend.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 6</p>
+        </div>
+      </div>
 
-<!-- 13. Cameroonian Ndolé -->
-<div class="accordion">
-  <div class="accordion-header">Cameroonian Ndolé <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/cameroonian-ndole.jpg" alt="Ndolé">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>500g bitterleaf (washed)</li>
-      <li>500g beef or fish</li>
-      <li>1 cup ground peanuts</li>
-      <li>2 tbsp crayfish</li>
-      <li>Seasoning cubes, oil, salt</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Cook meat or fish with spices until tender.</li>
-      <li>Add ground peanuts, crayfish, and oil, stir well.</li>
-      <li>Add bitterleaf and simmer until flavors blend.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 6</p>
-  </div>
-</div>
+      <!-- Ugandan Matoke -->
+      <div class="accordion">
+        <div class="accordion-header">Ugandan Matoke (Steamed Plantains) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/ugandan-matoke.jpg" alt="Matoke">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>10 green plantains</li>
+            <li>1 onion</li>
+            <li>2 tomatoes</li>
+            <li>1 cup beef or chicken stock</li>
+            <li>Salt, oil</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Peel and boil plantains until soft.</li>
+            <li>Cook onion and tomatoes in oil to make sauce.</li>
+            <li>Mash plantains and mix with sauce and stock.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 5</p>
+        </div>
+      </div>
 
-<!-- 14. Ugandan Matoke -->
-<div class="accordion">
-  <div class="accordion-header">Ugandan Matoke (Steamed Plantains) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/ugandan-matoke.jpg" alt="Matoke">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>10 green plantains</li>
-      <li>1 onion</li>
-      <li>2 tomatoes</li>
-      <li>1 cup beef or chicken stock</li>
-      <li>Salt, oil</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Peel and boil plantains until soft.</li>
-      <li>Cook onion and tomatoes in oil to make sauce.</li>
-      <li>Mash plantains and mix with sauce and stock.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 5</p>
-  </div>
-</div>
-
-<!-- 15. South African Chakalaka -->
-<div class="accordion">
-  <div class="accordion-header">South African Chakalaka <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/south-african-chakalaka.jpg" alt="Chakalaka">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>2 carrots (grated)</li>
-      <li>1 onion</li>
-      <li>1 green pepper</li>
-      <li>1 cup baked beans</li>
-      <li>Spices: curry powder, chili</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Sauté onion and pepper with curry powder.</li>
-      <li>Add carrots and stir until soft.</li>
-      <li>Mix in baked beans and simmer for 10 mins.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 40 mins | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
-
+      <!-- South African Chakalaka -->
+      <div class="accordion">
+        <div class="accordion-header">South African Chakalaka <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/south-african-chakalaka.jpg" alt="Chakalaka">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>2 carrots (grated)</li>
+            <li>1 onion</li>
+            <li>1 green pepper</li>
+            <li>1 cup baked beans</li>
+            <li>Spices: curry powder, chili</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Sauté onion and pepper with curry powder.</li>
+            <li>Add carrots and stir until soft.</li>
+            <li>Mix in baked beans and simmer for 10 mins.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 40 mins | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
     </div>
 
-    <!-- ===================== CONTINENTAL ===================== -->
+    <!-- ===================== CONTINENTAL DISHES ===================== -->
+    <h2>🍝 Continental Dishes</h2>
     <div class="accordion">
-    <!-- ========================= -->
-<!-- Continental Dishes Section -->
-<!-- ========================= -->
 
-<h2 class="section-title">🍝 Continental Dishes</h2>
+      <!-- Spaghetti Bolognese -->
+      <div class="accordion">
+        <div class="accordion-header">Spaghetti Bolognese <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/spaghetti-bolognese.jpg" alt="Spaghetti Bolognese">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>400g spaghetti</li>
+            <li>500g minced beef</li>
+            <li>2 cans chopped tomatoes</li>
+            <li>1 onion, chopped</li>
+            <li>2 garlic cloves, minced</li>
+            <li>2 tbsp olive oil</li>
+            <li>1 tsp oregano, basil, and thyme</li>
+            <li>Salt and pepper</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Boil spaghetti in salted water until al dente.</li>
+            <li>Sauté onion and garlic in olive oil, add beef, and cook until brown.</li>
+            <li>Add chopped tomatoes, herbs, salt, and pepper. Simmer for 25 mins.</li>
+            <li>Serve sauce over spaghetti, garnish with parmesan cheese.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 45 mins | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- 1. Spaghetti Bolognese -->
-<div class="accordion">
-  <div class="accordion-header">Spaghetti Bolognese <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/spaghetti-bolognese.jpg" alt="Spaghetti Bolognese">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>400g spaghetti</li>
-      <li>500g minced beef</li>
-      <li>2 cans chopped tomatoes</li>
-      <li>1 onion, chopped</li>
-      <li>2 garlic cloves, minced</li>
-      <li>2 tbsp olive oil</li>
-      <li>1 tsp oregano, basil, and thyme</li>
-      <li>Salt and pepper</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Boil spaghetti in salted water until al dente.</li>
-      <li>Sauté onion and garlic in olive oil, add beef, and cook until brown.</li>
-      <li>Add chopped tomatoes, herbs, salt, and pepper. Simmer for 25 mins.</li>
-      <li>Serve sauce over spaghetti, garnish with parmesan cheese.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 45 mins | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- Lasagna -->
+      <div class="accordion">
+        <div class="accordion-header">Lasagna <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/lasagna.jpg" alt="Lasagna">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>12 lasagna sheets</li>
+            <li>500g minced beef</li>
+            <li>2 cups béchamel sauce</li>
+            <li>2 cups mozzarella & parmesan cheese</li>
+            <li>2 cups tomato sauce</li>
+            <li>1 onion, chopped</li>
+            <li>Olive oil, salt, pepper, oregano</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Cook beef with onion, tomato sauce, and spices until thick.</li>
+            <li>Grease baking dish, layer lasagna sheets, meat sauce, béchamel, and cheese.</li>
+            <li>Repeat layers, finishing with cheese on top.</li>
+            <li>Bake at 180°C for 35–40 mins until golden and bubbling.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 6</p>
+        </div>
+      </div>
 
-<!-- 2. Lasagna -->
-<div class="accordion">
-  <div class="accordion-header">Lasagna <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/lasagna.jpg" alt="Lasagna">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>12 lasagna sheets</li>
-      <li>500g minced beef</li>
-      <li>2 cups béchamel sauce</li>
-      <li>2 cups mozzarella & parmesan cheese</li>
-      <li>2 cups tomato sauce</li>
-      <li>1 onion, chopped</li>
-      <li>Olive oil, salt, pepper, oregano</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Cook beef with onion, tomato sauce, and spices until thick.</li>
-      <li>Grease baking dish, layer lasagna sheets, meat sauce, béchamel, and cheese.</li>
-      <li>Repeat layers, finishing with cheese on top.</li>
-      <li>Bake at 180°C for 35–40 mins until golden and bubbling.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 6</p>
-  </div>
-</div>
+      <!-- Chicken Alfredo -->
+      <div class="accordion">
+        <div class="accordion-header">Chicken Alfredo <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/chicken-alfredo.jpg" alt="Chicken Alfredo">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>300g fettuccine pasta</li>
+            <li>2 chicken breasts, sliced</li>
+            <li>1 cup heavy cream</li>
+            <li>1 cup parmesan cheese</li>
+            <li>2 tbsp butter</li>
+            <li>2 garlic cloves</li>
+            <li>Parsley, salt, pepper</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Cook pasta in salted water until al dente.</li>
+            <li>Sauté chicken in butter until golden, remove from pan.</li>
+            <li>In same pan, add garlic, cream, parmesan, and simmer until creamy.</li>
+            <li>Mix pasta, sauce, and chicken together. Garnish with parsley.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 40 mins | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- 3. Chicken Alfredo -->
-<div class="accordion">
-  <div class="accordion-header">Chicken Alfredo <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/chicken-alfredo.jpg" alt="Chicken Alfredo">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>300g fettuccine pasta</li>
-      <li>2 chicken breasts, sliced</li>
-      <li>1 cup heavy cream</li>
-      <li>1 cup parmesan cheese</li>
-      <li>2 tbsp butter</li>
-      <li>2 garlic cloves</li>
-      <li>Parsley, salt, pepper</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Cook pasta in salted water until al dente.</li>
-      <li>Sauté chicken in butter until golden, remove from pan.</li>
-      <li>In same pan, add garlic, cream, parmesan, and simmer until creamy.</li>
-      <li>Mix pasta, sauce, and chicken together. Garnish with parsley.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 40 mins | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- Grilled Salmon -->
+      <div class="accordion">
+        <div class="accordion-header">Grilled Salmon <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/grilled-salmon.jpg" alt="Grilled Salmon">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>4 salmon fillets</li>
+            <li>2 tbsp olive oil</li>
+            <li>1 lemon (juice & zest)</li>
+            <li>1 tsp garlic powder</li>
+            <li>Salt and pepper</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Season salmon with olive oil, lemon, garlic powder, salt, and pepper.</li>
+            <li>Grill on medium-high heat 5 mins per side until cooked.</li>
+            <li>Serve with vegetables or mashed potatoes.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 25 mins | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- 4. Grilled Salmon -->
-<div class="accordion">
-  <div class="accordion-header">Grilled Salmon <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/grilled-salmon.jpg" alt="Grilled Salmon">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>4 salmon fillets</li>
-      <li>2 tbsp olive oil</li>
-      <li>1 lemon (juice & zest)</li>
-      <li>1 tsp garlic powder</li>
-      <li>Salt and pepper</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Season salmon with olive oil, lemon, garlic powder, salt, and pepper.</li>
-      <li>Grill on medium-high heat 5 mins per side until cooked.</li>
-      <li>Serve with vegetables or mashed potatoes.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 25 mins | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- Beef Stroganoff -->
+      <div class="accordion">
+        <div class="accordion-header">Beef Stroganoff <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/beef-stroganoff.jpg" alt="Beef Stroganoff">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>500g beef strips</li>
+            <li>200g mushrooms</li>
+            <li>1 onion, chopped</li>
+            <li>1 cup sour cream</li>
+            <li>2 tbsp butter</li>
+            <li>1 cup beef stock</li>
+            <li>1 tsp mustard</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Sauté beef strips in butter, remove from pan.</li>
+            <li>Add onions and mushrooms, cook until soft.</li>
+            <li>Stir in beef stock, mustard, and simmer 10 mins.</li>
+            <li>Add sour cream and beef back. Serve with pasta or rice.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 50 mins | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- 5. Beef Stroganoff -->
-<div class="accordion">
-  <div class="accordion-header">Beef Stroganoff <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/beef-stroganoff.jpg" alt="Beef Stroganoff">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>500g beef strips</li>
-      <li>200g mushrooms</li>
-      <li>1 onion, chopped</li>
-      <li>1 cup sour cream</li>
-      <li>2 tbsp butter</li>
-      <li>1 cup beef stock</li>
-      <li>1 tsp mustard</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Sauté beef strips in butter, remove from pan.</li>
-      <li>Add onions and mushrooms, cook until soft.</li>
-      <li>Stir in beef stock, mustard, and simmer 10 mins.</li>
-      <li>Add sour cream and beef back. Serve with pasta or rice.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 50 mins | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- Caesar Salad -->
+      <div class="accordion">
+        <div class="accordion-header">Caesar Salad <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/caesar-salad.jpg" alt="Caesar Salad">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>1 romaine lettuce</li>
+            <li>1 cup croutons</li>
+            <li>½ cup parmesan cheese</li>
+            <li>½ cup Caesar dressing</li>
+            <li>Grilled chicken (optional)</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Toss lettuce with Caesar dressing.</li>
+            <li>Add croutons and parmesan.</li>
+            <li>Top with grilled chicken if desired.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 15 mins | <strong>Serves:</strong> 2</p>
+        </div>
+      </div>
 
-<!-- 6. Caesar Salad -->
-<div class="accordion">
-  <div class="accordion-header">Caesar Salad <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/caesar-salad.jpg" alt="Caesar Salad">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>1 romaine lettuce</li>
-      <li>1 cup croutons</li>
-      <li>½ cup parmesan cheese</li>
-      <li>½ cup Caesar dressing</li>
-      <li>Grilled chicken (optional)</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Toss lettuce with Caesar dressing.</li>
-      <li>Add croutons and parmesan.</li>
-      <li>Top with grilled chicken if desired.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 15 mins | <strong>Serves:</strong> 2</p>
-  </div>
-</div>
+      <!-- Ratatouille -->
+      <div class="accordion">
+        <div class="accordion-header">Ratatouille <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/ratatouille.jpg" alt="Ratatouille">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>1 eggplant, sliced</li>
+            <li>1 zucchini, sliced</li>
+            <li>1 red bell pepper</li>
+            <li>2 tomatoes</li>
+            <li>2 garlic cloves</li>
+            <li>2 tbsp olive oil</li>
+            <li>Salt, pepper, thyme</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Sauté garlic in oil, add tomatoes and herbs for sauce.</li>
+            <li>Arrange sliced vegetables in a baking dish, pour sauce over.</li>
+            <li>Bake at 180°C for 35 mins until tender.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 50 mins | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- 7. Ratatouille -->
-<div class="accordion">
-  <div class="accordion-header">Ratatouille <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/ratatouille.jpg" alt="Ratatouille">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>1 eggplant, sliced</li>
-      <li>1 zucchini, sliced</li>
-      <li>1 red bell pepper</li>
-      <li>2 tomatoes</li>
-      <li>2 garlic cloves</li>
-      <li>2 tbsp olive oil</li>
-      <li>Salt, pepper, thyme</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Sauté garlic in oil, add tomatoes and herbs for sauce.</li>
-      <li>Arrange sliced vegetables in a baking dish, pour sauce over.</li>
-      <li>Bake at 180°C for 35 mins until tender.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 50 mins | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- Paella -->
+      <div class="accordion">
+        <div class="accordion-header">Paella <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/paella.jpg" alt="Paella">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>2 cups short-grain rice</li>
+            <li>500g seafood mix (shrimp, mussels, calamari)</li>
+            <li>1 onion, chopped</li>
+            <li>1 red bell pepper</li>
+            <li>2 tomatoes, chopped</li>
+            <li>2 cups chicken stock</li>
+            <li>Saffron, paprika, olive oil, salt</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Sauté onion, peppers, and tomatoes in olive oil.</li>
+            <li>Add rice, stock, saffron, paprika, and bring to simmer.</li>
+            <li>Place seafood on top, cover, and cook until rice is tender.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 50 mins | <strong>Serves:</strong> 4–5</p>
+        </div>
+      </div>
 
-<!-- 8. Paella -->
-<div class="accordion">
-  <div class="accordion-header">Paella <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/paella.jpg" alt="Paella">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>2 cups short-grain rice</li>
-      <li>500g seafood mix (shrimp, mussels, calamari)</li>
-      <li>1 onion, chopped</li>
-      <li>1 red bell pepper</li>
-      <li>2 tomatoes, chopped</li>
-      <li>2 cups chicken stock</li>
-      <li>Saffron, paprika, olive oil, salt</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Sauté onion, peppers, and tomatoes in olive oil.</li>
-      <li>Add rice, stock, saffron, paprika, and bring to simmer.</li>
-      <li>Place seafood on top, cover, and cook until rice is tender.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 50 mins | <strong>Serves:</strong> 4–5</p>
-  </div>
-</div>
+      <!-- Fish & Chips -->
+      <div class="accordion">
+        <div class="accordion-header">Fish & Chips <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/fish-chips.jpg" alt="Fish & Chips">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>4 white fish fillets (cod or haddock)</li>
+            <li>2 cups flour</li>
+            <li>1 tsp baking powder</li>
+            <li>1 cup cold beer</li>
+            <li>Potatoes (cut into fries)</li>
+            <li>Salt, pepper, oil for frying</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Mix flour, baking powder, salt, and pepper. Add beer gradually to make batter.</li>
+            <li>Dip fish into batter, deep fry until golden.</li>
+            <li>Fry potatoes separately until crisp. Serve hot.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 45 mins | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- 9. Fish & Chips -->
-<div class="accordion">
-  <div class="accordion-header">Fish & Chips <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/fish-chips.jpg" alt="Fish & Chips">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>4 white fish fillets (cod or haddock)</li>
-      <li>2 cups flour</li>
-      <li>1 tsp baking powder</li>
-      <li>1 cup cold beer</li>
-      <li>Potatoes (cut into fries)</li>
-      <li>Salt, pepper, oil for frying</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Mix flour, baking powder, salt, and pepper. Add beer gradually to make batter.</li>
-      <li>Dip fish into batter, deep fry until golden.</li>
-      <li>Fry potatoes separately until crisp. Serve hot.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 45 mins | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- Pizza Margherita -->
+      <div class="accordion">
+        <div class="accordion-header">Pizza Margherita <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/pizza-margherita.jpg" alt="Pizza Margherita">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>Pizza dough (ready or homemade)</li>
+            <li>1 cup tomato sauce</li>
+            <li>150g mozzarella cheese</li>
+            <li>Fresh basil leaves</li>
+            <li>Olive oil, salt</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Preheat oven to 220°C.</li>
+            <li>Spread sauce over dough, top with mozzarella and basil.</li>
+            <li>Bake 12–15 mins until crust golden.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 20 mins | <strong>Serves:</strong> 2–3</p>
+        </div>
+      </div>
 
-<!-- 10. Pizza Margherita -->
-<div class="accordion">
-  <div class="accordion-header">Pizza Margherita <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/pizza-margherita.jpg" alt="Pizza Margherita">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>Pizza dough (ready or homemade)</li>
-      <li>1 cup tomato sauce</li>
-      <li>150g mozzarella cheese</li>
-      <li>Fresh basil leaves</li>
-      <li>Olive oil, salt</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Preheat oven to 220°C.</li>
-      <li>Spread sauce over dough, top with mozzarella and basil.</li>
-      <li>Bake 12–15 mins until crust golden.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 20 mins | <strong>Serves:</strong> 2–3</p>
-  </div>
-</div>
+      <!-- Roast Chicken -->
+      <div class="accordion">
+        <div class="accordion-header">Roast Chicken <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/roast-chicken.jpg" alt="Roast Chicken">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>1 whole chicken (about 1.5kg)</li>
+            <li>3 tbsp olive oil</li>
+            <li>1 tsp paprika, thyme, garlic powder</li>
+            <li>Salt and pepper</li>
+            <li>1 lemon (sliced)</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Preheat oven to 200°C.</li>
+            <li>Rub chicken with oil, spices, salt, and pepper.</li>
+            <li>Stuff with lemon slices. Roast for 1 hr 15 mins until golden.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr 15 mins | <strong>Serves:</strong> 4–5</p>
+        </div>
+      </div>
 
-<!-- 11. Roast Chicken -->
-<div class="accordion">
-  <div class="accordion-header">Roast Chicken <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/roast-chicken.jpg" alt="Roast Chicken">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>1 whole chicken (about 1.5kg)</li>
-      <li>3 tbsp olive oil</li>
-      <li>1 tsp paprika, thyme, garlic powder</li>
-      <li>Salt and pepper</li>
-      <li>1 lemon (sliced)</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Preheat oven to 200°C.</li>
-      <li>Rub chicken with oil, spices, salt, and pepper.</li>
-      <li>Stuff with lemon slices. Roast for 1 hr 15 mins until golden.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr 15 mins | <strong>Serves:</strong> 4–5</p>
-  </div>
-</div>
+      <!-- Shepherd’s Pie -->
+      <div class="accordion">
+        <div class="accordion-header">Shepherd’s Pie <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/shepherds-pie.jpg" alt="Shepherd’s Pie">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>500g minced lamb</li>
+            <li>1 onion, chopped</li>
+            <li>2 cups mashed potatoes</li>
+            <li>1 cup peas and carrots</li>
+            <li>2 tbsp butter</li>
+            <li>Salt, pepper, thyme</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Cook lamb with onions, peas, carrots, and seasoning.</li>
+            <li>Place mixture in baking dish, spread mashed potatoes on top.</li>
+            <li>Bake at 180°C for 25 mins until golden.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 50 mins | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- 12. Shepherd’s Pie -->
-<div class="accordion">
-  <div class="accordion-header">Shepherd’s Pie <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/shepherds-pie.jpg" alt="Shepherd’s Pie">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>500g minced lamb</li>
-      <li>1 onion, chopped</li>
-      <li>2 cups mashed potatoes</li>
-      <li>1 cup peas and carrots</li>
-      <li>2 tbsp butter</li>
-      <li>Salt, pepper, thyme</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Cook lamb with onions, peas, carrots, and seasoning.</li>
-      <li>Place mixture in baking dish, spread mashed potatoes on top.</li>
-      <li>Bake at 180°C for 25 mins until golden.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 50 mins | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- French Onion Soup -->
+      <div class="accordion">
+        <div class="accordion-header">French Onion Soup <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/french-onion-soup.jpg" alt="French Onion Soup">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>4 large onions, thinly sliced</li>
+            <li>3 tbsp butter</li>
+            <li>1 tsp sugar</li>
+            <li>1L beef stock</li>
+            <li>4 slices baguette</li>
+            <li>100g gruyere cheese, grated</li>
+            <li>Salt and pepper</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Caramelize onions in butter and sugar until golden.</li>
+            <li>Add beef stock, simmer 15 mins.</li>
+            <li>Serve in bowls with toasted baguette slices and cheese on top.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 45 mins | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- 13. French Onion Soup -->
-<div class="accordion">
-  <div class="accordion-header">French Onion Soup <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/french-onion-soup.jpg" alt="French Onion Soup">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>4 large onions, thinly sliced</li>
-      <li>3 tbsp butter</li>
-      <li>1 tsp sugar</li>
-      <li>1L beef stock</li>
-      <li>4 slices baguette</li>
-      <li>100g gruyere cheese, grated</li>
-      <li>Salt and pepper</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Caramelize onions in butter and sugar until golden.</li>
-      <li>Add beef stock, simmer 15 mins.</li>
-      <li>Serve in bowls with toasted baguette slices and cheese on top.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 45 mins | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- Risotto -->
+      <div class="accordion">
+        <div class="accordion-header">Risotto <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/risotto.jpg" alt="Risotto">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>1 cup arborio rice</li>
+            <li>4 cups chicken or vegetable stock</li>
+            <li>1 onion, chopped</li>
+            <li>1 cup mushrooms, sliced</li>
+            <li>2 tbsp butter</li>
+            <li>½ cup parmesan cheese</li>
+            <li>Salt, pepper</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Sauté onion and mushrooms in butter.</li>
+            <li>Add rice, stir for 2 mins. Gradually add stock, stirring continuously until rice is creamy.</li>
+            <li>Mix in parmesan, season, and serve hot.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 35 mins | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- 14. Risotto -->
-<div class="accordion">
-  <div class="accordion-header">Risotto <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/risotto.jpg" alt="Risotto">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>1 cup arborio rice</li>
-      <li>4 cups chicken or vegetable stock</li>
-      <li>1 onion, chopped</li>
-      <li>1 cup mushrooms, sliced</li>
-      <li>2 tbsp butter</li>
-      <li>½ cup parmesan cheese</li>
-      <li>Salt, pepper</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Sauté onion and mushrooms in butter.</li>
-      <li>Add rice, stir for 2 mins. Gradually add stock, stirring continuously until rice is creamy.</li>
-      <li>Mix in parmesan, season, and serve hot.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 35 mins | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
-
-<!-- 15. Stuffed Peppers -->
-<div class="accordion">
-  <div class="accordion-header">Stuffed Peppers <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/stuffed-peppers.jpg" alt="Stuffed Peppers">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>4 bell peppers, tops cut off</li>
-      <li>250g minced beef or chicken</li>
-      <li>1 cup cooked rice</li>
-      <li>1 onion, chopped</li>
-      <li>2 tbsp tomato paste</li>
-      <li>Salt, pepper, herbs</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Mix meat, rice, onion, tomato paste, and herbs.</li>
-      <li>Stuff peppers with mixture, place in baking dish.</li>
-      <li>Bake at 180°C for 35–40 mins until peppers are tender.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 50 mins | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
-
+      <!-- Stuffed Peppers -->
+      <div class="accordion">
+        <div class="accordion-header">Stuffed Peppers <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/stuffed-peppers.jpg" alt="Stuffed Peppers">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>4 bell peppers, tops cut off</li>
+            <li>250g minced beef or chicken</li>
+            <li>1 cup cooked rice</li>
+            <li>1 onion, chopped</li>
+            <li>2 tbsp tomato paste</li>
+            <li>Salt, pepper, herbs</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Mix meat, rice, onion, tomato paste, and herbs.</li>
+            <li>Stuff peppers with mixture, place in baking dish.</li>
+            <li>Bake at 180°C for 35–40 mins until peppers are tender.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 50 mins | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
     </div>
-
-    <!-- Add: Pizza, Burgers, Lasagna, Fried Chicken, Fish & Chips, etc. -->
 
     <!-- ===================== DESSERTS ===================== -->
-    <h2>🍨Desserts</h2>
+    <h2>🍨 Desserts</h2>
     <div class="accordion">
-    <!-- New York Cheesecake (USA) -->
-<div class="accordion">
-  <div class="accordion-header">New York Cheesecake (USA) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/new-york-cheesecake.jpg" alt="New York Cheesecake">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>200g digestive biscuits (crushed)</li>
-      <li>100g butter (melted)</li>
-      <li>500g cream cheese</li>
-      <li>200g sugar</li>
-      <li>3 eggs</li>
-      <li>200ml sour cream</li>
-      <li>1 tsp vanilla extract</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Mix crushed biscuits with melted butter, press into a springform pan.</li>
-      <li>Whisk cream cheese, sugar, and vanilla until smooth. Add eggs one by one.</li>
-      <li>Mix in sour cream, then pour filling over the crust.</li>
-      <li>Bake at 160°C for 1 hour. Cool and refrigerate overnight.</li>
-      <li>Serve chilled with fruit or sauce.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr + chilling | <strong>Serves:</strong> 8</p>
-  </div>
-</div>
 
-<!-- Chocolate Mousse (France) -->
-<div class="accordion">
-  <div class="accordion-header">Chocolate Mousse (France) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/chocolate-mousse.jpg" alt="Chocolate Mousse">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>200g dark chocolate</li>
-      <li>3 eggs (separated)</li>
-      <li>2 tbsp sugar</li>
-      <li>200ml heavy cream</li>
-      <li>1 tsp vanilla extract</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Melt chocolate over a water bath, let cool slightly.</li>
-      <li>Whip cream until soft peaks form.</li>
-      <li>Beat yolks with sugar, stir in chocolate and vanilla.</li>
-      <li>Fold in whipped cream and stiff egg whites gently.</li>
-      <li>Chill for at least 3 hours.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 25 mins + chilling | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- New York Cheesecake (USA) -->
+      <div class="accordion">
+        <div class="accordion-header">New York Cheesecake (USA) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/new-york-cheesecake.jpg" alt="New York Cheesecake">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>200g digestive biscuits (crushed)</li>
+            <li>100g butter (melted)</li>
+            <li>500g cream cheese</li>
+            <li>200g sugar</li>
+            <li>3 eggs</li>
+            <li>200ml sour cream</li>
+            <li>1 tsp vanilla extract</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Mix crushed biscuits with melted butter, press into a springform pan.</li>
+            <li>Whisk cream cheese, sugar, and vanilla until smooth. Add eggs one by one.</li>
+            <li>Mix in sour cream, then pour filling over the crust.</li>
+            <li>Bake at 160°C for 1 hour. Cool and refrigerate overnight.</li>
+            <li>Serve chilled with fruit or sauce.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr + chilling | <strong>Serves:</strong> 8</p>
+        </div>
+      </div>
 
-<!-- Apple Pie (USA) -->
-<div class="accordion">
-  <div class="accordion-header">Apple Pie (USA) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/apple-pie.jpg" alt="Apple Pie">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>2 pie crusts</li>
-      <li>6 apples (peeled, sliced)</li>
-      <li>1/2 cup sugar</li>
-      <li>1 tsp cinnamon</li>
-      <li>2 tbsp flour</li>
-      <li>1 tbsp butter</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Mix apples with sugar, flour, and cinnamon.</li>
-      <li>Fill bottom crust with apple mixture, dot with butter.</li>
-      <li>Cover with top crust, seal, cut slits.</li>
-      <li>Bake at 190°C for 50–60 minutes until golden.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 6–8</p>
-  </div>
-</div>
+      <!-- Chocolate Mousse (France) -->
+      <div class="accordion">
+        <div class="accordion-header">Chocolate Mousse (France) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/chocolate-mousse.jpg" alt="Chocolate Mousse">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>200g dark chocolate</li>
+            <li>3 eggs (separated)</li>
+            <li>2 tbsp sugar</li>
+            <li>200ml heavy cream</li>
+            <li>1 tsp vanilla extract</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Melt chocolate over a water bath, let cool slightly.</li>
+            <li>Whip cream until soft peaks form.</li>
+            <li>Beat yolks with sugar, stir in chocolate and vanilla.</li>
+            <li>Fold in whipped cream and stiff egg whites gently.</li>
+            <li>Chill for at least 3 hours.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 25 mins + chilling | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- Black Forest Cake (Germany) -->
-<div class="accordion">
-  <div class="accordion-header">Black Forest Cake (Germany) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/black-forest-cake.jpg" alt="Black Forest Cake">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>200g flour</li>
-      <li>200g sugar</li>
-      <li>6 eggs</li>
-      <li>200g dark chocolate (melted)</li>
-      <li>500ml whipped cream</li>
-      <li>300g cherries</li>
-      <li>2 tbsp cherry liqueur (optional)</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Bake chocolate sponge cakes from eggs, sugar, and flour.</li>
-      <li>Whip cream until stiff, slice cakes into 3 layers.</li>
-      <li>Brush with cherry syrup/liqueur, fill with cream and cherries.</li>
-      <li>Decorate top with cream, chocolate shavings, and cherries.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1.5 hrs | <strong>Serves:</strong> 10</p>
-  </div>
-</div>
+      <!-- Apple Pie (USA) -->
+      <div class="accordion">
+        <div class="accordion-header">Apple Pie (USA) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/apple-pie.jpg" alt="Apple Pie">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>2 pie crusts</li>
+            <li>6 apples (peeled, sliced)</li>
+            <li>1/2 cup sugar</li>
+            <li>1 tsp cinnamon</li>
+            <li>2 tbsp flour</li>
+            <li>1 tbsp butter</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Mix apples with sugar, flour, and cinnamon.</li>
+            <li>Fill bottom crust with apple mixture, dot with butter.</li>
+            <li>Cover with top crust, seal, cut slits.</li>
+            <li>Bake at 190°C for 50–60 minutes until golden.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 6–8</p>
+        </div>
+      </div>
 
-<!-- Lemon Tart (France) -->
-<div class="accordion">
-  <div class="accordion-header">Lemon Tart (France) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/lemon-tart.jpg" alt="Lemon Tart">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>1 tart shell</li>
-      <li>3 eggs</li>
-      <li>150g sugar</li>
-      <li>100ml lemon juice</li>
-      <li>Zest of 2 lemons</li>
-      <li>100ml cream</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Whisk eggs, sugar, lemon juice, zest, and cream.</li>
-      <li>Pour into tart shell and bake at 160°C for 30 mins.</li>
-      <li>Cool and dust with powdered sugar.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 45 mins | <strong>Serves:</strong> 6</p>
-  </div>
-</div>
+      <!-- Black Forest Cake (Germany) -->
+      <div class="accordion">
+        <div class="accordion-header">Black Forest Cake (Germany) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/black-forest-cake.jpg" alt="Black Forest Cake">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>200g flour</li>
+            <li>200g sugar</li>
+            <li>6 eggs</li>
+            <li>200g dark chocolate (melted)</li>
+            <li>500ml whipped cream</li>
+            <li>300g cherries</li>
+            <li>2 tbsp cherry liqueur (optional)</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Bake chocolate sponge cakes from eggs, sugar, and flour.</li>
+            <li>Whip cream until stiff, slice cakes into 3 layers.</li>
+            <li>Brush with cherry syrup/liqueur, fill with cream and cherries.</li>
+            <li>Decorate top with cream, chocolate shavings, and cherries.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1.5 hrs | <strong>Serves:</strong> 10</p>
+        </div>
+      </div>
 
-<!-- Tiramisu (Italy) -->
-<div class="accordion">
-  <div class="accordion-header">Tiramisu (Italy) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/tiramisu.jpg" alt="Tiramisu">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>200g ladyfingers</li>
-      <li>250g mascarpone</li>
-      <li>3 eggs</li>
-      <li>100g sugar</li>
-      <li>1 cup espresso</li>
-      <li>Cocoa powder (for dusting)</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Whip yolks with sugar, fold in mascarpone.</li>
-      <li>Dip ladyfingers in espresso, layer with cream mixture.</li>
-      <li>Repeat layers, dust top with cocoa powder.</li>
-      <li>Chill 4 hours before serving.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 30 mins + chilling | <strong>Serves:</strong> 6</p>
-  </div>
-</div>
+      <!-- Lemon Tart (France) -->
+      <div class="accordion">
+        <div class="accordion-header">Lemon Tart (France) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/lemon-tart.jpg" alt="Lemon Tart">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>1 tart shell</li>
+            <li>3 eggs</li>
+            <li>150g sugar</li>
+            <li>100ml lemon juice</li>
+            <li>Zest of 2 lemons</li>
+            <li>100ml cream</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Whisk eggs, sugar, lemon juice, zest, and cream.</li>
+            <li>Pour into tart shell and bake at 160°C for 30 mins.</li>
+            <li>Cool and dust with powdered sugar.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 45 mins | <strong>Serves:</strong> 6</p>
+        </div>
+      </div>
 
-<!-- Crème Brûlée (France) -->
-<div class="accordion">
-  <div class="accordion-header">Crème Brûlée (France) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/creme-brulee.jpg" alt="Crème Brûlée">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>500ml heavy cream</li>
-      <li>100g sugar</li>
-      <li>4 egg yolks</li>
-      <li>1 tsp vanilla</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Whisk yolks with sugar and vanilla.</li>
-      <li>Heat cream gently, whisk into yolks.</li>
-      <li>Pour into ramekins, bake in water bath at 150°C for 40 mins.</li>
-      <li>Cool, sprinkle sugar, torch until caramelized.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- Tiramisu (Italy) -->
+      <div class="accordion">
+        <div class="accordion-header">Tiramisu (Italy) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/tiramisu.jpg" alt="Tiramisu">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>200g ladyfingers</li>
+            <li>250g mascarpone</li>
+            <li>3 eggs</li>
+            <li>100g sugar</li>
+            <li>1 cup espresso</li>
+            <li>Cocoa powder (for dusting)</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Whip yolks with sugar, fold in mascarpone.</li>
+            <li>Dip ladyfingers in espresso, layer with cream mixture.</li>
+            <li>Repeat layers, dust top with cocoa powder.</li>
+            <li>Chill 4 hours before serving.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 30 mins + chilling | <strong>Serves:</strong> 6</p>
+        </div>
+      </div>
 
-<!-- Baklava (Turkey) -->
-<div class="accordion">
-  <div class="accordion-header">Baklava (Turkey) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/baklava.jpg" alt="Baklava">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>400g phyllo dough</li>
-      <li>250g walnuts/pistachios</li>
-      <li>200g butter</li>
-      <li>200ml honey syrup</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Layer phyllo with butter and nuts.</li>
-      <li>Cut into diamonds, bake at 180°C until golden.</li>
-      <li>Pour syrup over hot baklava, cool before serving.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 12</p>
-  </div>
-</div>
+      <!-- Crème Brûlée (France) -->
+      <div class="accordion">
+        <div class="accordion-header">Crème Brûlée (France) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/creme-brulee.jpg" alt="Crème Brûlée">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>500ml heavy cream</li>
+            <li>100g sugar</li>
+            <li>4 egg yolks</li>
+            <li>1 tsp vanilla</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Whisk yolks with sugar and vanilla.</li>
+            <li>Heat cream gently, whisk into yolks.</li>
+            <li>Pour into ramekins, bake in water bath at 150°C for 40 mins.</li>
+            <li>Cool, sprinkle sugar, torch until caramelized.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- Gelato (Italy) -->
-<div class="accordion">
-  <div class="accordion-header">Gelato (Italy) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/gelato.jpg" alt="Gelato">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>500ml milk</li>
-      <li>200ml cream</li>
-      <li>150g sugar</li>
-      <li>Flavoring (vanilla, chocolate, pistachio)</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Heat milk, cream, and sugar until dissolved.</li>
-      <li>Cool, churn in ice cream maker until smooth.</li>
-      <li>Freeze before serving.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 45 mins + freezing | <strong>Serves:</strong> 6</p>
-  </div>
-</div>
+      <!-- Baklava (Turkey) -->
+      <div class="accordion">
+        <div class="accordion-header">Baklava (Turkey) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/baklava.jpg" alt="Baklava">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>400g phyllo dough</li>
+            <li>250g walnuts/pistachios</li>
+            <li>200g butter</li>
+            <li>200ml honey syrup</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Layer phyllo with butter and nuts.</li>
+            <li>Cut into diamonds, bake at 180°C until golden.</li>
+            <li>Pour syrup over hot baklava, cool before serving.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 1 hr | <strong>Serves:</strong> 12</p>
+        </div>
+      </div>
 
-<!-- Mango Sticky Rice (Thailand) -->
-<div class="accordion">
-  <div class="accordion-header">Mango Sticky Rice (Thailand) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/mango-sticky-rice.jpg" alt="Mango Sticky Rice">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>200g glutinous rice</li>
-      <li>200ml coconut milk</li>
-      <li>3 tbsp sugar</li>
-      <li>1 ripe mango</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Cook sticky rice, mix with sweetened coconut milk.</li>
-      <li>Slice mango, serve alongside sticky rice.</li>
-      <li>Drizzle with extra coconut sauce.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 45 mins | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- Gelato (Italy) -->
+      <div class="accordion">
+        <div class="accordion-header">Gelato (Italy) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/gelato.jpg" alt="Gelato">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>500ml milk</li>
+            <li>200ml cream</li>
+            <li>150g sugar</li>
+            <li>Flavoring (vanilla, chocolate, pistachio)</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Heat milk, cream, and sugar until dissolved.</li>
+            <li>Cool, churn in ice cream maker until smooth.</li>
+            <li>Freeze before serving.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 45 mins + freezing | <strong>Serves:</strong> 6</p>
+        </div>
+      </div>
 
-<!-- Gulab Jamun (India) -->
-<div class="accordion">
-  <div class="accordion-header">Gulab Jamun (India) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/gulab-jamun.jpg" alt="Gulab Jamun">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>200g milk powder</li>
-      <li>50g flour</li>
-      <li>1 tsp baking powder</li>
-      <li>100ml milk</li>
-      <li>Sugar syrup flavored with rose water</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Knead dough from milk powder, flour, and milk.</li>
-      <li>Shape into balls, deep fry until golden.</li>
-      <li>Soak in warm sugar syrup.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 40 mins | <strong>Serves:</strong> 6</p>
-  </div>
-</div>
+      <!-- Mango Sticky Rice (Thailand) -->
+      <div class="accordion">
+        <div class="accordion-header">Mango Sticky Rice (Thailand) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/mango-sticky-rice.jpg" alt="Mango Sticky Rice">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>200g glutinous rice</li>
+            <li>200ml coconut milk</li>
+            <li>3 tbsp sugar</li>
+            <li>1 ripe mango</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Cook sticky rice, mix with sweetened coconut milk.</li>
+            <li>Slice mango, serve alongside sticky rice.</li>
+            <li>Drizzle with extra coconut sauce.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 45 mins | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- Panna Cotta (Italy) -->
-<div class="accordion">
-  <div class="accordion-header">Panna Cotta (Italy) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/panna-cotta.jpg" alt="Panna Cotta">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>400ml cream</li>
-      <li>100g sugar</li>
-      <li>1 tsp vanilla</li>
-      <li>2 tsp gelatin</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Heat cream, sugar, and vanilla until dissolved.</li>
-      <li>Add dissolved gelatin, pour into molds.</li>
-      <li>Chill for 4 hrs before serving.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 20 mins + chilling | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- Gulab Jamun (India) -->
+      <div class="accordion">
+        <div class="accordion-header">Gulab Jamun (India) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/gulab-jamun.jpg" alt="Gulab Jamun">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>200g milk powder</li>
+            <li>50g flour</li>
+            <li>1 tsp baking powder</li>
+            <li>100ml milk</li>
+            <li>Sugar syrup flavored with rose water</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Knead dough from milk powder, flour, and milk.</li>
+            <li>Shape into balls, deep fry until golden.</li>
+            <li>Soak in warm sugar syrup.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 40 mins | <strong>Serves:</strong> 6</p>
+        </div>
+      </div>
 
-<!-- Banoffee Pie (UK) -->
-<div class="accordion">
-  <div class="accordion-header">Banoffee Pie (UK) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/banoffee-pie.jpg" alt="Banoffee Pie">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>200g biscuits</li>
-      <li>100g butter</li>
-      <li>1 can dulce de leche</li>
-      <li>2 bananas</li>
-      <li>Whipped cream</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Press biscuit and butter crust into pan.</li>
-      <li>Spread dulce de leche, layer bananas.</li>
-      <li>Top with whipped cream and chill.</li>
-    </ol>
-    <p><strong>Cooking Time:</strong> 30 mins | <strong>Serves:</strong> 6</p>
-  </div>
-</div>
+      <!-- Panna Cotta (Italy) -->
+      <div class="accordion">
+        <div class="accordion-header">Panna Cotta (Italy) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/panna-cotta.jpg" alt="Panna Cotta">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>400ml cream</li>
+            <li>100g sugar</li>
+            <li>1 tsp vanilla</li>
+            <li>2 tsp gelatin</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Heat cream, sugar, and vanilla until dissolved.</li>
+            <li>Add dissolved gelatin, pour into molds.</li>
+            <li>Chill for 4 hrs before serving.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 20 mins + chilling | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-</div>
-
-</div>
+      <!-- Banoffee Pie (UK) -->
+      <div class="accordion">
+        <div class="accordion-header">Banoffee Pie (UK) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/banoffee-pie.jpg" alt="Banoffee Pie">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>200g biscuits</li>
+            <li>100g butter</li>
+            <li>1 can dulce de leche</li>
+            <li>2 bananas</li>
+            <li>Whipped cream</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Press biscuit and butter crust into pan.</li>
+            <li>Spread dulce de leche, layer bananas.</li>
+            <li>Top with whipped cream and chill.</li>
+          </ol>
+          <p><strong>Cooking Time:</strong> 30 mins | <strong>Serves:</strong> 6</p>
+        </div>
+      </div>
 
     </div>
 
     <!-- ===================== DRINKS ===================== -->
-    <h2>🍹Drinks</h2>
+    <h2>🍹 Drinks</h2>
     <div class="accordion">
-     <!-- Chapman (Nigeria) -->
-<div class="accordion">
-  <div class="accordion-header">Chapman (Nigeria) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/chapman.jpg" alt="Chapman Drink">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>Sprite or 7Up</li>
-      <li>Fanta</li>
-      <li>Grenadine syrup</li>
-      <li>Angostura bitters (optional)</li>
-      <li>Lime & orange slices</li>
-      <li>Ice cubes</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Fill a tall glass with ice.</li>
-      <li>Mix equal parts Sprite and Fanta.</li>
-      <li>Add a splash of grenadine and bitters.</li>
-      <li>Garnish with lime and orange slices.</li>
-    </ol>
-    <p><strong>Time:</strong> 5 mins | <strong>Serves:</strong> 1</p>
-  </div>
-</div>
 
-<!-- Mojito (Cuba) -->
-<div class="accordion">
-  <div class="accordion-header">Mojito (Cuba) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/mojito.jpg" alt="Mojito">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>Mint leaves</li>
-      <li>2 tsp sugar</li>
-      <li>Juice of 1 lime</li>
-      <li>Soda water</li>
-      <li>Ice cubes</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Muddle mint leaves with sugar and lime juice.</li>
-      <li>Add ice and top with soda water.</li>
-      <li>Stir gently and garnish with mint sprigs.</li>
-    </ol>
-    <p><strong>Time:</strong> 7 mins | <strong>Serves:</strong> 1</p>
-  </div>
-</div>
+      <!-- Chapman (Nigeria) -->
+      <div class="accordion">
+        <div class="accordion-header">Chapman (Nigeria) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/chapman.jpg" alt="Chapman Drink">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>Sprite or 7Up</li>
+            <li>Fanta</li>
+            <li>Grenadine syrup</li>
+            <li>Angostura bitters (optional)</li>
+            <li>Lime & orange slices</li>
+            <li>Ice cubes</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Fill a tall glass with ice.</li>
+            <li>Mix equal parts Sprite and Fanta.</li>
+            <li>Add a splash of grenadine and bitters.</li>
+            <li>Garnish with lime and orange slices.</li>
+          </ol>
+          <p><strong>Time:</strong> 5 mins | <strong>Serves:</strong> 1</p>
+        </div>
+      </div>
 
-<!-- Cappuccino (Italy) -->
-<div class="accordion">
-  <div class="accordion-header">Cappuccino (Italy) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/cappuccino.jpg" alt="Cappuccino">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>1 shot espresso</li>
-      <li>1/3 cup steamed milk</li>
-      <li>1/3 cup milk foam</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Brew a fresh espresso shot.</li>
-      <li>Steam milk and froth until foamy.</li>
-      <li>Pour espresso, then steamed milk, then foam on top.</li>
-    </ol>
-    <p><strong>Time:</strong> 10 mins | <strong>Serves:</strong> 1</p>
-  </div>
-</div>
+      <!-- Mojito (Cuba) -->
+      <div class="accordion">
+        <div class="accordion-header">Mojito (Cuba) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/mojito.jpg" alt="Mojito">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>Mint leaves</li>
+            <li>2 tsp sugar</li>
+            <li>Juice of 1 lime</li>
+            <li>Soda water</li>
+            <li>Ice cubes</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Muddle mint leaves with sugar and lime juice.</li>
+            <li>Add ice and top with soda water.</li>
+            <li>Stir gently and garnish with mint sprigs.</li>
+          </ol>
+          <p><strong>Time:</strong> 7 mins | <strong>Serves:</strong> 1</p>
+        </div>
+      </div>
 
-<!-- Coffee (Classic) -->
-<div class="accordion">
-  <div class="accordion-header">Classic Coffee <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/coffee.jpg" alt="Coffee">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>2 tbsp ground coffee</li>
-      <li>1 cup hot water</li>
-      <li>Sugar or milk (optional)</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Brew coffee with hot water using a press or filter.</li>
-      <li>Serve black or add sugar/milk to taste.</li>
-    </ol>
-    <p><strong>Time:</strong> 5 mins | <strong>Serves:</strong> 1</p>
-  </div>
-</div>
+      <!-- Cappuccino (Italy) -->
+      <div class="accordion">
+        <div class="accordion-header">Cappuccino (Italy) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/cappuccino.jpg" alt="Cappuccino">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>1 shot espresso</li>
+            <li>1/3 cup steamed milk</li>
+            <li>1/3 cup milk foam</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Brew a fresh espresso shot.</li>
+            <li>Steam milk and froth until foamy.</li>
+            <li>Pour espresso, then steamed milk, then foam on top.</li>
+          </ol>
+          <p><strong>Time:</strong> 10 mins | <strong>Serves:</strong> 1</p>
+        </div>
+      </div>
 
-<!-- Pina Colada (Puerto Rico) -->
-<div class="accordion">
-  <div class="accordion-header">Pina Colada (Puerto Rico) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/pina-colada.jpg" alt="Pina Colada">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>1 cup pineapple juice</li>
-      <li>1/2 cup coconut milk</li>
-      <li>Ice cubes</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Blend pineapple juice, coconut milk, and ice until smooth.</li>
-      <li>Serve cold with pineapple slices.</li>
-    </ol>
-    <p><strong>Time:</strong> 8 mins | <strong>Serves:</strong> 2</p>
-  </div>
-</div>
+      <!-- Classic Coffee -->
+      <div class="accordion">
+        <div class="accordion-header">Classic Coffee <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/coffee.jpg" alt="Coffee">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>2 tbsp ground coffee</li>
+            <li>1 cup hot water</li>
+            <li>Sugar or milk (optional)</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Brew coffee with hot water using a press or filter.</li>
+            <li>Serve black or add sugar/milk to taste.</li>
+          </ol>
+          <p><strong>Time:</strong> 5 mins | <strong>Serves:</strong> 1</p>
+        </div>
+      </div>
 
-<!-- Hot Chocolate -->
-<div class="accordion">
-  <div class="accordion-header">Hot Chocolate <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/hot-chocolate.jpg" alt="Hot Chocolate">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>2 tbsp cocoa powder</li>
-      <li>2 cups milk</li>
-      <li>2 tbsp sugar</li>
-      <li>Whipped cream (optional)</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Heat milk in a saucepan.</li>
-      <li>Whisk in cocoa powder and sugar until smooth.</li>
-      <li>Serve hot, topped with whipped cream.</li>
-    </ol>
-    <p><strong>Time:</strong> 10 mins | <strong>Serves:</strong> 2</p>
-  </div>
-</div>
+      <!-- Pina Colada (Puerto Rico) -->
+      <div class="accordion">
+        <div class="accordion-header">Pina Colada (Puerto Rico) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/pina-colada.jpg" alt="Pina Colada">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>1 cup pineapple juice</li>
+            <li>1/2 cup coconut milk</li>
+            <li>Ice cubes</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Blend pineapple juice, coconut milk, and ice until smooth.</li>
+            <li>Serve cold with pineapple slices.</li>
+          </ol>
+          <p><strong>Time:</strong> 8 mins | <strong>Serves:</strong> 2</p>
+        </div>
+      </div>
 
-<!-- Margarita (Mexico) -->
-<div class="accordion">
-  <div class="accordion-header">Margarita (Mexico) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/margarita.jpg" alt="Margarita">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>Juice of 2 limes</li>
-      <li>1 tsp sugar</li>
-      <li>Salt for rim</li>
-      <li>Ice cubes</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Rim glass with salt.</li>
-      <li>Shake lime juice, sugar, and ice together.</li>
-      <li>Pour into glass and serve chilled.</li>
-    </ol>
-    <p><strong>Time:</strong> 6 mins | <strong>Serves:</strong> 1</p>
-  </div>
-</div>
+      <!-- Hot Chocolate -->
+      <div class="accordion">
+        <div class="accordion-header">Hot Chocolate <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/hot-chocolate.jpg" alt="Hot Chocolate">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>2 tbsp cocoa powder</li>
+            <li>2 cups milk</li>
+            <li>2 tbsp sugar</li>
+            <li>Whipped cream (optional)</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Heat milk in a saucepan.</li>
+            <li>Whisk in cocoa powder and sugar until smooth.</li>
+            <li>Serve hot, topped with whipped cream.</li>
+          </ol>
+          <p><strong>Time:</strong> 10 mins | <strong>Serves:</strong> 2</p>
+        </div>
+      </div>
 
-<!-- Iced Tea -->
-<div class="accordion">
-  <div class="accordion-header">Iced Tea <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/iced-tea.jpg" alt="Iced Tea">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>4 tea bags</li>
-      <li>1 liter water</li>
-      <li>Sugar & lemon slices</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Brew tea in boiling water.</li>
-      <li>Cool and refrigerate.</li>
-      <li>Serve with ice, sugar, and lemon slices.</li>
-    </ol>
-    <p><strong>Time:</strong> 20 mins | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- Margarita (Mexico) -->
+      <div class="accordion">
+        <div class="accordion-header">Margarita (Mexico) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/margarita.jpg" alt="Margarita">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>Juice of 2 limes</li>
+            <li>1 tsp sugar</li>
+            <li>Salt for rim</li>
+            <li>Ice cubes</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Rim glass with salt.</li>
+            <li>Shake lime juice, sugar, and ice together.</li>
+            <li>Pour into glass and serve chilled.</li>
+          </ol>
+          <p><strong>Time:</strong> 6 mins | <strong>Serves:</strong> 1</p>
+        </div>
+      </div>
 
-<!-- Smoothie (Mixed Fruits) -->
-<div class="accordion">
-  <div class="accordion-header">Fruit Smoothie <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/fruit-smoothie.jpg" alt="Smoothie">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>1 banana</li>
-      <li>1 cup mixed berries</li>
-      <li>1/2 cup yogurt</li>
-      <li>Honey to taste</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Blend all ingredients until smooth.</li>
-      <li>Serve chilled in tall glasses.</li>
-    </ol>
-    <p><strong>Time:</strong> 5 mins | <strong>Serves:</strong> 2</p>
-  </div>
-</div>
+      <!-- Iced Tea -->
+      <div class="accordion">
+        <div class="accordion-header">Iced Tea <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/iced-tea.jpg" alt="Iced Tea">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>4 tea bags</li>
+            <li>1 liter water</li>
+            <li>Sugar & lemon slices</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Brew tea in boiling water.</li>
+            <li>Cool and refrigerate.</li>
+            <li>Serve with ice, sugar, and lemon slices.</li>
+          </ol>
+          <p><strong>Time:</strong> 20 mins | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- Milkshake (Vanilla) -->
-<div class="accordion">
-  <div class="accordion-header">Vanilla Milkshake <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/vanilla-milkshake.jpg" alt="Vanilla Milkshake">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>2 cups vanilla ice cream</li>
-      <li>1 cup milk</li>
-      <li>Whipped cream (optional)</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Blend ice cream and milk until creamy.</li>
-      <li>Top with whipped cream.</li>
-    </ol>
-    <p><strong>Time:</strong> 5 mins | <strong>Serves:</strong> 2</p>
-  </div>
-</div>
+      <!-- Fruit Smoothie -->
+      <div class="accordion">
+        <div class="accordion-header">Fruit Smoothie <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/fruit-smoothie.jpg" alt="Smoothie">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>1 banana</li>
+            <li>1 cup mixed berries</li>
+            <li>1/2 cup yogurt</li>
+            <li>Honey to taste</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Blend all ingredients until smooth.</li>
+            <li>Serve chilled in tall glasses.</li>
+          </ol>
+          <p><strong>Time:</strong> 5 mins | <strong>Serves:</strong> 2</p>
+        </div>
+      </div>
 
-<!-- Latte (Italy) -->
-<div class="accordion">
-  <div class="accordion-header">Latte (Italy) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/latte.jpg" alt="Latte">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>1 shot espresso</li>
-      <li>1 cup steamed milk</li>
-      <li>Foam for topping</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Brew espresso shot.</li>
-      <li>Pour steamed milk over espresso.</li>
-      <li>Top with foam.</li>
-    </ol>
-    <p><strong>Time:</strong> 7 mins | <strong>Serves:</strong> 1</p>
-  </div>
-</div>
+      <!-- Vanilla Milkshake -->
+      <div class="accordion">
+        <div class="accordion-header">Vanilla Milkshake <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/vanilla-milkshake.jpg" alt="Vanilla Milkshake">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>2 cups vanilla ice cream</li>
+            <li>1 cup milk</li>
+            <li>Whipped cream (optional)</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Blend ice cream and milk until creamy.</li>
+            <li>Top with whipped cream.</li>
+          </ol>
+          <p><strong>Time:</strong> 5 mins | <strong>Serves:</strong> 2</p>
+        </div>
+      </div>
 
-<!-- Lemonade -->
-<div class="accordion">
-  <div class="accordion-header">Fresh Lemonade <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/lemonade.jpg" alt="Lemonade">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>3 lemons</li>
-      <li>3 tbsp sugar</li>
-      <li>1 liter water</li>
-      <li>Ice cubes</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Squeeze lemons and mix juice with sugar.</li>
-      <li>Add water and stir well.</li>
-      <li>Serve over ice.</li>
-    </ol>
-    <p><strong>Time:</strong> 10 mins | <strong>Serves:</strong> 4</p>
-  </div>
-</div>
+      <!-- Latte (Italy) -->
+      <div class="accordion">
+        <div class="accordion-header">Latte (Italy) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/latte.jpg" alt="Latte">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>1 shot espresso</li>
+            <li>1 cup steamed milk</li>
+            <li>Foam for topping</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Brew espresso shot.</li>
+            <li>Pour steamed milk over espresso.</li>
+            <li>Top with foam.</li>
+          </ol>
+          <p><strong>Time:</strong> 7 mins | <strong>Serves:</strong> 1</p>
+        </div>
+      </div>
 
-<!-- Bloody Mary (Mocktail) -->
-<div class="accordion">
-  <div class="accordion-header">Bloody Mary (Mocktail) <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/bloody-mary-mocktail.jpg" alt="Bloody Mary">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>1 cup tomato juice</li>
-      <li>1 tbsp lemon juice</li>
-      <li>A dash of hot sauce</li>
-      <li>Celery stick for garnish</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Mix tomato juice, lemon juice, and hot sauce.</li>
-      <li>Pour into glass with ice and garnish with celery.</li>
-    </ol>
-    <p><strong>Time:</strong> 5 mins | <strong>Serves:</strong> 1</p>
-  </div>
-</div>
+      <!-- Lemonade -->
+      <div class="accordion">
+        <div class="accordion-header">Fresh Lemonade <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/lemonade.jpg" alt="Lemonade">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>3 lemons</li>
+            <li>3 tbsp sugar</li>
+            <li>1 liter water</li>
+            <li>Ice cubes</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Squeeze lemons and mix juice with sugar.</li>
+            <li>Add water and stir well.</li>
+            <li>Serve over ice.</li>
+          </ol>
+          <p><strong>Time:</strong> 10 mins | <strong>Serves:</strong> 4</p>
+        </div>
+      </div>
 
-<!-- Frappe -->
-<div class="accordion">
-  <div class="accordion-header">Coffee Frappe <span>+</span></div>
-  <div class="accordion-body">
-    <img src="images/coffee-frappe.jpg" alt="Frappe">
-    <h3>Ingredients:</h3>
-    <ul>
-      <li>1 tsp instant coffee</li>
-      <li>1 cup cold milk</li>
-      <li>1 tbsp sugar</li>
-      <li>Ice cubes</li>
-    </ul>
-    <h3>Instructions:</h3>
-    <ol>
-      <li>Blend coffee, milk, sugar, and ice until frothy.</li>
-      <li>Serve chilled with a straw.</li>
-    </ol>
-    <p><strong>Time:</strong> 5 mins | <strong>Serves:</strong> 1</p>
-  </div>
-</div>
+      <!-- Bloody Mary (Mocktail) -->
+      <div class="accordion">
+        <div class="accordion-header">Bloody Mary (Mocktail) <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/bloody-mary-mocktail.jpg" alt="Bloody Mary">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>1 cup tomato juice</li>
+            <li>1 tbsp lemon juice</li>
+            <li>A dash of hot sauce</li>
+            <li>Celery stick for garnish</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Mix tomato juice, lemon juice, and hot sauce.</li>
+            <li>Pour into glass with ice and garnish with celery.</li>
+          </ol>
+          <p><strong>Time:</strong> 5 mins | <strong>Serves:</strong> 1</p>
+        </div>
+      </div>
 
-    <!-- Keep adding until 50+ meals total -->
+      <!-- Coffee Frappe -->
+      <div class="accordion">
+        <div class="accordion-header">Coffee Frappe <span>+</span></div>
+        <div class="accordion-body">
+          <img src="images/coffee-frappe.jpg" alt="Frappe">
+          <h3>Ingredients:</h3>
+          <ul>
+            <li>1 tsp instant coffee</li>
+            <li>1 cup cold milk</li>
+            <li>1 tbsp sugar</li>
+            <li>Ice cubes</li>
+          </ul>
+          <h3>Instructions:</h3>
+          <ol>
+            <li>Blend coffee, milk, sugar, and ice until frothy.</li>
+            <li>Serve chilled with a straw.</li>
+          </ol>
+          <p><strong>Time:</strong> 5 mins | <strong>Serves:</strong> 1</p>
+        </div>
+      </div>
+
+    </div>
+
   </div>
-  
 
   <footer>
     <p>&copy; 2025 Labwat's Kitchen. All Rights Reserved.</p>
@@ -1945,11 +1945,12 @@
       });
     });
   </script>
+
   <!-- WhatsApp Floating Button -->
-<a href="https://wa.me/2347015059513?text=Hello%20Labwat's%20Kitchen!%20I'd%20like%20to%20order%20some%20food." 
-   class="whatsapp-float" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
+  <a href="https://wa.me/2347015059513?text=Hello%20Labwat's%20Kitchen!%20I'd%20like%20to%20order%20some%20food." 
+     class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
 </body>
 </html>
