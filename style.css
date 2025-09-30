@@ -79,7 +79,7 @@ body {
   background: url("images/contact-bg.jpg") no-repeat center/cover;
 }
 .hero-recipe {
-  background: url("images/recipe-bg.jpg") no-repeat center/cover; /* new image for recipe */
+  background: url("images/recipe-bg.jpg") no-repeat center/cover;
 }
 
 .hero h1 {
@@ -298,70 +298,17 @@ footer {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* -------------------- RECIPE PAGE SCOPED -------------------- */
-.recipe-page body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(120deg, #ffe9c6, #fff6f0);
-  color: #333;
+/* -------------------- RESPONSIVE ADJUSTMENTS -------------------- */
+@media (max-width: 992px) {
+  .hero h1 { font-size: 2.5rem; }
+  .hero p { font-size: 1.1rem; }
+  .highlights { flex-direction: column; align-items: center; }
+  .dish { flex-direction: column; text-align: center; }
 }
 
-.recipe-page .navbar {
-  background: linear-gradient(to right, #004d40, #00695c);
-}
-
-.recipe-page .navbar a {
-  color: #e8f5e9;
-}
-
-.recipe-page .navbar a:hover,
-.recipe-page .navbar a.active {
-  color: #c8e6c9;
-}
-
-.recipe-page h2.section-title {
-  color: #2e7d32;
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.recipe-page .accordion + .accordion {
-  margin-top: 1.5rem;
-}
-/* Hero Section - Recipe Page */
-.hero-recipe {
-  background: linear-gradient(rgba(0,77,64,0.7), rgba(0,77,64,0.7)),
-              url('../images/recipe-hero.jpg') center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: 4rem 2rem;
-}
-
-.hero-recipe h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero-recipe p {
-  font-size: 1.25rem;
-}
-/* Hero Section - Recipes */
-.hero-recipe {
-  background: url("images/recipe-bg.jpg") no-repeat center/cover;
-  text-align: center;
-  padding: 6rem 2rem;
-  color: #fff;
-  background-blend-mode: overlay;
-  background-color: rgba(0, 60, 50, 0.7); /* same green overlay */
-  animation: fadeIn 2s ease-in;
-}
-
-.hero-recipe h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  color: #e8f5e9;
-}
-
-.hero-recipe p {
-  font-size: 1.3rem;
-  color: #c8e6c9;
+@media (max-width: 768px) {
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .navbar ul { flex-direction: column; gap: 1rem; padding: 1rem; }
+  .hero h1 { font-size: 2rem; }
+  form { width: 90%; }
 }
