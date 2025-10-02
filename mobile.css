@@ -9,140 +9,23 @@
 }
 
 /* Mobile-specific base styles */
-body {
-  background: var(--mobile-background);
-  color: var(--mobile-text);
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-/* Enhanced mobile navigation */
-.navbar {
-  background: linear-gradient(135deg, var(--mobile-primary), var(--mobile-accent));
-  padding: 1rem;
-}
-
-.navbar ul {
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.navbar a {
-  font-size: 1.1rem;
-  padding: 0.8rem;
-  display: block;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.navbar a:hover,
-.navbar a.active {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateX(10px);
-}
-
-/* Mobile-optimized hero sections */
-.hero,
-.hero-about,
-.hero-menu,
-.hero-contact,
-.hero-recipe {
-  padding: 4rem 1rem;
-  background-blend-mode: multiply;
-}
-
-.hero h1,
-.hero-recipe h1 {
-  font-size: 2.2rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-/* Touch-friendly buttons and elements */
-.highlight,
-form button,
-.accordion-header {
-  min-height: 44px; /* Minimum touch target size */
-  padding: 1.2rem;
-  font-size: 1.1rem;
-}
-
-/* Mobile-optimized highlights */
-.highlights {
-  flex-direction: column;
-  padding: 1.5rem;
-  gap: 1rem;
-}
-
-.highlight {
-  background: linear-gradient(135deg, var(--mobile-primary), var(--mobile-accent));
-  color: white;
-  text-align: center;
-}
-
-/* Improved mobile forms */
-form input,
-form textarea {
-  font-size: 16px; /* Prevents zoom on iOS */
-  padding: 1rem;
-  border: 2px solid var(--mobile-accent);
-}
-
-/* Mobile accordion enhancements */
-.accordion-header {
-  background: linear-gradient(135deg, var(--mobile-primary), var(--mobile-accent));
-  font-size: 1.1rem;
-}
-
-/* Recipe page mobile optimizations */
-.recipes-container {
-  padding: 1rem;
-}
-
-.recipes-container h2 {
-  font-size: 1.8rem;
-  color: var(--mobile-primary);
-}
-
-/* Mobile-specific utility classes */
-.mobile-only {
-  display: block;
-}
-
-.tablet-only,
-.desktop-only {
-  display: none;
-}
-
-/* Swipe-friendly elements */
-.dish img {
-  width: 100px;
-  height: 80px;
-}
-
-/* Enhanced footer for mobile */
-footer {
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-}
-
-/* Mobile animation enhancements */
-@keyframes mobileSlideIn {
-  from { transform: translateX(-100%); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-.mobile-slide {
-  animation: mobileSlideIn 0.5s ease-out;
-
-}
-/* ==================== HAMBURGER MENU FIX ==================== */
 @media (max-width: 768px) {
+  body {
+    background: var(--mobile-background);
+    color: var(--mobile-text);
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  /* Enhanced mobile navigation */
   .navbar {
+    background: linear-gradient(135deg, var(--mobile-primary), var(--mobile-accent));
+    padding: 0.8rem 1rem !important;
     flex-direction: row !important;
     justify-content: space-between !important;
     align-items: center !important;
     position: relative !important;
-    padding: 0.8rem 1rem !important;
   }
 
   .nav-menu {
@@ -157,12 +40,59 @@ footer {
     flex-direction: column !important;
     gap: 0.5rem !important;
     z-index: 1000 !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
   }
 
   .nav-menu.show {
     display: flex !important;
   }
 
+  .navbar a {
+    font-size: 1.1rem;
+    padding: 0.8rem;
+    display: block;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar a:hover,
+  .navbar a.active {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(10px);
+  }
+
+  /* FIX OVERSIZED HERO TEXT */
+  .hero h1,
+  .hero-recipe h1 {
+    font-size: 1.8rem !important; /* Reduced from 2.2rem */
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+
+  .hero p,
+  .hero-recipe p {
+    font-size: 1rem !important;
+    line-height: 1.4;
+  }
+
+  /* Mobile-optimized hero sections */
+  .hero,
+  .hero-about,
+  .hero-menu,
+  .hero-contact,
+  .hero-recipe {
+    padding: 3rem 1rem !important; /* Reduced padding */
+    background-blend-mode: multiply;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Hamburger button */
   .hamburger {
     display: block !important;
     background: none !important;
@@ -172,8 +102,110 @@ footer {
     cursor: pointer !important;
     padding: 0.5rem !important;
   }
+
+  /* Touch-friendly buttons and elements */
+  .highlight,
+  form button,
+  .accordion-header {
+    min-height: 44px;
+    padding: 1.2rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+  }
+
+  /* Mobile-optimized highlights */
+  .highlights {
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .highlight {
+    background: linear-gradient(135deg, var(--mobile-primary), var(--mobile-accent));
+    color: white;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Improved mobile forms */
+  form {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  form input,
+  form textarea {
+    font-size: 16px;
+    padding: 1rem;
+    border: 2px solid var(--mobile-accent);
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Mobile accordion enhancements */
+  .accordion-header {
+    background: linear-gradient(135deg, var(--mobile-primary), var(--mobile-accent));
+    font-size: 1.1rem;
+    width: 100%;
+  }
+
+  /* Recipe page mobile fixes */
+  .recipes-container {
+    padding: 1rem !important;
+    max-width: 100% !important;
+  }
+
+  .recipes-container h2 {
+    font-size: 1.5rem !important;
+    margin-top: 1.5rem !important;
+  }
+
+  /* Ensure all images fit mobile */
+  img, video {
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 8px;
+  }
+
+  /* Dish items mobile optimization */
+  .dish {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+
+  .dish img {
+    width: 100px !important;
+    height: 80px !important;
+  }
+
+  /* Enhanced footer for mobile */
+  footer {
+    padding: 2rem 1rem !important;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  /* Mobile utility classes */
+  .mobile-only {
+    display: block;
+  }
+
+  .tablet-only,
+  .desktop-only {
+    display: none;
+  }
+
+  /* Fix any overflow issues */
+  * {
+    max-width: 100%;
+  }
 }
 
+/* Hide hamburger on desktop */
 .hamburger {
   display: none;
 }
