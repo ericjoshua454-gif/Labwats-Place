@@ -13,129 +13,50 @@
 <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
 <link rel="stylesheet" href="tablet.css" media="(min-width: 769px) and (max-width: 1024px)">
 <link rel="stylesheet" href="desktop.css" media="(min-width: 1025px)">
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+<style>
+    /* Simple animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
     }
-    /* ... all your CSS code ... */
-  
-    body {
-      background: linear-gradient(120deg, #ffe9c6, #fff6f0);
-      color: #333;
-      line-height: 1.6;
+    .fade-in:nth-child(2) { animation-delay: 0.2s; }
+    .fade-in:nth-child(3) { animation-delay: 0.4s; }
+    .fade-in:nth-child(4) { animation-delay: 0.6s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(to right, #004d40, #00695c);
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .navbar .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #fff;
-      display: flex;
-      align-items: center;
-    }
-
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .navbar a {
-      text-decoration: none;
-      color: #e8f5e9;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    .navbar a:hover,
-    .navbar a.active {
-      color: #c8e6c9;
-    }
-
-    /* Hero Section - Recipes */
-    .hero-recipe {
-      background: url("images/recipe-bg.jpg") no-repeat center/cover;
-      text-align: center;
-      padding: 6rem 2rem;
-      color: #fff;
-      background-blend-mode: overlay;
-      background-color: rgba(0, 60, 50, 0.7);
-      animation: fadeIn 2s ease-in;
-    }
-
-    .hero-recipe h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-      color: #e8f5e9;
-    }
-
-    .hero-recipe p {
-      font-size: 1.3rem;
-      color: #c8e6c9;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Recipes Container */
+    /* Recipes specific styles */
     .recipes-container {
       max-width: 1000px;
       margin: auto;
       padding: 2rem;
     }
 
-    h2 {
-      margin-top: 2rem;
-      font-size: 2rem;
-      color: #1b5e20;
-      text-align: center;
-    }
-
-    /* Accordion */
     .accordion {
       margin: 1rem 0;
       border-radius: 10px;
-      background: #ffffff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     .accordion-header {
       padding: 1rem;
       cursor: pointer;
-      background: linear-gradient(to right, #43cea2, #185a9d);
-      color: #fff;
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-weight: bold;
     }
 
-    .accordion-header:hover {
-      background: linear-gradient(to right, #185a9d, #43cea2);
-    }
-
     .accordion-body {
       display: none;
       padding: 1rem;
-      background: #fff;
     }
 
     .accordion-body img {
@@ -148,15 +69,6 @@
 
     .accordion.open .accordion-body {
       display: block;
-    }
-
-    /* Footer */
-    footer {
-      background: linear-gradient(to right, #004d40, #00695c);
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
     }
 
     /* WhatsApp Floating Button */
@@ -182,8 +94,9 @@
     .whatsapp-float:hover {
       background-color: #128C7E;
     }
-  </style>
+</style>
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -1966,6 +1879,7 @@
 
 </body>
 </html>
+
 
 
 
