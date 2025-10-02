@@ -145,16 +145,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const navMenu = document.querySelector('.navbar ul');
   
   if (hamburger && navMenu) {
-    hamburger.addEventListener('click', function(e) {
-      e.stopPropagation();
+    hamburger.addEventListener('click', function() {
       navMenu.classList.toggle('show');
     });
   }
-  
-  // Close menu when clicking outside
-  document.addEventListener('click', function() {
-    if (navMenu) {
-      navMenu.classList.remove('show');
-    }
-  });
 });
