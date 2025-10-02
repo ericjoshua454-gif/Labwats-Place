@@ -1946,16 +1946,17 @@
 <script src="tablet-features.js"></script>
 <script src="desktop-features.js"></script>
 <script src="script.js"></script>
-    // Accordion functionality
-    document.querySelectorAll('.accordion-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const accordion = header.parentElement;
-        accordion.classList.toggle('open');
-        header.querySelector("span").textContent =
-          accordion.classList.contains("open") ? "-" : "+";
-      });
+<script>
+  // Accordion functionality
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const accordion = header.parentElement;
+      accordion.classList.toggle('open');
+      header.querySelector("span").textContent =
+        accordion.classList.contains("open") ? "-" : "+";
     });
-  </script>
+  });
+</script>
 
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/2347015059513?text=Hello%20Labwat's%20Kitchen!%20I'd%20like%20to%20order%20some%20food." 
@@ -1965,6 +1966,7 @@
 
 </body>
 </html>
+
 
 
 
