@@ -139,3 +139,22 @@ window.addEventListener('resize', function() {
         reveal(); // Re-check reveal on resize
     }, 250);
 });
+// Mobile Navigation Toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.navbar ul');
+  
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      navMenu.classList.toggle('show');
+    });
+  }
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', function() {
+    if (navMenu) {
+      navMenu.classList.remove('show');
+    }
+  });
+});
