@@ -1,0 +1,152 @@
+/* ==================== TABLET THEME (Warm & Comforting) ==================== */
+:root {
+  --tablet-primary: #45B7D1;
+  --tablet-accent: #96CEB4;
+  --tablet-background: #F7F9FC;
+  --tablet-text: #34495E;
+  --tablet-secondary: #FECA57;
+  --tablet-warm: #FF9A76;
+}
+
+/* Tablet-specific base styles */
+body {
+  background: var(--tablet-background);
+  color: var(--tablet-text);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* Enhanced tablet navigation */
+.navbar {
+  background: linear-gradient(135deg, var(--tablet-primary), var(--tablet-accent));
+  padding: 1.2rem 2rem;
+}
+
+.navbar a {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Tablet-optimized layouts */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  padding: 2.5rem;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--tablet-primary), var(--tablet-warm));
+  color: white;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+}
+
+/* Two-column recipe layout for tablet */
+.recipes-container {
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+.recipe-accordion-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Enhanced typography for tablet */
+.hero h1,
+.hero-recipe h1 {
+  font-size: 3rem;
+  background: linear-gradient(135deg, var(--tablet-primary), var(--tablet-warm));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Tablet form enhancements */
+form {
+  max-width: 700px;
+}
+
+form input,
+form textarea {
+  border: 2px solid var(--tablet-accent);
+  border-radius: 15px;
+  font-size: 17px;
+}
+
+form button {
+  background: linear-gradient(135deg, var(--tablet-primary), var(--tablet-warm));
+  border-radius: 15px;
+  font-size: 1.1rem;
+}
+
+/* Tablet accordion styles */
+.accordion-header {
+  background: linear-gradient(135deg, var(--tablet-primary), var(--tablet-warm));
+  border-radius: 15px 15px 0 0;
+  font-size: 1.3rem;
+}
+
+/* Dish grid for tablet */
+.dish {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+.dish img {
+  width: 100px;
+  height: 80px;
+  border-radius: 10px;
+}
+
+/* Tablet utility classes */
+.mobile-only {
+  display: none;
+}
+
+.tablet-only {
+  display: block;
+}
+
+.desktop-only {
+  display: none;
+}
+
+/* Enhanced footer for tablet */
+footer {
+  padding: 2.5rem;
+  background: linear-gradient(135deg, var(--tablet-primary), var(--tablet-accent));
+}
+
+/* Tablet animation enhancements */
+@keyframes tabletFadeInUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tablet-fade-up {
+  animation: tabletFadeInUp 0.6s ease-out;
+}

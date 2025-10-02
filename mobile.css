@@ -1,0 +1,136 @@
+/* ==================== MOBILE THEME (Bright & Clear) ==================== */
+:root {
+  --mobile-primary: #FF6B6B;
+  --mobile-accent: #4ECDC4;
+  --mobile-background: #FFFFFF;
+  --mobile-text: #2C3E50;
+  --mobile-secondary: #FFE66D;
+  --mobile-success: #1DD1A1;
+}
+
+/* Mobile-specific base styles */
+body {
+  background: var(--mobile-background);
+  color: var(--mobile-text);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Enhanced mobile navigation */
+.navbar {
+  background: linear-gradient(135deg, var(--mobile-primary), var(--mobile-accent));
+  padding: 1rem;
+}
+
+.navbar ul {
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.navbar a {
+  font-size: 1.1rem;
+  padding: 0.8rem;
+  display: block;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(10px);
+}
+
+/* Mobile-optimized hero sections */
+.hero,
+.hero-about,
+.hero-menu,
+.hero-contact,
+.hero-recipe {
+  padding: 4rem 1rem;
+  background-blend-mode: multiply;
+}
+
+.hero h1,
+.hero-recipe h1 {
+  font-size: 2.2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Touch-friendly buttons and elements */
+.highlight,
+form button,
+.accordion-header {
+  min-height: 44px; /* Minimum touch target size */
+  padding: 1.2rem;
+  font-size: 1.1rem;
+}
+
+/* Mobile-optimized highlights */
+.highlights {
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--mobile-primary), var(--mobile-accent));
+  color: white;
+  text-align: center;
+}
+
+/* Improved mobile forms */
+form input,
+form textarea {
+  font-size: 16px; /* Prevents zoom on iOS */
+  padding: 1rem;
+  border: 2px solid var(--mobile-accent);
+}
+
+/* Mobile accordion enhancements */
+.accordion-header {
+  background: linear-gradient(135deg, var(--mobile-primary), var(--mobile-accent));
+  font-size: 1.1rem;
+}
+
+/* Recipe page mobile optimizations */
+.recipes-container {
+  padding: 1rem;
+}
+
+.recipes-container h2 {
+  font-size: 1.8rem;
+  color: var(--mobile-primary);
+}
+
+/* Mobile-specific utility classes */
+.mobile-only {
+  display: block;
+}
+
+.tablet-only,
+.desktop-only {
+  display: none;
+}
+
+/* Swipe-friendly elements */
+.dish img {
+  width: 100px;
+  height: 80px;
+}
+
+/* Enhanced footer for mobile */
+footer {
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* Mobile animation enhancements */
+@keyframes mobileSlideIn {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.mobile-slide {
+  animation: mobileSlideIn 0.5s ease-out;
+}
