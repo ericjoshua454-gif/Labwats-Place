@@ -142,11 +142,22 @@ window.addEventListener('resize', function() {
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
   const hamburger = document.querySelector('.hamburger');
-  const navMenu = document.querySelector('.navbar ul');
+  const navMenu = document.querySelector('.nav-menu');
   
   if (hamburger && navMenu) {
-    hamburger.addEventListener('click', function() {
+    hamburger.addEventListener('click', function(e) {
+      e.stopPropagation();
       navMenu.classList.toggle('show');
     });
   }
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.navbar')) {
+      const navMenu = document.querySelector('.nav-menu');
+      if (navMenu) {
+        navMenu.classList.remove('show');
+      }
+    }
+  });
 });
