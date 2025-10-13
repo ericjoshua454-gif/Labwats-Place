@@ -148,18 +148,7 @@ function initDesktopEnhancements() {
     });
 }
 
-// Desktop utility functions
-function addDesktopUtilities() {
-    // Add desktop control panel
-    const controlPanel = document.createElement('div');
-    controlPanel.className = 'desktop-control-panel';
-    controlPanel.innerHTML = `
-        <div class="panel-header">Quick Controls</div>
-        <button onclick="toggleDarkMode()" class="panel-btn">🌙 Dark Mode</button>
-        <button onclick="increaseFontSize()" class="panel-btn">A+ Font Size</button>
-        <button onclick="decreaseFontSize()" class="panel-btn">A- Font Size</button>
-        <button onclick="exportRecipes()" class="panel-btn">📤 Export</button>
-    `;
+
     
     // Add styles for control panel
     const style = document.createElement('style');
@@ -292,4 +281,5 @@ function loadPreferences() {
 }
 
 // Initialize preferences when desktop features load
+
 document.addEventListener('DOMContentLoaded', loadPreferences);
