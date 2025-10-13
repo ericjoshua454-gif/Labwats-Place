@@ -13,6 +13,36 @@
   <!-- Chart.js (for charts) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = "https://bqwsozssaxegxsdfalnd.supabase.co";
+  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxd3NvenNzYXhlZ3hzZGZhbG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNjE1MzcsImV4cCI6MjA3NTkzNzUzN30._FZbzpsmEDtE7cUT7bWWA21404zVLDy2XM9WjZyLcWE";
+  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  async function checkAdmin() {
+    const { data: { user }, error } = await supabase.auth.getUser();
+
+    if (!user) {
+      // Not logged in → redirect
+      window.location.href = "login.html";
+      return;
+    }
+
+    // Fetch user role from your `users` table
+    const { data, error: fetchError } = await supabase.from('users')
+      .select('role')
+      .eq('id', user.id)
+      .single();
+
+    if (fetchError || data.role !== 'admin') {
+      // Not admin → redirect to dashboard
+      window.location.href = "dashboard.html";
+    }
+  }
+
+  checkAdmin();
+</script>
+
 <body>
   <!-- HEADER -->
   <header class="main-header">
@@ -159,3 +189,4 @@
   </script>
 </body>
 </html>
+
