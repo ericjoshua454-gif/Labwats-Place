@@ -43,65 +43,46 @@
     <p>© 2025 Labwat’s Place. All rights reserved.</p>
   </footer>
 
-  <!-- SHARED SCRIPT -->
-<!-- JavaScript Files -->
-<script src="main.js"></script>
-<script src="mobile-features.js"></script>
-<script src="tablet-features.js"></script>
-<script src="desktop-features.js"></script>
-<script src="script.js"></script>
+  <!-- Supabase Library + Initialization -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = "https://YOUR_PROJECT_URL.supabase.co";
+    const SUPABASE_KEY = "YOUR_ANON_PUBLIC_KEY";
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  </script>
+
   <!-- REGISTER SCRIPT -->
   <script>
-    const form = document.getElementById('loginForm');
-    form.addEventListener('submit', e => {
+    const registerForm = document.getElementById('registerForm');
+
+    registerForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const email = document.getElementById('loginEmail').value;
-      const password = document.getElementById('loginPassword').value;
 
-     <!-- Include Supabase library -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+      const fullName = document.getElementById('registerName').value;
+      const email = document.getElementById('registerEmail').value;
+      const password = document.getElementById('registerPassword').value;
 
-<!-- Include Supabase library -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+      try {
+        // Create a new user and store metadata
+        const { data, error } = await supabase.auth.signUp({
+          email,
+          password,
+          options: {
+            data: { full_name: fullName, role: "user" } // default role = user
+          }
+        });
 
-<script>
-  // ✅ Step 1: Add your Supabase credentials here
-  const SUPABASE_URL = "https://bqwsozssaxegxsdfalnd.supabase.co";
-  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxd3NvenNzYXhlZ3hzZGZhbG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNjE1MzcsImV4cCI6MjA3NTkzNzUzN30._FZbzpsmEDtE7cUT7bWWA21404zVLDy2XM9WjZyLcWE";
-  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-  // ✅ Step 2: Handle the register form
-  document.getElementById('registerForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const fullName = document.getElementById('registerName').value;
-    const email = document.getElementById('registerEmail').value;
-    const password = document.getElementById('registerPassword').value;
-
-    try {
-      // Create a new Supabase user (email + password)
-      const { data, error } = await supabase.auth.signUp({
-        email: email,
-        password: password,
-        options: {
-          data: { full_name: fullName } // store full name as metadata
+        if (error) {
+          alert("❌ Signup failed: " + error.message);
+        } else {
+          alert("✅ Account created! Please verify your email before logging in.");
+          window.location.href = "login.html";
         }
-      });
-
-      if (error) {
-        alert("Signup failed: " + error.message);
-      } else {
-        alert("✅ Account created successfully! Please verify your email before logging in.");
-        window.location.href = "login.html"; // redirect after signup
+      } catch (err) {
+        console.error("Unexpected error:", err);
+        alert("An unexpected error occurred. Please try again.");
       }
-    } catch (err) {
-      console.error("Unexpected error:", err);
-    }
-  });
-</script>
-
-
+    });
+  </script>
 </body>
 </html>
-
-
