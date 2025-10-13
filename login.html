@@ -40,57 +40,43 @@
     <p>© 2025 Labwat’s Place. All rights reserved.</p>
   </footer>
 
-  <!-- SHARED SCRIPT -->
-<!-- JavaScript Files -->
-<script src="main.js"></script>
-<script src="mobile-features.js"></script>
-<script src="tablet-features.js"></script>
-<script src="desktop-features.js"></script>
-<script src="script.js"></script>
+  <!-- Supabase Library + Initialization -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = "https://bqwsozssaxegxsdfalnd.supabase.co";
+    const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxd3NvenNzYXhlZ3hzZGZhbG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNjE1MzcsImV4cCI6MjA3NTkzNzUzN30._FZbzpsmEDtE7cUT7bWWA21404zVLDy2XM9WjZyLcWE";
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  </script>
+
   <!-- LOGIN SCRIPT -->
   <script>
-    const form = document.getElementById('loginForm');
-    form.addEventListener('submit', e => {
+    const loginForm = document.getElementById('loginForm');
+
+    loginForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+
       const email = document.getElementById('loginEmail').value;
       const password = document.getElementById('loginPassword').value;
 
-  <!-- Include Supabase library -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+      const { data, error } = await supabase.auth.signInWithPassword({ email, password });
 
-<script>
-  // ✅ Step 1: Your Supabase credentials
-  const SUPABASE_URL = "https://bqwsozssaxegxsdfalnd.supabase.co";
-  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxd3NvenNzYXhlZ3hzZGZhbG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNjE1MzcsImV4cCI6MjA3NTkzNzUzN30._FZbzpsmEDtE7cUT7bWWA21404zVLDy2XM9WjZyLcWE";
-  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+      if (error) {
+        alert("❌ Login failed: " + error.message);
+      } else {
+        // Example: redirect to dashboard for normal users, admin.html for admins
+        const { data: userData } = await supabase.from('users')
+          .select('role')
+          .eq('id', data.user.id)
+          .single();
 
-  // ✅ Step 2: Handle login
-  document.getElementById('loginForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
-
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email: email,
-      password: password
+        if (userData && userData.role === "admin") {
+          window.location.href = "admin.html";
+        } else {
+          window.location.href = "dashboard.html";
+        }
+      }
     });
-
-    if (error) {
-      alert("❌ Login failed: " + error.message);
-    } else {
-      alert("✅ Login successful!");
-      // Redirect based on user role later (for now, go to dashboard)
-      window.location.href = "index.html";
-    }
-  });
-</script>
-
-
-    
   </script>
+
 </body>
 </html>
-
-
-
