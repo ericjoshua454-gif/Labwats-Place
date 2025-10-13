@@ -214,62 +214,8 @@ function initDesktopEnhancements() {
     document.head.appendChild(style);
     document.body.appendChild(controlPanel);
 }
-
-// Desktop utility functions
-function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
     
-    if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
-    }
-}
 
-function increaseFontSize() {
-    const currentSize = parseFloat(getComputedStyle(document.body).fontSize);
-    document.body.style.fontSize = (currentSize + 2) + 'px';
-    localStorage.setItem('fontSize', document.body.style.fontSize);
-}
-
-function decreaseFontSize() {
-    const currentSize = parseFloat(getComputedStyle(document.body).fontSize);
-    if (currentSize > 14) {
-        document.body.style.fontSize = (currentSize - 2) + 'px';
-        localStorage.setItem('fontSize', document.body.style.fontSize);
-    }
-}
-
-function exportRecipes() {
-    const recipes = document.querySelectorAll('.recipe-accordion');
-    let exportData = "Labwat's Kitchen Recipes\\n\\n";
-    
-    recipes.forEach((recipe, index) => {
-        const title = recipe.querySelector('.recipe-accordion-header').textContent.replace('+', '').replace('-', '').trim();
-        const ingredients = recipe.querySelectorAll('ul li');
-        const instructions = recipe.querySelectorAll('ol li');
-        
-        exportData += `${index + 1}. ${title}\\n`;
-        exportData += "Ingredients:\\n";
-        ingredients.forEach(ing => {
-            exportData += `  - ${ing.textContent}\\n`;
-        });
-        exportData += "Instructions:\\n";
-        instructions.forEach((inst, i) => {
-            exportData += `  ${i + 1}. ${inst.textContent}\\n`;
-        });
-        exportData += "\\n";
-    });
-    
-    // Create download link
-    const blob = new Blob([exportData], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'labwat-recipes.txt';
-    a.click();
-    URL.revokeObjectURL(url);
-}
 
 // Load saved preferences
 function loadPreferences() {
@@ -283,3 +229,4 @@ function loadPreferences() {
 // Initialize preferences when desktop features load
 
 document.addEventListener('DOMContentLoaded', loadPreferences);
+
