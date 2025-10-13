@@ -19,6 +19,27 @@
       <a href="#" id="logoutBtn">Logout</a>
     </nav>
   </header>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = "https://YOUR_PROJECT_URL.supabase.co";
+  const SUPABASE_KEY = "YOUR_ANON_PUBLIC_KEY";
+  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  // Check if user is logged in
+  async function checkUser() {
+    const { data: { user }, error } = await supabase.auth.getUser();
+
+    if (!user) {
+      // Not logged in → redirect to login page
+      window.location.href = "login.html";
+    } else {
+      console.log("Logged-in user:", user.email);
+      // You can display their info here if needed
+    }
+  }
+
+  checkUser();
+</script>
 
   <!-- DASHBOARD MAIN -->
   <main class="user-dashboard container">
@@ -109,3 +130,4 @@
   </script>
 </body>
 </html>
+
