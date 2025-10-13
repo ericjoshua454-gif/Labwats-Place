@@ -52,18 +52,36 @@
 <script src="script.js"></script>
   <!-- REGISTER SCRIPT -->
   <script>
-    const regForm = document.getElementById('registerForm');
-    regForm.addEventListener('submit', e => {
+    const form = document.getElementById('loginForm');
+    form.addEventListener('submit', e => {
       e.preventDefault();
-      const name = document.getElementById('registerName').value;
-      const email = document.getElementById('registerEmail').value;
-      const password = document.getElementById('registerPassword').value;
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
 
-      // Temporary registration (replace with Firebase)
-      localStorage.setItem("user", JSON.stringify({ name, email }));
-      alert("Registration successful!");
-      window.location.href = "login.html";
-    });
-  </script>
+     <!-- Include Supabase library -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+  // ✅ Replace these with your actual details
+  const SUPABASE_URL = https://bqwsozssaxegxsdfalnd.supabase.co
+  const SUPABASE_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxd3NvenNzYXhlZ3hzZGZhbG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNjE1MzcsImV4cCI6MjA3NTkzNzUzN30._FZbzpsmEDtE7cUT7bWWA21404zVLDy2XM9WjZyLcWE
+
+  // ✅ Initialize connection
+  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  // ✅ Quick test to make sure it’s connected
+  async function testConnection() {
+    const { data, error } = await supabase.from('orders').select('*');
+    if (error) {
+      console.error("Connection failed:", error);
+    } else {
+      console.log("Connection successful:", data);
+    }
+  }
+
+  testConnection();
+</script>
+
 </body>
 </html>
+
