@@ -148,7 +148,18 @@ function initDesktopEnhancements() {
     });
 }
 
-
+// Desktop utility functions
+function addDesktopUtilities() {
+    // Add desktop control panel
+    const controlPanel = document.createElement('div');
+    controlPanel.className = 'desktop-control-panel';
+    controlPanel.innerHTML = `
+        <div class="panel-header">Quick Controls</div>
+        <button onclick="toggleDarkMode()" class="panel-btn">🌙 Dark Mode</button>
+        <button onclick="increaseFontSize()" class="panel-btn">A+ Font Size</button>
+        <button onclick="decreaseFontSize()" class="panel-btn">A- Font Size</button>
+        <button onclick="exportRecipes()" class="panel-btn">📤 Export</button>
+    `;
     
     // Add styles for control panel
     const style = document.createElement('style');
@@ -214,8 +225,97 @@ function initDesktopEnhancements() {
     document.head.appendChild(style);
     document.body.appendChild(controlPanel);
 }
-    
+// Make buttons draggable (safe version)
+    const buttons = document.querySelectorAll('.quick-btn');
+    buttons.forEach(btn => {
+        let offsetX, offsetY, isDragging = false;
 
+        btn.addEventListener('touchstart', e => {
+            isDragging = true;
+            const touch = e.touches[0];
+            offsetX = touch.clientX - btn.getBoundingClientRect().left;
+            offsetY = touch.clientY - btn.getBoundingClientRect().top;
+            btn.style.transition = 'none';
+        });
+
+        btn.addEventListener('touchmove', e => {
+            if (!isDragging) return;
+            const touch = e.touches[0];
+            const x = touch.clientX - offsetX;
+            const y = touch.clientY - offsetY;
+            btn.style.position = 'fixed';
+            btn.style.left = `${x}px`;
+            btn.style.top = `${y}px`;
+        });
+
+        btn.addEventListener('touchend', () => {
+            isDragging = false;
+            btn.style.transition = '';
+        });
+    });
+
+    // Button actions
+    document.querySelector('.scroll-top').onclick = scrollToTop;
+    document.querySelector('.shopping-list').onclick = generateMobileShoppingList;
+    document.querySelector('.help-btn').onclick = () => {
+        window.open('https://wa.me/234XXXXXXXXXX?text=Hello%20Labwats%20Place!', '_blank');
+    };
+}
+// Desktop utility functions
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+function increaseFontSize() {
+    const currentSize = parseFloat(getComputedStyle(document.body).fontSize);
+    document.body.style.fontSize = (currentSize + 2) + 'px';
+    localStorage.setItem('fontSize', document.body.style.fontSize);
+}
+
+function decreaseFontSize() {
+    const currentSize = parseFloat(getComputedStyle(document.body).fontSize);
+    if (currentSize > 14) {
+        document.body.style.fontSize = (currentSize - 2) + 'px';
+        localStorage.setItem('fontSize', document.body.style.fontSize);
+    }
+}
+
+function exportRecipes() {
+    const recipes = document.querySelectorAll('.recipe-accordion');
+    let exportData = "Labwat's Kitchen Recipes\\n\\n";
+    
+    recipes.forEach((recipe, index) => {
+        const title = recipe.querySelector('.recipe-accordion-header').textContent.replace('+', '').replace('-', '').trim();
+        const ingredients = recipe.querySelectorAll('ul li');
+        const instructions = recipe.querySelectorAll('ol li');
+        
+        exportData += `${index + 1}. ${title}\\n`;
+        exportData += "Ingredients:\\n";
+        ingredients.forEach(ing => {
+            exportData += `  - ${ing.textContent}\\n`;
+        });
+        exportData += "Instructions:\\n";
+        instructions.forEach((inst, i) => {
+            exportData += `  ${i + 1}. ${inst.textContent}\\n`;
+        });
+        exportData += "\\n";
+    });
+    
+    // Create download link
+    const blob = new Blob([exportData], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'labwat-recipes.txt';
+    a.click();
+    URL.revokeObjectURL(url);
+}
 
 // Load saved preferences
 function loadPreferences() {
@@ -227,6 +327,4 @@ function loadPreferences() {
 }
 
 // Initialize preferences when desktop features load
-
 document.addEventListener('DOMContentLoaded', loadPreferences);
-
