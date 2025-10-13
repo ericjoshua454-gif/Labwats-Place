@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Labwat’s Place</title>
+
+  <!-- Responsive Stylesheets -->
+  <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 1025px)">
+  <link rel="stylesheet" href="tablet.css" media="screen and (min-width: 768px) and (max-width: 1024px)">
+  <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 767px)">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="main-header">
+    <h2 class="logo">Labwat’s Place</h2>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+    </nav>
+  </header>
+
+  <!-- LOGIN FORM -->
+  <main class="auth-container container">
+    <h1>Login</h1>
+    <form id="loginForm" class="auth-form">
+      <label>Email</label>
+      <input type="email" id="loginEmail" placeholder="Enter your email" required>
+
+      <label>Password</label>
+      <input type="password" id="loginPassword" placeholder="Enter your password" required>
+
+      <button type="submit" class="btn-primary">Login</button>
+      <p>Don't have an account? <a href="register.html">Register here</a></p>
+    </form>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Labwat’s Place. All rights reserved.</p>
+  </footer>
+
+  <!-- SHARED SCRIPT -->
+<!-- JavaScript Files -->
+<script src="main.js"></script>
+<script src="mobile-features.js"></script>
+<script src="tablet-features.js"></script>
+<script src="desktop-features.js"></script>
+<script src="script.js"></script>
+  <!-- LOGIN SCRIPT -->
+  <script>
+    const form = document.getElementById('loginForm');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      // Temporary login simulation (replace with Firebase)
+      if (email === "admin@labwats.com" && password === "12345") {
+        alert("Admin login successful!");
+        window.location.href = "admin.html";
+      } else {
+        alert("Login successful!");
+        window.location.href = "dashboard.html";
+      }
+    });
+  </script>
+</body>
+</html>

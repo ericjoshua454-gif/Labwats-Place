@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Labwat’s Place</title>
+
+  <!-- Responsive Stylesheets -->
+  <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 1025px)">
+  <link rel="stylesheet" href="tablet.css" media="screen and (min-width: 768px) and (max-width: 1024px)">
+  <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 767px)">
+
+  <!-- Chart.js (for charts) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="main-header">
+    <h2 class="logo">Labwat’s Admin</h2>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="#" id="logoutBtn">Logout</a>
+    </nav>
+  </header>
+
+  <!-- DASHBOARD MAIN -->
+  <main class="admin-dashboard container">
+    <h1>Admin Dashboard</h1>
+
+    <!-- SUMMARY CARDS -->
+    <section class="summary-cards">
+      <div class="card">
+        <h3>Total Orders</h3>
+        <p id="totalOrders">0</p>
+      </div>
+      <div class="card">
+        <h3>Total Revenue</h3>
+        <p id="totalRevenue">$0</p>
+      </div>
+      <div class="card">
+        <h3>Total Customers</h3>
+        <p id="totalCustomers">0</p>
+      </div>
+    </section>
+
+    <!-- CHARTS -->
+    <section class="charts">
+      <div class="chart-container">
+        <h3>Orders Over Time</h3>
+        <canvas id="ordersChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <h3>Revenue Overview</h3>
+        <canvas id="revenueChart"></canvas>
+      </div>
+    </section>
+
+    <!-- ORDERS TABLE -->
+    <section class="orders-section">
+      <h2>Customer Orders</h2>
+      <table class="orders-table">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Item</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="ordersBody">
+          <!-- Example static data (will later be replaced with Firebase data) -->
+          <tr>
+            <td>#001</td>
+            <td>John Doe</td>
+            <td>Grilled Chicken</td>
+            <td>$15</td>
+            <td><span class="status pending">Pending</span></td>
+            <td>
+              <button class="btn-approve">Mark Delivered</button>
+              <button class="btn-delete">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>#002</td>
+            <td>Jane Smith</td>
+            <td>Jollof Rice</td>
+            <td>$10</td>
+            <td><span class="status delivered">Delivered</span></td>
+            <td>
+              <button class="btn-delete">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Labwat’s Place. All rights reserved.</p>
+  </footer>
+
+  <!-- SHARED SCRIPT -->
+<!-- JavaScript Files -->
+<script src="main.js"></script>
+<script src="mobile-features.js"></script>
+<script src="tablet-features.js"></script>
+<script src="desktop-features.js"></script>
+<script src="script.js"></script>
+  <!-- DASHBOARD JS -->
+  <script>
+    // Sample static data (replace with Firebase later)
+    const orders = [
+      { id: '001', customer: 'John Doe', item: 'Grilled Chicken', amount: 15, status: 'Pending' },
+      { id: '002', customer: 'Jane Smith', item: 'Jollof Rice', amount: 10, status: 'Delivered' },
+      { id: '003', customer: 'Mike Adams', item: 'Beef Suya', amount: 12, status: 'Pending' }
+    ];
+
+    // Update summary cards
+    const totalOrders = orders.length;
+    const totalRevenue = orders.reduce((sum, o) => sum + o.amount, 0);
+    const totalCustomers = new Set(orders.map(o => o.customer)).size;
+
+    document.getElementById('totalOrders').textContent = totalOrders;
+    document.getElementById('totalRevenue').textContent = '$' + totalRevenue;
+    document.getElementById('totalCustomers').textContent = totalCustomers;
+
+    // Chart.js example charts
+    const ctx1 = document.getElementById('ordersChart');
+    const ctx2 = document.getElementById('revenueChart');
+    new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+        datasets: [{ label: 'Orders', data: [2, 5, 3, 6, 4] }]
+      },
+    });
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+        datasets: [{ label: 'Revenue ($)', data: [20, 50, 30, 60, 40] }]
+      },
+    });
+
+    // Interactivity for "Mark Delivered" and "Delete"
+    document.querySelectorAll('.btn-approve').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.target.closest('tr').querySelector('.status').textContent = 'Delivered';
+        e.target.closest('tr').querySelector('.status').className = 'status delivered';
+        e.target.remove(); // remove "Mark Delivered" button
+      });
+    });
+    document.querySelectorAll('.btn-delete').forEach(btn => {
+      btn.addEventListener('click', e => e.target.closest('tr').remove());
+    });
+  </script>
+</body>
+</html>

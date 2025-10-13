@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dashboard | Labwat’s Place</title>
+
+  <!-- Responsive Stylesheets -->
+  <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 1025px)">
+  <link rel="stylesheet" href="tablet.css" media="screen and (min-width: 768px) and (max-width: 1024px)">
+  <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 767px)">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="main-header">
+    <h2 class="logo">Labwat’s Place</h2>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="#" id="logoutBtn">Logout</a>
+    </nav>
+  </header>
+
+  <!-- DASHBOARD MAIN -->
+  <main class="user-dashboard container">
+    <h1>Welcome, <span id="userName">Customer</span> 👋</h1>
+
+    <!-- SUMMARY CARDS -->
+    <section class="summary-cards">
+      <div class="card">
+        <h3>Total Orders</h3>
+        <p id="userTotalOrders">0</p>
+      </div>
+      <div class="card">
+        <h3>Delivered</h3>
+        <p id="userDelivered">0</p>
+      </div>
+      <div class="card">
+        <h3>Pending</h3>
+        <p id="userPending">0</p>
+      </div>
+    </section>
+
+    <!-- USER ORDER HISTORY -->
+    <section class="orders-section">
+      <h2>My Orders</h2>
+      <table class="orders-table">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Item</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="userOrdersBody">
+          <!-- Orders will be loaded here -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Labwat’s Place. All rights reserved.</p>
+  </footer>
+
+  <!-- SHARED SCRIPT -->
+<!-- JavaScript Files -->
+<script src="main.js"></script>
+<script src="mobile-features.js"></script>
+<script src="tablet-features.js"></script>
+<script src="desktop-features.js"></script>
+<script src="script.js"></script>
+  <!-- DASHBOARD SCRIPT -->
+  <script>
+    // Simulated example orders (to be replaced with Firebase data)
+    const userOrders = [
+      { id: 'A101', item: 'Fried Rice', amount: 12, status: 'Delivered', date: 'Oct 12, 2025' },
+      { id: 'A102', item: 'Beef Suya', amount: 8, status: 'Pending', date: 'Oct 13, 2025' },
+      { id: 'A103', item: 'Grilled Chicken', amount: 15, status: 'Delivered', date: 'Oct 10, 2025' }
+    ];
+
+    // Update summary info
+    const totalOrders = userOrders.length;
+    const delivered = userOrders.filter(o => o.status === 'Delivered').length;
+    const pending = userOrders.filter(o => o.status === 'Pending').length;
+
+    document.getElementById('userTotalOrders').textContent = totalOrders;
+    document.getElementById('userDelivered').textContent = delivered;
+    document.getElementById('userPending').textContent = pending;
+
+    // Display orders in table
+    const tableBody = document.getElementById('userOrdersBody');
+    userOrders.forEach(order => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${order.id}</td>
+        <td>${order.item}</td>
+        <td>$${order.amount}</td>
+        <td><span class="status ${order.status.toLowerCase()}">${order.status}</span></td>
+        <td>${order.date}</td>
+      `;
+      tableBody.appendChild(row);
+    });
+
+    // Simulate logged-in user (for now)
+    document.getElementById('userName').textContent = 'John Doe';
+  </script>
+</body>
+</html>
