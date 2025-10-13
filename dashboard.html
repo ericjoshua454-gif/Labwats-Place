@@ -11,18 +11,10 @@
   <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 767px)">
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="main-header">
-    <h2 class="logo">Labwat’s Place</h2>
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="#" id="logoutBtn">Logout</a>
-    </nav>
-  </header>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  const SUPABASE_URL = "https://YOUR_PROJECT_URL.supabase.co";
-  const SUPABASE_KEY = "YOUR_ANON_PUBLIC_KEY";
+  const SUPABASE_URL = "https://bqwsozssaxegxsdfalnd.supabase.co";
+  const SUPABASE_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxd3NvenNzYXhlZ3hzZGZhbG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNjE1MzcsImV4cCI6MjA3NTkzNzUzN30._FZbzpsmEDtE7cUT7bWWA21404zVLDy2XM9WjZyLcWE";
   const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
   // Check if user is logged in
@@ -40,6 +32,15 @@
 
   checkUser();
 </script>
+  <!-- HEADER -->
+  <header class="main-header">
+    <h2 class="logo">Labwat’s Place</h2>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="#" id="logoutBtn">Logout</a>
+    </nav>
+  </header>
+
 
   <!-- DASHBOARD MAIN -->
   <main class="user-dashboard container">
@@ -130,4 +131,5 @@
   </script>
 </body>
 </html>
+
 
