@@ -17,6 +17,13 @@
 <link rel="stylesheet" href="desktop.css" media="(min-width: 1025px)">
   <!-- ✅ Google Site Verification -->
   <meta name="google-site-verification" content="ZQTvv58vglNkkwMkYtJnigGQtTbQf7dOv96kF0Q8pW8" />
+<!-- Supabase Library + Project Initialization -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = "https://bqwsozssaxegxsdfalnd.supabase.co" // replace with your Supabase URL
+  const SUPABASE_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxd3NvenNzYXhlZ3hzZGZhbG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNjE1MzcsImV4cCI6MjA3NTkzNzUzN30._FZbzpsmEDtE7cUT7bWWA21404zVLDy2XM9WjZyLcWE"; // replace with your anon key
+  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+</script>
 
   <!-- Open Graph (for social media preview) -->
   <meta property="og:title" content="Labwat's Kitchen | Nigerian Cuisine & Catering">
@@ -240,3 +247,4 @@
   </a>
 </body>
 </html>
+
