@@ -61,27 +61,47 @@
      <!-- Include Supabase library -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<script>
-  // ✅ Replace these with your actual details
-  const SUPABASE_URL = https://bqwsozssaxegxsdfalnd.supabase.co
-  const SUPABASE_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxd3NvenNzYXhlZ3hzZGZhbG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNjE1MzcsImV4cCI6MjA3NTkzNzUzN30._FZbzpsmEDtE7cUT7bWWA21404zVLDy2XM9WjZyLcWE
+<!-- Include Supabase library -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-  // ✅ Initialize connection
+<script>
+  // ✅ Step 1: Add your Supabase credentials here
+  const SUPABASE_URL = "https://bqwsozssaxegxsdfalnd.supabase.co";
+  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxd3NvenNzYXhlZ3hzZGZhbG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNjE1MzcsImV4cCI6MjA3NTkzNzUzN30._FZbzpsmEDtE7cUT7bWWA21404zVLDy2XM9WjZyLcWE";
   const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-  // ✅ Quick test to make sure it’s connected
-  async function testConnection() {
-    const { data, error } = await supabase.from('orders').select('*');
-    if (error) {
-      console.error("Connection failed:", error);
-    } else {
-      console.log("Connection successful:", data);
-    }
-  }
+  // ✅ Step 2: Handle the register form
+  document.getElementById('registerForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-  testConnection();
+    const fullName = document.getElementById('registerName').value;
+    const email = document.getElementById('registerEmail').value;
+    const password = document.getElementById('registerPassword').value;
+
+    try {
+      // Create a new Supabase user (email + password)
+      const { data, error } = await supabase.auth.signUp({
+        email: email,
+        password: password,
+        options: {
+          data: { full_name: fullName } // store full name as metadata
+        }
+      });
+
+      if (error) {
+        alert("Signup failed: " + error.message);
+      } else {
+        alert("✅ Account created successfully! Please verify your email before logging in.");
+        window.location.href = "login.html"; // redirect after signup
+      }
+    } catch (err) {
+      console.error("Unexpected error:", err);
+    }
+  });
 </script>
+
 
 </body>
 </html>
+
 
