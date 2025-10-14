@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="tablet.css" media="screen and (min-width: 768px) and (max-width: 1024px)">
   <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 767px)">
 
-  <!-- Chart.js (for charts) -->
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -70,31 +70,9 @@
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody id="ordersBody">
-          <!-- Static example data (will later be replaced with Supabase data) -->
-          <tr>
-            <td>#001</td>
-            <td>John Doe</td>
-            <td>Grilled Chicken</td>
-            <td>$15</td>
-            <td><span class="status pending">Pending</span></td>
-            <td>
-              <button class="btn-approve">Mark Delivered</button>
-              <button class="btn-delete">Delete</button>
-            </td>
-          </tr>
-          <tr>
-            <td>#002</td>
-            <td>Jane Smith</td>
-            <td>Jollof Rice</td>
-            <td>$10</td>
-            <td><span class="status delivered">Delivered</span></td>
-            <td>
-              <button class="btn-delete">Delete</button>
-            </td>
-          </tr>
-        </tbody>
+        <tbody id="ordersBody"></tbody>
       </table>
+      <p id="refreshNotice" style="font-size:0.9em;color:#555;">Last updated: <span id="lastUpdated">-</span></p>
     </section>
   </main>
 
@@ -103,30 +81,22 @@
     <p>© 2025 Labwat’s Place. All rights reserved.</p>
   </footer>
 
-  <!-- SUPABASE & DASHBOARD LOGIC -->
+  <!-- SUPABASE INITIALIZATION -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-    const SUPABASE_URL = "https://bqwsozssaxegxsdfalnd.supabase.co"; // your project URL
-    const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxd3NvenNzYXhlZ3hzZGZhbG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNjE1MzcsImV4cCI6MjA3NTkzNzUzN30._FZbzpsmEDtE7cUT7bWWA21404zVLDy2XM9WjZyLcWE"; // your anon/public key
-
+    const SUPABASE_URL = "hxxxxxx"; // your project URL
+    const SUPABASE_KEY = "xxxxxxxxE"; // your anon/public key
     const { createClient } = supabase;
     window.supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
     async function checkAdmin() {
-      const { data: { user }, error } = await window.supabase.auth.getUser();
+      const { data: { user } } = await window.supabase.auth.getUser();
+      if (!user) return window.location.href = "login.html";
 
-      if (!user) {
-        window.location.href = "login.html";
-        return;
-      }
+      const { data, error } = await window.supabase.from('users')
+        .select('role').eq('id', user.id).single();
 
-      const { data, error: fetchError } = await window.supabase
-        .from('users')
-        .select('role')
-        .eq('id', user.id)
-        .single();
-
-      if (fetchError || !data || data.role !== 'admin') {
+      if (error || !data || data.role !== 'admin') {
         window.location.href = "dashboard.html";
       }
     }
@@ -141,51 +111,100 @@
   <script src="desktop-features.js"></script>
   <script src="script.js"></script>
 
-  <!-- DASHBOARD JS -->
+  <!-- DASHBOARD SCRIPT WITH AUTO-REFRESH AND CHARTS -->
   <script>
-    const orders = [
-      { id: '001', customer: 'John Doe', item: 'Grilled Chicken', amount: 15, status: 'Pending' },
-      { id: '002', customer: 'Jane Smith', item: 'Jollof Rice', amount: 10, status: 'Delivered' },
-      { id: '003', customer: 'Mike Adams', item: 'Beef Suya', amount: 12, status: 'Pending' }
-    ];
+    let ordersChartInstance, revenueChartInstance;
 
-    const totalOrders = orders.length;
-    const totalRevenue = orders.reduce((sum, o) => sum + o.amount, 0);
-    const totalCustomers = new Set(orders.map(o => o.customer)).size;
+    async function loadAdminDashboard() {
+      try {
+        const { data: orders, error } = await supabase.from('orders').select('*');
 
-    document.getElementById('totalOrders').textContent = totalOrders;
-    document.getElementById('totalRevenue').textContent = '$' + totalRevenue;
-    document.getElementById('totalCustomers').textContent = totalCustomers;
+        if (error) return console.error("❌ Error fetching orders:", error);
 
-    const ctx1 = document.getElementById('ordersChart');
-    const ctx2 = document.getElementById('revenueChart');
+        // Summary cards
+        const totalOrders = orders.length;
+        const totalRevenue = orders.reduce((sum, o) => sum + (o.amount || 0), 0);
+        const totalCustomers = new Set(orders.map(o => o.customer_name)).size;
 
-    new Chart(ctx1, {
-      type: 'line',
-      data: {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-        datasets: [{ label: 'Orders', data: [2, 5, 3, 6, 4] }]
-      },
-    });
+        document.getElementById('totalOrders').textContent = totalOrders;
+        document.getElementById('totalRevenue').textContent = '₦' + totalRevenue;
+        document.getElementById('totalCustomers').textContent = totalCustomers;
 
-    new Chart(ctx2, {
-      type: 'bar',
-      data: {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-        datasets: [{ label: 'Revenue ($)', data: [20, 50, 30, 60, 40] }]
-      },
-    });
+        // Orders table
+        const ordersBody = document.getElementById('ordersBody');
+        ordersBody.innerHTML = '';
+        orders.forEach(order => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${order.id}</td>
+            <td>${order.customer_name || 'Unknown'}</td>
+            <td>${order.item}</td>
+            <td>₦${order.amount}</td>
+            <td><span class="status ${order.status.toLowerCase()}">${order.status}</span></td>
+            <td>
+              ${order.status.toLowerCase() === 'pending' ? `<button class="btn-approve">Mark Delivered</button>` : ''}
+              <button class="btn-delete">Delete</button>
+            </td>
+          `;
+          ordersBody.appendChild(row);
+        });
 
-    document.querySelectorAll('.btn-approve').forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.target.closest('tr').querySelector('.status').textContent = 'Delivered';
-        e.target.closest('tr').querySelector('.status').className = 'status delivered';
-        e.target.remove();
-      });
-    });
+        // Interactivity
+        document.querySelectorAll('.btn-approve').forEach(btn => {
+          btn.addEventListener('click', async e => {
+            const row = e.target.closest('tr');
+            const orderId = row.children[0].textContent;
+            await supabase.from('orders').update({ status: 'Delivered' }).eq('id', orderId);
+            loadAdminDashboard();
+          });
+        });
 
-    document.querySelectorAll('.btn-delete').forEach(btn => {
-      btn.addEventListener('click', e => e.target.closest('tr').remove());
+        document.querySelectorAll('.btn-delete').forEach(btn => {
+          btn.addEventListener('click', async e => {
+            const row = e.target.closest('tr');
+            const orderId = row.children[0].textContent;
+            await supabase.from('orders').delete().eq('id', orderId);
+            loadAdminDashboard();
+          });
+        });
+
+        // Update last refreshed time
+        document.getElementById('lastUpdated').textContent = new Date().toLocaleTimeString();
+
+        // Prepare chart data
+        const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+        const ordersPerDay = days.map(day => orders.filter(o => new Date(o.date).toLocaleDateString('en-US', { weekday: 'short' }) === day).length);
+        const revenuePerDay = days.map(day => orders
+          .filter(o => new Date(o.date).toLocaleDateString('en-US', { weekday: 'short' }) === day)
+          .reduce((sum, o) => sum + (o.amount || 0), 0));
+
+        // Orders Chart
+        if (ordersChartInstance) ordersChartInstance.destroy();
+        const ctx1 = document.getElementById('ordersChart').getContext('2d');
+        ordersChartInstance = new Chart(ctx1, {
+          type: 'line',
+          data: { labels: days, datasets: [{ label: 'Orders', data: ordersPerDay, backgroundColor: 'rgba(54, 162, 235, 0.2)', borderColor: 'rgba(54, 162, 235,1)', borderWidth: 2 }] },
+        });
+
+        // Revenue Chart
+        if (revenueChartInstance) revenueChartInstance.destroy();
+        const ctx2 = document.getElementById('revenueChart').getContext('2d');
+        revenueChartInstance = new Chart(ctx2, {
+          type: 'bar',
+          data: { labels: days, datasets: [{ label: 'Revenue (₦)', data: revenuePerDay, backgroundColor: 'rgba(75, 192, 192, 0.5)', borderColor: 'rgba(75, 192, 192, 1)', borderWidth: 1 }] },
+        });
+
+      } catch (err) {
+        console.error("Unexpected error:", err);
+      }
+    }
+
+    loadAdminDashboard();
+    setInterval(loadAdminDashboard, 10000); // Refresh every 10 seconds
+
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
+      await supabase.auth.signOut();
+      window.location.href = 'login.html';
     });
   </script>
 </body>
