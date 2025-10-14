@@ -25,11 +25,10 @@
     }
     .order-btn.whatsapp {
       background: #25D366;
-      color: #b61414;
+      color: white;
     }
     .order-btn.whatsapp:hover {
       background: #1ebd5b;
-      color: white;
     }
 
     /* Floating WhatsApp */
@@ -62,7 +61,7 @@
     <ul class="nav-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="menu.html">Menu</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
       <li><a href="recipe.html">Recipes</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -80,7 +79,7 @@
       <h2>Explore Our Dishes</h2>
       <div class="accordion">
 
-        <!-- Specials -->
+        <!-- ⭐ Specials -->
         <div class="accordion-item">
           <button class="accordion-header">⭐ Specials <span class="icon">+</span></button>
           <div class="accordion-body">
@@ -107,7 +106,7 @@
           </div>
         </div>
 
-        <!-- Appetizers -->
+        <!-- 🥗 Appetizers -->
         <div class="accordion-item">
           <button class="accordion-header">🥗 Appetizers <span class="icon">+</span></button>
           <div class="accordion-body">
@@ -129,7 +128,7 @@
           </div>
         </div>
 
-        <!-- Main Courses -->
+        <!-- 🍲 Main Courses -->
         <div class="accordion-item">
           <button class="accordion-header">🍲 Main Courses <span class="icon">+</span></button>
           <div class="accordion-body">
@@ -161,7 +160,7 @@
           </div>
         </div>
 
-        <!-- Kiddies Menu -->
+        <!-- 👶 Kiddies Menu -->
         <div class="accordion-item">
           <button class="accordion-header">👶 Kiddies Menu <span class="icon">+</span></button>
           <div class="accordion-body">
@@ -188,7 +187,7 @@
           </div>
         </div>
 
-        <!-- Desserts -->
+        <!-- 🍰 Desserts -->
         <div class="accordion-item">
           <button class="accordion-header">🍰 Desserts <span class="icon">+</span></button>
           <div class="accordion-body">
@@ -210,7 +209,7 @@
           </div>
         </div>
 
-        <!-- Drinks -->
+        <!-- 🍷 Drinks -->
         <div class="accordion-item">
           <button class="accordion-header">🍷 Wines & Drinks <span class="icon">+</span></button>
           <div class="accordion-body">
@@ -257,37 +256,45 @@
   <script src="desktop-features.js"></script>
   <script src="script.js"></script>
 
-  <!-- Supabase -->
+  <!-- ✅ Supabase Integration -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
     const SUPABASE_URL = "https://bqwsozssaxegxsdfalnd.supabase.co";
-    const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxd3NvenNzYXhlZ3hzZGZhbG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNjE1MzcsImV4cCI6MjA3NTkzNzUzN30._FZbzpsmEDtE7cUT7bWWA21404zVLDy2XM9WjZyLcWE";
-    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxd3NvenNzYXhlZ3hzZGZhbG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNjE1MzcsImV4cCI6MjA3NTkzNzUzN30._FZbzpsmEDtE7cUT7bWWA21404zVLDy2XM9WjZyLcWE"; // Replace with your actual key
+    const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
     async function placeOrder(itemName, itemPrice) {
       try {
-        // Optional: Add user authentication if needed
         const whatsappNumber = "2349132963161";
         const message = `Hi! I want to order: ${itemName} - ₦${itemPrice} from Labwat's Kitchen.`;
+        const encodedMessage = encodeURIComponent(message);
 
         // 1️⃣ Save order to Supabase
-        const { data, error } = await supabase.from('orders').insert([{
-          item: itemName,
-          amount: itemPrice,
-          status: "Pending",
-          date: new Date().toISOString()
-        }]);
-        if (error) console.error("Supabase order error:", error.message);
+        const { data, error } = await sb.from('orders').insert([
+          {
+            item: itemName,
+            amount: itemPrice,
+            status: "Pending",
+            date: new Date().toISOString()
+          }
+        ]);
 
-        // 2️⃣ Open WhatsApp
-window.open("https://wa.me/2349132963161?text=Hi!%20I%20want%20to%20order%3A%20Shawarma%20-%20%E2%82%A55000%20from%20Labwat's%20Kitchen.", "_blank");
+        if (error) {
+          console.error("Supabase order error:", error.message);
+          alert("Could not save order. Please try again.");
+          return;
+        }
 
-      } catch(err) {
+        console.log("Order saved:", data);
+
+        // 2️⃣ Redirect to WhatsApp dynamically
+        const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        window.open(whatsappLink, "_blank");
+      } catch (err) {
         console.error("Order error:", err);
+        alert("Something went wrong. Please try again.");
       }
     }
   </script>
 </body>
 </html>
-
-
