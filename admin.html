@@ -13,35 +13,6 @@
   <!-- Chart.js (for charts) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-  const SUPABASE_URL = "https://bqwsozssaxegxsdfalnd.supabase.co";
-  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxd3NvenNzYXhlZ3hzZGZhbG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNjE1MzcsImV4cCI6MjA3NTkzNzUzN30._FZbzpsmEDtE7cUT7bWWA21404zVLDy2XM9WjZyLcWE";
-  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-  async function checkAdmin() {
-    const { data: { user }, error } = await supabase.auth.getUser();
-
-    if (!user) {
-      // Not logged in → redirect
-      window.location.href = "login.html";
-      return;
-    }
-
-    // Fetch user role from your `users` table
-    const { data, error: fetchError } = await supabase.from('users')
-      .select('role')
-      .eq('id', user.id)
-      .single();
-
-    if (fetchError || data.role !== 'admin') {
-      // Not admin → redirect to dashboard
-      window.location.href = "dashboard.html";
-    }
-  }
-
-  checkAdmin();
-</script>
 
 <body>
   <!-- HEADER -->
@@ -100,7 +71,7 @@
           </tr>
         </thead>
         <tbody id="ordersBody">
-          <!-- Example static data (will later be replaced with Firebase data) -->
+          <!-- Static example data (will later be replaced with Supabase data) -->
           <tr>
             <td>#001</td>
             <td>John Doe</td>
@@ -132,23 +103,52 @@
     <p>© 2025 Labwat’s Place. All rights reserved.</p>
   </footer>
 
-  <!-- SHARED SCRIPT -->
-<!-- JavaScript Files -->
-<script src="main.js"></script>
-<script src="mobile-features.js"></script>
-<script src="tablet-features.js"></script>
-<script src="desktop-features.js"></script>
-<script src="script.js"></script>
+  <!-- SUPABASE & DASHBOARD LOGIC -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = "https://bqwsozssaxegxsdfalnd.supabase.co"; // your project URL
+    const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxd3NvenNzYXhlZ3hzZGZhbG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNjE1MzcsImV4cCI6MjA3NTkzNzUzN30._FZbzpsmEDtE7cUT7bWWA21404zVLDy2XM9WjZyLcWE"; // your anon/public key
+
+    const { createClient } = supabase;
+    window.supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    async function checkAdmin() {
+      const { data: { user }, error } = await window.supabase.auth.getUser();
+
+      if (!user) {
+        window.location.href = "login.html";
+        return;
+      }
+
+      const { data, error: fetchError } = await window.supabase
+        .from('users')
+        .select('role')
+        .eq('id', user.id)
+        .single();
+
+      if (fetchError || !data || data.role !== 'admin') {
+        window.location.href = "dashboard.html";
+      }
+    }
+
+    checkAdmin();
+  </script>
+
+  <!-- JS Files -->
+  <script src="main.js"></script>
+  <script src="mobile-features.js"></script>
+  <script src="tablet-features.js"></script>
+  <script src="desktop-features.js"></script>
+  <script src="script.js"></script>
+
   <!-- DASHBOARD JS -->
   <script>
-    // Sample static data (replace with Firebase later)
     const orders = [
       { id: '001', customer: 'John Doe', item: 'Grilled Chicken', amount: 15, status: 'Pending' },
       { id: '002', customer: 'Jane Smith', item: 'Jollof Rice', amount: 10, status: 'Delivered' },
       { id: '003', customer: 'Mike Adams', item: 'Beef Suya', amount: 12, status: 'Pending' }
     ];
 
-    // Update summary cards
     const totalOrders = orders.length;
     const totalRevenue = orders.reduce((sum, o) => sum + o.amount, 0);
     const totalCustomers = new Set(orders.map(o => o.customer)).size;
@@ -157,9 +157,9 @@
     document.getElementById('totalRevenue').textContent = '$' + totalRevenue;
     document.getElementById('totalCustomers').textContent = totalCustomers;
 
-    // Chart.js example charts
     const ctx1 = document.getElementById('ordersChart');
     const ctx2 = document.getElementById('revenueChart');
+
     new Chart(ctx1, {
       type: 'line',
       data: {
@@ -167,6 +167,7 @@
         datasets: [{ label: 'Orders', data: [2, 5, 3, 6, 4] }]
       },
     });
+
     new Chart(ctx2, {
       type: 'bar',
       data: {
@@ -175,18 +176,17 @@
       },
     });
 
-    // Interactivity for "Mark Delivered" and "Delete"
     document.querySelectorAll('.btn-approve').forEach(btn => {
       btn.addEventListener('click', e => {
         e.target.closest('tr').querySelector('.status').textContent = 'Delivered';
         e.target.closest('tr').querySelector('.status').className = 'status delivered';
-        e.target.remove(); // remove "Mark Delivered" button
+        e.target.remove();
       });
     });
+
     document.querySelectorAll('.btn-delete').forEach(btn => {
       btn.addEventListener('click', e => e.target.closest('tr').remove());
     });
   </script>
 </body>
 </html>
-
