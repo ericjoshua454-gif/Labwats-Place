@@ -43,6 +43,7 @@
     <!-- USER ORDER HISTORY -->
     <section class="orders-section">
       <h2>My Orders</h2>
+      <p id="loadingText" style="color: gray;">Loading latest orders...</p>
       <table class="orders-table">
         <thead>
           <tr>
@@ -68,38 +69,45 @@
   <!-- Supabase Library + Initialization -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-    // Replace these with your Supabase credentials
-    const SUPABASE_URL = "https://YOUR_PROJECT_URL.supabase.co";
-    const SUPABASE_KEY = "YOUR_ANON_PUBLIC_KEY";
+    // Replace with your Supabase credentials
+    const SUPABASE_URL = "https://bqwsozssaxegxsdfalnd.supabase.co";
+    const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxd3NvenNzYXhlZ3hzZGZhbG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNjE1MzcsImV4cCI6MjA3NTkzNzUzN30._FZbzpsmEDtE7cUT7bWWA21404zVLDy2XM9WjZyLcWE";
     const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
   </script>
 
   <!-- DASHBOARD SCRIPT -->
   <script>
-    async function loadDashboard() {
-      // 1️⃣ Check if user is logged in
-      const { data: { user }, error } = await supabase.auth.getUser();
-      if (error || !user) {
+    let user = null;
+
+    async function checkUser() {
+      const { data, error } = await supabase.auth.getUser();
+      if (error || !data.user) {
         window.location.href = "login.html";
         return;
       }
+      user = data.user;
+      document.getElementById("userName").textContent = user.user_metadata.full_name || "Customer";
+    }
 
-      // 2️⃣ Display user's name
-      document.getElementById("userName").textContent =
-        user.user_metadata.full_name || "Customer";
+    async function loadDashboard() {
+      if (!user) return;
 
-      // 3️⃣ Fetch orders for this user
-      const { data: orders, error: orderError } = await supabase
+      document.getElementById("loadingText").style.display = "block";
+
+      const { data: orders, error } = await supabase
         .from("orders")
         .select("*")
-        .eq("user_id", user.id);
+        .eq("user_id", user.id)
+        .order("date", { ascending: false });
 
-      if (orderError) {
-        console.error("Error fetching orders:", orderError);
+      document.getElementById("loadingText").style.display = "none";
+
+      if (error) {
+        console.error("Error fetching orders:", error);
         return;
       }
 
-      // 4️⃣ Update summary cards
+      // Update summary cards
       const totalOrders = orders.length;
       const delivered = orders.filter(o => o.status === "Delivered").length;
       const pending = orders.filter(o => o.status === "Pending").length;
@@ -108,7 +116,7 @@
       document.getElementById("userDelivered").textContent = delivered;
       document.getElementById("userPending").textContent = pending;
 
-      // 5️⃣ Display orders in table
+      // Render orders table
       const tableBody = document.getElementById("userOrdersBody");
       tableBody.innerHTML = "";
       orders.forEach(order => {
@@ -124,14 +132,19 @@
       });
     }
 
-    // 6️⃣ Logout functionality
+    // Logout
     document.getElementById("logoutBtn").addEventListener("click", async () => {
       await supabase.auth.signOut();
       window.location.href = "login.html";
     });
 
-    // 7️⃣ Run the dashboard
-    loadDashboard();
+    // Initialize
+    (async function init() {
+      await checkUser();
+      await loadDashboard();
+      // ⏱ Auto-refresh every 10 seconds
+      setInterval(loadDashboard, 10000);
+    })();
   </script>
 </body>
 </html>
