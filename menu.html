@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu - Labwat's Kitchen</title>
   <link rel="stylesheet" href="style.css">
-<!-- Responsive CSS Files -->
-<link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
-<link rel="stylesheet" href="tablet.css" media="(min-width: 769px) and (max-width: 1024px)">
-<link rel="stylesheet" href="desktop.css" media="(min-width: 1025px)">
+
+  <!-- Responsive CSS -->
+  <link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
+  <link rel="stylesheet" href="tablet.css" media="(min-width: 769px) and (max-width: 1024px)">
+  <link rel="stylesheet" href="desktop.css" media="(min-width: 1025px)">
+
   <style>
+    /* Order Button */
     .order-btn {
       display: inline-block;
       margin-top: 0.5rem;
@@ -28,6 +31,8 @@
       background: #1ebd5b;
       color: white;
     }
+
+    /* Floating WhatsApp */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -63,13 +68,13 @@
     </ul>
   </nav>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section class="hero-menu">
     <h1>Our Menu</h1>
     <p>Delicious meals crafted with love, passion, and creativity</p>
   </section>
 
-  <!-- Accordion Menu -->
+  <!-- Menu Accordion -->
   <section class="menu-content">
     <div class="container">
       <h2>Explore Our Dishes</h2>
@@ -242,7 +247,10 @@
     <p>&copy; 2025 Labwat's Kitchen. All Rights Reserved.</p>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/2349132963161" class="whatsapp-float" target="_blank">💬</a>
+
+  <!-- JS Files -->
   <script src="main.js"></script>
   <script src="mobile-features.js"></script>
   <script src="tablet-features.js"></script>
@@ -252,27 +260,32 @@
   <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-    const SUPABASE_URL = "https://bqwsozssaxegxsdfalnd.supabase.co";
-    const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxd3NvenNzYXhlZ3hzZGZhbG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNjE1MzcsImV4cCI6MjA3NTkzNzUzN30._FZbzpsmEDtE7cUT7bWWA21404zVLDy2XM9WjZyLcWE";
+    const SUPABASE_URL = "https://YOUR_PROJECT_URL.supabase.co";
+    const SUPABASE_KEY = "YOUR_ANON_PUBLIC_KEY";
     const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-    function placeOrder(item, amount) {
-      // 1️⃣ Save order to Supabase
-      supabase.from('orders').insert([{ item, amount, status: 'Pending', date: new Date().toISOString() }])
-        .then(({ data, error }) => {
-          if (error) {
-            console.error("Error saving order:", error);
-            return;
-          }
-          console.log("Order saved:", data);
-        });
+    async function placeOrder(itemName, itemPrice) {
+      try {
+        // Optional: Add user authentication if needed
+        const whatsappNumber = "2349132963161";
+        const message = `Hi! I want to order: ${itemName} - ₦${itemPrice} from Labwat's Kitchen.`;
 
-      // 2️⃣ Open WhatsApp with prefilled message
-      const message = `Hi! I want to order: ${item} - ₦${amount}`;
-      window.open(`https://wa.me/2349132963161?text=${encodeURIComponent(message)}`, '_blank');
+        // 1️⃣ Save order to Supabase
+        const { data, error } = await supabase.from('orders').insert([{
+          item: itemName,
+          amount: itemPrice,
+          status: "Pending",
+          date: new Date().toISOString()
+        }]);
+        if (error) console.error("Supabase order error:", error.message);
+
+        // 2️⃣ Open WhatsApp
+        window.open(`https://wa.me/${2349132963161}?text=${encodeURIComponent(message)}`, "_blank");
+
+      } catch(err) {
+        console.error("Order error:", err);
+      }
     }
   </script>
-
 </body>
 </html>
-
