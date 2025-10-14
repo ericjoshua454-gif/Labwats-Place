@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Dashboard | Labwat’s Place</title>
 
   <!-- Responsive Stylesheets -->
-  <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 1025px)">
-  <link rel="stylesheet" href="tablet.css" media="screen and (min-width: 768px) and (max-width: 1024px)">
-  <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 767px)">
+  <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 1025px)" />
+  <link rel="stylesheet" href="tablet.css" media="screen and (min-width: 768px) and (max-width: 1024px)" />
+  <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 767px)" />
 </head>
 <body>
   <!-- HEADER -->
@@ -54,7 +54,7 @@
           </tr>
         </thead>
         <tbody id="userOrdersBody">
-          <!-- Orders will be loaded here -->
+          <!-- Orders will load here -->
         </tbody>
       </table>
     </section>
@@ -65,75 +65,72 @@
     <p>© 2025 Labwat’s Place. All rights reserved.</p>
   </footer>
 
-  <!-- SHARED SCRIPT -->
-  <script src="main.js"></script>
-  <script src="mobile-features.js"></script>
-  <script src="tablet-features.js"></script>
-  <script src="desktop-features.js"></script>
-  <script src="script.js"></script>
-
   <!-- Supabase Library + Initialization -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-    const SUPABASE_URL = "https://bqwsozssaxegxsdfalnd.supabase.co";
-    const SUPABASE_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxd3NvenNzYXhlZ3hzZGZhbG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNjE1MzcsImV4cCI6MjA3NTkzNzUzN30._FZbzpsmEDtE7cUT7bWWA21404zVLDy2XM9WjZyLcWE";
-    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    // Replace these with your Supabase credentials
+    const SUPABASE_URL = "https://YOUR_PROJECT_URL.supabase.co";
+    const SUPABASE_KEY = "YOUR_ANON_PUBLIC_KEY";
+    const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
   </script>
 
   <!-- DASHBOARD SCRIPT -->
   <script>
     async function loadDashboard() {
-      // Check logged-in user
-      const { data: { user } } = await supabase.auth.getUser();
-      if (!user) {
+      // 1️⃣ Check if user is logged in
+      const { data: { user }, error } = await supabase.auth.getUser();
+      if (error || !user) {
         window.location.href = "login.html";
         return;
       }
 
-      document.getElementById('userName').textContent = user.user_metadata.full_name || "Customer";
+      // 2️⃣ Display user's name
+      document.getElementById("userName").textContent =
+        user.user_metadata.full_name || "Customer";
 
-      // Fetch orders from Supabase (replace with your table name)
-      const { data: orders, error } = await supabase
-        .from('orders')
-        .select('*')
-        .eq('user_id', user.id);
+      // 3️⃣ Fetch orders for this user
+      const { data: orders, error: orderError } = await supabase
+        .from("orders")
+        .select("*")
+        .eq("user_id", user.id);
 
-      if (error) {
-        console.error("Error fetching orders:", error);
+      if (orderError) {
+        console.error("Error fetching orders:", orderError);
         return;
       }
 
-      // Update summary cards
+      // 4️⃣ Update summary cards
       const totalOrders = orders.length;
-      const delivered = orders.filter(o => o.status === 'Delivered').length;
-      const pending = orders.filter(o => o.status === 'Pending').length;
+      const delivered = orders.filter(o => o.status === "Delivered").length;
+      const pending = orders.filter(o => o.status === "Pending").length;
 
-      document.getElementById('userTotalOrders').textContent = totalOrders;
-      document.getElementById('userDelivered').textContent = delivered;
-      document.getElementById('userPending').textContent = pending;
+      document.getElementById("userTotalOrders").textContent = totalOrders;
+      document.getElementById("userDelivered").textContent = delivered;
+      document.getElementById("userPending").textContent = pending;
 
-      // Display orders in table
-      const tableBody = document.getElementById('userOrdersBody');
-      tableBody.innerHTML = ''; // clear previous rows
+      // 5️⃣ Display orders in table
+      const tableBody = document.getElementById("userOrdersBody");
+      tableBody.innerHTML = "";
       orders.forEach(order => {
-        const row = document.createElement('tr');
+        const row = document.createElement("tr");
         row.innerHTML = `
           <td>${order.id}</td>
           <td>${order.item}</td>
-          <td>$${order.amount}</td>
+          <td>₦${order.amount}</td>
           <td><span class="status ${order.status.toLowerCase()}">${order.status}</span></td>
-          <td>${order.date}</td>
+          <td>${new Date(order.date).toLocaleDateString()}</td>
         `;
         tableBody.appendChild(row);
       });
     }
 
-    // Logout
-    document.getElementById('logoutBtn').addEventListener('click', async () => {
+    // 6️⃣ Logout functionality
+    document.getElementById("logoutBtn").addEventListener("click", async () => {
       await supabase.auth.signOut();
       window.location.href = "login.html";
     });
 
+    // 7️⃣ Run the dashboard
     loadDashboard();
   </script>
 </body>
