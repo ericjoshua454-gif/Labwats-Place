@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu - Labwat's Kitchen</title>
   <link rel="stylesheet" href="style.css">
+
   <style>
-    /* Order Button */
     .order-btn {
       display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
+      margin-top: 0.5rem;
+      padding: 0.6rem 1rem;
       border-radius: 6px;
       font-weight: bold;
       text-decoration: none;
+      cursor: pointer;
       transition: 0.3s ease;
     }
     .order-btn.whatsapp {
@@ -22,9 +23,8 @@
     }
     .order-btn.whatsapp:hover {
       background: #1ebd5b;
+      color: white;
     }
-
-    /* Floating WhatsApp */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -48,25 +48,17 @@
   </style>
 </head>
 <body>
-<nav class="navbar">
-  <div class="logo">
-    <div class="chef-hat"></div>
-    Labwat's Kitchen
-  </div>
-  <button class="hamburger">☰</button>
-  <ul class="nav-menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="menu.html">Menu</a></li>
-    <li><a href="recipe.html">Recipes</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-    <!-- Responsive CSS Files -->
-<link rel="stylesheet" href="mobile.css" media="(max-width: 768px)">
-<link rel="stylesheet" href="tablet.css" media="(min-width: 769px) and (max-width: 1024px)">
-<link rel="stylesheet" href="desktop.css" media="(min-width: 1025px)">
-  </header>
+  <nav class="navbar">
+    <div class="logo">Labwat's Kitchen</div>
+    <button class="hamburger">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="recipe.html">Recipes</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
   <!-- Hero -->
   <section class="hero-menu">
@@ -78,18 +70,32 @@
   <section class="menu-content">
     <div class="container">
       <h2>Explore Our Dishes</h2>
-
       <div class="accordion">
 
         <!-- Specials -->
         <div class="accordion-item">
           <button class="accordion-header">⭐ Specials <span class="icon">+</span></button>
           <div class="accordion-body">
-            <div class="dish"><img src="images/shawarma.jpg"><p>Shawarma (Chicken or Beef) – ₦5000</div>
-            <div class="dish"><img src="images/fishpeppersoup.jpg"><p>Catfish Pepper Soup – ₦4,500</p></div>
-            <div class="dish"><img src="images/asun.jpg"><p>Spicy Asun (Goat Meat) – ₦4,000</p></div>
-            <div class="dish"><img src="images/smallchops.jpg"><p>Small Chops Platter – ₦5,000</p></div>
-            <a href="https://wa.me/2349132963161?text=Hi!%20I%20want%20to%20order%20Specials%20from%20Labwat's%20Kitchen." target="_blank" class="order-btn whatsapp">💬 Order Specials</a>
+            <div class="dish">
+              <img src="images/shawarma.jpg">
+              <p>Shawarma (Chicken or Beef) – ₦5000</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Shawarma (Chicken or Beef)', 5000)">💬 Order</button>
+            </div>
+            <div class="dish">
+              <img src="images/fishpeppersoup.jpg">
+              <p>Catfish Pepper Soup – ₦4,500</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Catfish Pepper Soup', 4500)">💬 Order</button>
+            </div>
+            <div class="dish">
+              <img src="images/asun.jpg">
+              <p>Spicy Asun (Goat Meat) – ₦4,000</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Spicy Asun (Goat Meat)', 4000)">💬 Order</button>
+            </div>
+            <div class="dish">
+              <img src="images/smallchops.jpg">
+              <p>Small Chops Platter – ₦5,000</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Small Chops Platter', 5000)">💬 Order</button>
+            </div>
           </div>
         </div>
 
@@ -97,10 +103,21 @@
         <div class="accordion-item">
           <button class="accordion-header">🥗 Appetizers <span class="icon">+</span></button>
           <div class="accordion-body">
-            <div class="dish"><img src="images/suya.jpg"><p>Suya Skewers – ₦2,500</p></div>
-            <div class="dish"><img src="images/puffpuff.jpg"><p>Puff Puff – ₦1,200</p></div>
-            <div class="dish"><img src="images/chinchin.jpg"><p>Chin Chin – ₦1,000</p></div>
-            <a href="https://wa.me/2349132963161?text=Hi!%20I%20want%20to%20order%20Appetizers%20from%20Labwat's%20Kitchen." target="_blank" class="order-btn whatsapp">💬 Order Appetizers</a>
+            <div class="dish">
+              <img src="images/suya.jpg">
+              <p>Suya Skewers – ₦2,500</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Suya Skewers', 2500)">💬 Order</button>
+            </div>
+            <div class="dish">
+              <img src="images/puffpuff.jpg">
+              <p>Puff Puff – ₦1,200</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Puff Puff', 1200)">💬 Order</button>
+            </div>
+            <div class="dish">
+              <img src="images/chinchin.jpg">
+              <p>Chin Chin – ₦1,000</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Chin Chin', 1000)">💬 Order</button>
+            </div>
           </div>
         </div>
 
@@ -108,12 +125,31 @@
         <div class="accordion-item">
           <button class="accordion-header">🍲 Main Courses <span class="icon">+</span></button>
           <div class="accordion-body">
-            <div class="dish"><img src="images/jollof.jpg"><p>Classic Jollof Rice – ₦3,500</p></div>
-            <div class="dish"><img src="images/egusi.jpg"><p>Egusi Soup & Pounded Yam – ₦4,000</p></div>
-            <div class="dish"><img src="images/ofada.jpg"><p>Ofada Rice & Ayamase – ₦4,200</p></div>
-            <div class="dish"><img src="images/efo.jpg"><p>Efo Riro with Beef – ₦3,800</p></div>
-            <div class="dish"><img src="images/okro.jpg"><p>Okro Soup & Fish – ₦3,600</p></div>
-            <a href="https://wa.me/2349132963161?text=Hi!%20I%20want%20to%20order%20Main%20Courses%20from%20Labwat's%20Kitchen." target="_blank" class="order-btn whatsapp">💬 Order Main Courses</a>
+            <div class="dish">
+              <img src="images/jollof.jpg">
+              <p>Classic Jollof Rice – ₦3,500</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Classic Jollof Rice', 3500)">💬 Order</button>
+            </div>
+            <div class="dish">
+              <img src="images/egusi.jpg">
+              <p>Egusi Soup & Pounded Yam – ₦4,000</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Egusi Soup & Pounded Yam', 4000)">💬 Order</button>
+            </div>
+            <div class="dish">
+              <img src="images/ofada.jpg">
+              <p>Ofada Rice & Ayamase – ₦4,200</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Ofada Rice & Ayamase', 4200)">💬 Order</button>
+            </div>
+            <div class="dish">
+              <img src="images/efo.jpg">
+              <p>Efo Riro with Beef – ₦3,800</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Efo Riro with Beef', 3800)">💬 Order</button>
+            </div>
+            <div class="dish">
+              <img src="images/okro.jpg">
+              <p>Okro Soup & Fish – ₦3,600</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Okro Soup & Fish', 3600)">💬 Order</button>
+            </div>
           </div>
         </div>
 
@@ -121,11 +157,26 @@
         <div class="accordion-item">
           <button class="accordion-header">👶 Kiddies Menu <span class="icon">+</span></button>
           <div class="accordion-body">
-            <div class="dish"><img src="images/kidsspaghetti.jpg"><p>Kids Spaghetti & Meatballs – ₦2,000</p></div>
-            <div class="dish"><img src="images/chipsnuggets.jpg"><p>Chicken Nuggets & Fries – ₦2,500</p></div>
-            <div class="dish"><img src="images/pancakes.jpg"><p>Fluffy Pancakes with Syrup – ₦1,800</p></div>
-            <div class="dish"><img src="images/miniburger.jpg"><p>Mini Burger & Juice Pack – ₦2,200</p></div>
-            <a href="https://wa.me/2349132963161?text=Hi!%20I%20want%20to%20order%20from%20the%20Kiddies%20Menu%20at%20Labwat's%20Kitchen." target="_blank" class="order-btn whatsapp">💬 Order Kiddies Meal</a>
+            <div class="dish">
+              <img src="images/kidsspaghetti.jpg">
+              <p>Kids Spaghetti & Meatballs – ₦2,000</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Kids Spaghetti & Meatballs', 2000)">💬 Order</button>
+            </div>
+            <div class="dish">
+              <img src="images/chipsnuggets.jpg">
+              <p>Chicken Nuggets & Fries – ₦2,500</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Chicken Nuggets & Fries', 2500)">💬 Order</button>
+            </div>
+            <div class="dish">
+              <img src="images/pancakes.jpg">
+              <p>Fluffy Pancakes with Syrup – ₦1,800</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Fluffy Pancakes with Syrup', 1800)">💬 Order</button>
+            </div>
+            <div class="dish">
+              <img src="images/miniburger.jpg">
+              <p>Mini Burger & Juice Pack – ₦2,200</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Mini Burger & Juice Pack', 2200)">💬 Order</button>
+            </div>
           </div>
         </div>
 
@@ -133,10 +184,21 @@
         <div class="accordion-item">
           <button class="accordion-header">🍰 Desserts <span class="icon">+</span></button>
           <div class="accordion-body">
-            <div class="dish"><img src="images/moimoi.jpg"><p>Moimoi Special – ₦1,800</p></div>
-            <div class="dish"><img src="images/coconut.jpg"><p>Coconut Pudding – ₦2,000</p></div>
-            <div class="dish"><img src="images/icecream.jpg"><p>Vanilla Ice Cream – ₦1,500</p></div>
-            <a href="https://wa.me/2349132963161?text=Hi!%20I%20want%20to%20order%20Desserts%20from%20Labwat's%20Kitchen." target="_blank" class="order-btn whatsapp">💬 Order Desserts</a>
+            <div class="dish">
+              <img src="images/moimoi.jpg">
+              <p>Moimoi Special – ₦1,800</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Moimoi Special', 1800)">💬 Order</button>
+            </div>
+            <div class="dish">
+              <img src="images/coconut.jpg">
+              <p>Coconut Pudding – ₦2,000</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Coconut Pudding', 2000)">💬 Order</button>
+            </div>
+            <div class="dish">
+              <img src="images/icecream.jpg">
+              <p>Vanilla Ice Cream – ₦1,500</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Vanilla Ice Cream', 1500)">💬 Order</button>
+            </div>
           </div>
         </div>
 
@@ -144,11 +206,26 @@
         <div class="accordion-item">
           <button class="accordion-header">🍷 Wines & Drinks <span class="icon">+</span></button>
           <div class="accordion-body">
-            <div class="dish"><img src="images/redwine.jpg"><p>Red Wine – ₦7,000</p></div>
-            <div class="dish"><img src="images/whitewine.jpg"><p>White Wine – ₦6,500</p></div>
-            <div class="dish"><img src="images/rose.jpg"><p>Rosé Wine – ₦6,800</p></div>
-            <div class="dish"><img src="images/champagne.jpg"><p>Champagne – ₦15,000</p></div>
-            <a href="https://wa.me/2349132963161?text=Hi!%20I%20want%20to%20order%20Drinks%20from%20Labwat's%20Kitchen." target="_blank" class="order-btn whatsapp">💬 Order Drinks</a>
+            <div class="dish">
+              <img src="images/redwine.jpg">
+              <p>Red Wine – ₦7,000</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Red Wine', 7000)">💬 Order</button>
+            </div>
+            <div class="dish">
+              <img src="images/whitewine.jpg">
+              <p>White Wine – ₦6,500</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('White Wine', 6500)">💬 Order</button>
+            </div>
+            <div class="dish">
+              <img src="images/rose.jpg">
+              <p>Rosé Wine – ₦6,800</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Rosé Wine', 6800)">💬 Order</button>
+            </div>
+            <div class="dish">
+              <img src="images/champagne.jpg">
+              <p>Champagne – ₦15,000</p>
+              <button class="order-btn whatsapp" onclick="placeOrder('Champagne', 15000)">💬 Order</button>
+            </div>
           </div>
         </div>
 
@@ -161,16 +238,37 @@
     <p class="footer-motto">"From the East to the West, our food is the best."</p>
     <p>&copy; 2025 Labwat's Kitchen. All Rights Reserved.</p>
   </footer>
-<!-- JavaScript Files -->
-<script src="main.js"></script>
-<script src="mobile-features.js"></script>
-<script src="tablet-features.js"></script>
-<script src="desktop-features.js"></script>
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/2349132963161?text=Hi!%20I%20want%20to%20place%20an%20order%20at%20Labwat's%20Kitchen." 
-     class="whatsapp-float" target="_blank">💬</a>
 
+  <!-- JavaScript -->
+  <script src="main.js"></script>
+  <script src="mobile-features.js"></script>
+  <script src="tablet-features.js"></script>
+  <script src="desktop-features.js"></script>
   <script src="script.js"></script>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = "https://bqwsozssaxegxsdfalnd.supabase.co";
+    const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxd3NvenNzYXhlZ3hzZGZhbG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNjE1MzcsImV4cCI6MjA3NTkzNzUzN30._FZbzpsmEDtE7cUT7bWWA21404zVLDy2XM9WjZyLcWE";
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    function placeOrder(item, amount) {
+      // 1️⃣ Save order to Supabase
+      supabase.from('orders').insert([{ item, amount, status: 'Pending', date: new Date().toISOString() }])
+        .then(({ data, error }) => {
+          if (error) {
+            console.error("Error saving order:", error);
+            return;
+          }
+          console.log("Order saved:", data);
+        });
+
+      // 2️⃣ Open WhatsApp with prefilled message
+      const message = `Hi! I want to order: ${item} - ₦${amount}`;
+      window.open(`https://wa.me/2349132963161?text=${encodeURIComponent(message)}`, '_blank');
+    }
+  </script>
+
 </body>
 </html>
-
