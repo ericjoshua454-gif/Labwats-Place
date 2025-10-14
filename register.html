@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Register | Labwat’s Place</title>
 
   <!-- Responsive Stylesheets -->
-  <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 1025px)">
-  <link rel="stylesheet" href="tablet.css" media="screen and (min-width: 768px) and (max-width: 1024px)">
-  <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 767px)">
+  <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 1025px)" />
+  <link rel="stylesheet" href="tablet.css" media="screen and (min-width: 768px) and (max-width: 1024px)" />
+  <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 767px)" />
 </head>
 <body>
   <!-- HEADER -->
@@ -25,20 +25,19 @@
     <h1>Create Account</h1>
     <form id="registerForm" class="auth-form">
       <label>Full Name</label>
-      <input type="text" id="registerName" placeholder="Enter your full name" required>
+      <input type="text" id="registerName" placeholder="Enter your full name" required />
 
       <label>Email</label>
-      <input type="email" id="registerEmail" placeholder="Enter your email" required>
+      <input type="email" id="registerEmail" placeholder="Enter your email" required />
 
       <label>Password</label>
-      <input type="password" id="registerPassword" placeholder="Enter your password" required>
+      <input type="password" id="registerPassword" placeholder="Enter your password" required />
 
       <button type="submit" class="btn-primary">Register</button>
       <p>Already have an account? <a href="login.html">Login here</a></p>
     </form>
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <p>© 2025 Labwat’s Place. All rights reserved.</p>
   </footer>
@@ -46,36 +45,36 @@
   <!-- Supabase Library + Initialization -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
-    const SUPABASE_URL = "https://YOUR_PROJECT_URL.supabase.co";
-    const SUPABASE_KEY = "YOUR_ANON_PUBLIC_KEY";
-    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    const { createClient } = supabase;
+    const SUPABASE_URL = "https://bqwsozssaxegxsdfalnd.supabase.co";
+    const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxd3NvenNzYXhlZ3hzZGZhbG5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzNjE1MzcsImV4cCI6MjA3NTkzNzUzN30._FZbzpsmEDtE7cUT7bWWA21404zVLDy2XM9WjZyLcWE";
+    window.supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
   </script>
 
-  <!-- REGISTER SCRIPT -->
+  <!-- REGISTER LOGIC -->
   <script>
     const registerForm = document.getElementById('registerForm');
 
     registerForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const fullName = document.getElementById('registerName').value;
-      const email = document.getElementById('registerEmail').value;
+      const fullName = document.getElementById('registerName').value.trim();
+      const email = document.getElementById('registerEmail').value.trim();
       const password = document.getElementById('registerPassword').value;
 
       try {
-        // Create a new user and store metadata
         const { data, error } = await supabase.auth.signUp({
           email,
           password,
           options: {
-            data: { full_name: fullName, role: "user" } // default role = user
+            data: { full_name: fullName, role: "user" }
           }
         });
 
         if (error) {
-          alert("❌ Signup failed: " + error.message);
+          alert("Signup failed: " + error.message);
         } else {
-          alert("✅ Account created! Please verify your email before logging in.");
+          alert("Account created! Please check your email to verify your account.");
           window.location.href = "login.html";
         }
       } catch (err) {
